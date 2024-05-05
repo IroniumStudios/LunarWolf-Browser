@@ -30,6 +30,7 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 
 # Features
 
+
 - **LunarWolf Shield** - Browse the web without any ads and don't let websites to track you. Thanks to the LunarWolf Shield powered by [Cliqz](https://github.com/cliqz-oss/adblocker), websites can load even 8 times faster!
 - **Chromium without Google services and low resources usage** - Since LunarWolf uses Electron under the hood which is based on only several and the most important Chromium components, it's not bloated with redundant Google tracking services and others.
 - **Fast and fluent UI** - The animations are really smooth and their timings are perfectly balanced.
@@ -41,6 +42,7 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 
 ## Other basic features
 
+
 - Downloads popup with currently downloaded items (download manager WebUI page is WIP)
 - History manager
 - Bookmarks bar & manager
@@ -51,9 +53,13 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 - State of the art tab system
 
 
+
 ### Instructions for setting up your build environment for windows, Linux and mac os
 
+
+
 + if your starting on linux or mac os this is the following command below before installing npm
+
 
 
 ```bash
@@ -64,6 +70,7 @@ sudo apt update # Checks for the latest version
 + Now for installing npm on mac os and linux run the following command in your terminal
 
 
+
 ```bash
 sudo apt install npm # this command will install npm for linux and mac os
 ```
@@ -71,8 +78,10 @@ sudo apt install npm # this command will install npm for linux and mac os
 
 + To Help you keep track of all your versions and make things a little easier for you, Download nvm (Node Version Manegar) from [`here`](https://github.com/coreybutler/nvm-windows)
 
+
   
 + after installing NVM Run your terminal or Command Prompt, then type the following command
+
 
   
 ```bash
@@ -80,7 +89,9 @@ nvm install 22.1.0 # this installed the compatible version of node.js for this p
 ```
 
 
+
 after installing the correct version of node.js we want the nvm to use this version as its main defalt version slot, you can do this by running
+
 
 
 ```bash
@@ -88,12 +99,15 @@ nvm use 22.1.0 # sets the version you specified as defalt if your on windows but
 ```
 
 
+
 and if your using linux or mac os run this command alongsize the other one
+
 
 
 ```bash
 nvm alias default 21.7.2 # Sets the node version as the main defalt alias on linux and mac os
 ```
+
 
 
 make sure you have the 30.0.1 version of electron installed, you can do so by running this command in your terminal or command prompt
@@ -107,17 +121,28 @@ npm install -g electron@30.0.1
 + Next up is installing yarn package manegar version 4.1.1, which you can find from [`here`](https://yarnpkg.com/getting-started/install)
 
 
+
 #### Note: New Versions of Node.js No Longer Need Windows Build Tools Alongside it, because node already includes them out of the box
+
+
 
 ### Building and Running Commands for Linux, mac os, and windows
 
+
+
 #### open the base-rpc folder and run this command
+
+
 
 ```bash
 yarn install # Install needed depedencies for base-rpc.
 ```
 
+
+
 #### Now go back to the main browser-base-updated folder and run the commands below
+
+
 
 ```bash
  yarn install # Install needed depedencies.
@@ -129,6 +154,7 @@ yarn install # Install needed depedencies for base-rpc.
 ### Compiling and yarn lint Commands for Windows
 
 
+
 ```bash
  yarn compile-win32 # Package LunarWolf for Windows
  yarn lint # Runs linter
@@ -137,6 +163,7 @@ yarn install # Install needed depedencies for base-rpc.
 
 
 ### Compiling and yarn lint Commands for Linux and mac os
+
 
 
 ```bash
