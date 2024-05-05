@@ -12,12 +12,12 @@
     "mobx",
     "styled-components"
   ],
-  "homepage": "https://github.com/IroniumStudios/browser-base-updated/blob/master/README.md",
+  "homepage": "https://github.com/IroniumStudios/LunarWolf-Browser/blob/main/README.md",
   "main": "build/main.bundle.js",
   "author": "Damon Smith <cleverdamontoutube@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IroniumStudios/browser-base-updated/tree/master.git"
+    "url": "git+https://github.com/IroniumStudios/LunarWolf-Browser.git"
   },
   "discussion": {
     "url": "https://github.com/IroniumStudios/browser-base-updated/discussions"
