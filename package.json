@@ -20,7 +20,7 @@
     "url": "git+https://github.com/IroniumStudios/LunarWolf-Browser.git"
   },
   "discussion": {
-    "url": "https://github.com/IroniumStudios/browser-base-updated/discussions"
+    "url": "https://github.com/IroniumStudios/LunarWolf-Browser/issues"
   },
   "scripts": {
     "dev-renderer": "cross-env DEV=1 webpack serve --config webpack.config.renderer.js",
