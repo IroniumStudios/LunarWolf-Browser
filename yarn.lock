@@ -496,10 +496,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/unitless@npm:0.8.0":
-  version: 0.8.0
-  resolution: "@emotion/unitless@npm:0.8.0"
-  checksum: 10c0/1f2cfb7c0ccb83c20b1c6d8d92a74a93da4b2a440f9a0d49ded08647faf299065a2ffde17e1335920fa10397b85f8635bbfe14f3cd29222a59ea81d978478072
+"@emotion/unitless@npm:0.8.1":
+  version: 0.8.1
+  resolution: "@emotion/unitless@npm:0.8.1"
+  checksum: 10c0/a1ed508628288f40bfe6dd17d431ed899c067a899fa293a13afe3aed1d70fac0412b8a215fafab0b42829360db687fecd763e5f01a64ddc4a4b58ec3112ff548
   languageName: node
   linkType: hard
 
@@ -1740,22 +1740,22 @@ __metadata:
 
 "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core#./lunarwolf-rpc/packages/rpc-core::hash=564c72&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/1f0a40804f5ca41a11266f8d592d6fc8411cd3fc1426757ab3495333f2a830bdba07e7783aaee63bdc3596679c237de262fd9fcf6a90518b9c87759ccd23e18b
+  resolution: "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core#./lunarwolf-rpc/packages/rpc-core::hash=38fd95&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/ab03bbe7d96ae2ad3cbcf268f92477a5999f90e68724a13b7a0df21a8c096b0133f035886bacbc55840214aec952a68cda6b3ff20d9eedcdb405149516e3acf0
   languageName: node
   linkType: hard
 
 "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron#./lunarwolf-rpc/packages/rpc-electron::hash=a84609&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/15489ceed4c4c616e6bf14dbb77c03f0521a6130449487b06c0bdc9deddd807423b71ee255af5bd2ebf3fb998ecdbcea29a4ed43dced30457791305c998c949c
+  resolution: "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron#./lunarwolf-rpc/packages/rpc-electron::hash=5b3341&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/9d1cc819e225004f1551f9847406d53f97f9de9870f253d4ee02f8535849051efc804d414bde58c3b95db214cb5c9cace1a3a71dfe42996e78fa778cbe6a0321
   languageName: node
   linkType: hard
 
 "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node#./lunarwolf-rpc/packages/rpc-node::hash=f052b9&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/ad09cc058293bb82bab11b2420d2513a3af34276289f6a46cdbd5520721233e755fa46ea46cbdcbc5c232f426750acd06ae5c0c5b654f330bb1417378b6a89c0
+  resolution: "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node#./lunarwolf-rpc/packages/rpc-node::hash=60630d&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/d66021fe35cc960d90bef53cbe8f085840c6b449ac828b016e8c3f1f19d7c54168edfc36930c1c1715c2624e1f90fed9a00311309ae9d6f3b4546156883b21cd
   languageName: node
   linkType: hard
 
@@ -1857,7 +1857,7 @@ __metadata:
     react-windows-controls: "npm:^1.1.1"
     rimraf: "npm:^5.0.5"
     source-map-support: "npm:^0.5.21"
-    styled-components: "npm:^6.1.8"
+    styled-components: "npm:^6.1.9"
     terser: "npm:^5.30.4"
     terser-webpack-plugin: "npm:^5.3.10"
     ts-loader: "npm:^9.5.1"
@@ -9247,12 +9247,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.1.8":
-  version: 6.1.8
-  resolution: "styled-components@npm:6.1.8"
+"styled-components@npm:^6.1.9":
+  version: 6.1.9
+  resolution: "styled-components@npm:6.1.9"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.2.1"
-    "@emotion/unitless": "npm:0.8.0"
+    "@emotion/unitless": "npm:0.8.1"
     "@types/stylis": "npm:4.2.0"
     css-to-react-native: "npm:3.2.0"
     csstype: "npm:3.1.2"
@@ -9263,7 +9263,7 @@ __metadata:
   peerDependencies:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
-  checksum: 10c0/fafe4b9198d5d7980c2358821d1a89f86200d55c8eec03670cf12cf43b8a05a77eafaf0872cd85821f68238308e0f5c9d9aa43a62e6987c65b70baa2c3277ab8
+  checksum: 10c0/e5298859675f954424af45e7e1261980f86ca01188509e0af330cabe869533e6ce04aa63a4f94cbdc66ba1b834da247e54bb0ee05b5d2d57d906f0a45388763f
   languageName: node
   linkType: hard
 
