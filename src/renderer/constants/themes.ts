@@ -50,7 +50,7 @@ export const darkTheme: ITheme = {
   'control.valueColor': '#fff',
   'control.lightIcon': true,
   'switch.backgroundColor': 'rgba(255, 255, 255, 0.24)',
-  'dialog.backgroundColor': '#383838',
+  'dialog.backgroundColor': '#303030',
   'dialog.separator.color': 'rgba(255, 255, 255, 0.12)',
   'dialog.textColor': '#fff',
   'dialog.lightForeground': true,

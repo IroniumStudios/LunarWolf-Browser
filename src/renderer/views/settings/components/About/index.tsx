@@ -14,7 +14,7 @@ const Location = observer(() => {
   return (
     <Row>
       <Title>
-        lunarwolf is a privacy orientated browser with tons of features such as a
+        LunarWolf is a privacy orientated browser with tons of features such as a
         built in Ad Blocker, full chromium extension support, being able to change your privacy settings whenever and wherever, 
         and includes modern APIs for website compatibility
       </Title>
@@ -25,8 +25,8 @@ const Location = observer(() => {
 export const About = () => {
   return (
     <>
-      <Header>About lunarwolf Browser</Header>
-      <Title>Your version of lunarwolf is v1.0.0</Title>
+      <Header>About Lunarwolf Browser</Header>
+      <Title>Your version of lunarwolf is v1.0.0-beta.1</Title>
       <Location />
     </>
   );
