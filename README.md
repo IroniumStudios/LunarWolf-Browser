@@ -35,7 +35,7 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 - **Customizable browser UI** - Choose whether LunarWolf should have compact or normal UI.
 - **Tab groups** - Easily group tabs, so it's hard to get lost.
 - **Scrollable tabs**
-- **LunarWolf supports Chrome extensions** - Install some extensions directly from Chrome Web Store, otherwise follow the documentation on installing custom extensions\* View the full documentation for installing the extensions [`here`](https://about:blank)
+- **LunarWolf supports Chrome extensions** - Install some extensions directly from Chrome Web Store, otherwise follow the documentation on installing custom extensions\* View the full documentation for installing the extensions [`here`](https://github.com/IroniumStudios/LunarWolf-Browser/blob/main/docs/extensions.md)
 
 ## Other basic features
 
