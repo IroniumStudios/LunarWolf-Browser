@@ -1,0 +1,23 @@
+{
+  "name": "@wexond/rpc-core",
+  "version": "0.0.0-release.0",
+  "license": "MIT",
+  "description": "Core components for type-safe inter-process communication",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/IroniumStudios/base-rpc/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IroniumStudios/base-rpc.git"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build:prod": "npm run clean && tsc",
+    "clean": "rimraf build",
+    "prepublishOnly": "npm run build:prod",
+    "test": "mocha -r ts-node/register tests/**/*.ts --timeout 5000"
+  }
+}

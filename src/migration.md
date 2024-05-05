@@ -1,0 +1,1 @@
+it would be really good if i had some help migrating the project from BrowserView to WebContentsView class

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "preserveWatchOutput": true,
+
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+
+    "outDir": "./build",
+
+    "baseUrl": "packages"
+  }
+}
