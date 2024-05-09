@@ -1230,7 +1230,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.12.7":
+"@types/node@npm:*":
   version: 20.12.7
   resolution: "@types/node@npm:20.12.7"
   dependencies:
@@ -1245,6 +1245,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/bfebae8389220c0188492c82eaf328f4ba15e6e9b4abee33d6bf36d3b13f188c2f53eb695d427feb882fff09834f467405e2ed9be6aeb6ad4705509822d2ea08
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.12.11":
+  version: 20.12.11
+  resolution: "@types/node@npm:20.12.11"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/efaa7b08c50ba6e6982ac7d531ba08d5935539ba76e954807df1ff9382a319ead7e003ccaca5ad7cf33ecf53f212507f7c1f2794bd2ff52df6365fef21f6e1fb
   languageName: node
   linkType: hard
 
@@ -1740,22 +1749,22 @@ __metadata:
 
 "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core#./lunarwolf-rpc/packages/rpc-core::hash=564c72&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/1f0a40804f5ca41a11266f8d592d6fc8411cd3fc1426757ab3495333f2a830bdba07e7783aaee63bdc3596679c237de262fd9fcf6a90518b9c87759ccd23e18b
+  resolution: "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core#./lunarwolf-rpc/packages/rpc-core::hash=38fd95&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/ab03bbe7d96ae2ad3cbcf268f92477a5999f90e68724a13b7a0df21a8c096b0133f035886bacbc55840214aec952a68cda6b3ff20d9eedcdb405149516e3acf0
   languageName: node
   linkType: hard
 
 "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron#./lunarwolf-rpc/packages/rpc-electron::hash=a84609&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/15489ceed4c4c616e6bf14dbb77c03f0521a6130449487b06c0bdc9deddd807423b71ee255af5bd2ebf3fb998ecdbcea29a4ed43dced30457791305c998c949c
+  resolution: "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron#./lunarwolf-rpc/packages/rpc-electron::hash=5b3341&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/9d1cc819e225004f1551f9847406d53f97f9de9870f253d4ee02f8535849051efc804d414bde58c3b95db214cb5c9cace1a3a71dfe42996e78fa778cbe6a0321
   languageName: node
   linkType: hard
 
 "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node::locator=LunarWolf%40workspace%3A.":
   version: 0.0.0-release.0
-  resolution: "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node#./lunarwolf-rpc/packages/rpc-node::hash=f052b9&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/ad09cc058293bb82bab11b2420d2513a3af34276289f6a46cdbd5520721233e755fa46ea46cbdcbc5c232f426750acd06ae5c0c5b654f330bb1417378b6a89c0
+  resolution: "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node#./lunarwolf-rpc/packages/rpc-node::hash=60630d&locator=LunarWolf%40workspace%3A."
+  checksum: 10c0/d66021fe35cc960d90bef53cbe8f085840c6b449ac828b016e8c3f1f19d7c54168edfc36930c1c1715c2624e1f90fed9a00311309ae9d6f3b4546156883b21cd
   languageName: node
   linkType: hard
 
@@ -1809,7 +1818,7 @@ __metadata:
     "@types/chrome": "npm:^0.0.266"
     "@types/crypto-js": "npm:^4.2.2"
     "@types/jszip": "npm:^3.4.1"
-    "@types/node": "npm:^20.12.7"
+    "@types/node": "npm:^20.12.11"
     "@types/react": "npm:^18.3.1"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-helmet": "npm:^6.1.11"
