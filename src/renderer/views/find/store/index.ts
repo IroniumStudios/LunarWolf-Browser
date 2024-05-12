@@ -1,7 +1,9 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import * as React from 'react';
 
 import { makeObservable, observable } from 'mobx';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer, shell } from 'electron';
 import { DialogStore } from '~/models/dialog-store';
 import { callViewMethod } from '~/utils/view';
 
@@ -18,7 +20,6 @@ const defaultFindInfo = {
 export class Store extends DialogStore {
   public findInputRef = React.createRef<HTMLInputElement>();
 
-  // Observable
   public tabId = -1;
 
   public tabsFindInfo = new Map<number, IFindInfo>();
@@ -57,6 +58,9 @@ export class Store extends DialogStore {
     ipcRenderer.on(
       'found-in-page',
       (e, { activeMatchOrdinal, matches }: Electron.FoundInPageResult) => {
+        if (`${matches}` == '0') {
+          shell.beep();
+        }
         this.findInfo.occurrences = `${activeMatchOrdinal}/${matches}`;
         this.sendInfo();
       },
