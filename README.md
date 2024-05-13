@@ -12,6 +12,8 @@ If your looking for the perfect Framework for your next web browser build, then 
 
 This Browser is a fork of the Wexond Browser Basse project, which can be found [`here`](https://github.com/wexond/browser-base)
 
+if you want a more up to date browsing platform check out my nightly releases here: https://github.com/IroniumStudios/LunarWolf-Browser-nightly
+
 </div>
 
 # Table of Contents:
