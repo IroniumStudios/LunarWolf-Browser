@@ -43,7 +43,7 @@
     "copyright": "copyright-header --templateId minimal --forceModificationYear 2024 --fix --copyrightHolder Damon Smith --include src"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.4",
+    "@babel/core": "^7.24.5",
     "@electron/remote": "^2.1.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@seald-io/nedb": "^4.0.4",
