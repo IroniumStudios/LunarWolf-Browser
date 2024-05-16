@@ -1,9 +1,11 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import { ipcRenderer } from 'electron';
 import * as remote from '@electron/remote';
 import { observable, computed, makeObservable } from 'mobx';
 import { getTheme } from '~/utils/themes';
 import { ISettings } from '~/interfaces';
-import { DEFAULT_SETTINGS } from '~/constants'; // Import DEFAULT_SETTINGS
+import { DEFAULT_SETTINGS } from '~/constants';
 
 export declare interface DialogStore {
   onVisibilityChange: (visible: boolean, ...args: any[]) => void;
@@ -12,19 +14,16 @@ export declare interface DialogStore {
 }
 
 export class DialogStore {
-  @observable
-  public settings: ISettings = DEFAULT_SETTINGS; // Use DEFAULT_SETTINGS here
+  public settings: ISettings = DEFAULT_SETTINGS;
 
-  @computed
   public get theme() {
     return getTheme(this.settings.theme);
   }
 
   private _windowId = -1;
 
-  private persistent = false;
+  private readonly persistent: boolean = false;
 
-  @observable
   public visible = false;
 
   public firstTime = false;
@@ -37,8 +36,8 @@ export class DialogStore {
     } = {},
   ) {
     makeObservable(this, {
-      theme: computed,
       settings: observable,
+      theme: computed,
       visible: observable,
     });
 
@@ -89,7 +88,7 @@ export class DialogStore {
     return await ipcRenderer.invoke(`${channel}-${this.id}`, ...args);
   }
 
-  public async send(channel: string, ...args: any[]) {
+  public send(channel: string, ...args: any[]) {
     ipcRenderer.send(`${channel}-${this.id}`, ...args);
   }
 
@@ -108,12 +107,10 @@ export class DialogStore {
 
   public hide(data: any = null) {
     if (this.persistent && !this.visible) return;
-
     this.visible = false;
     this.onHide(data);
-
-    setTimeout(() => {
-      this.send('hide');
+    setTimeout(async () => {
+      await this.send('hide');
     });
   }
 }
