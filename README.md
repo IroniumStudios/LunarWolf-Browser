@@ -142,7 +142,7 @@ yarn install # Install needed depedencies for base-rpc.
 
 
 
-#### Now go back to the main browser-base-updated folder and run the commands below
+#### Now go back to the main LunarWolf-Browser-main folder and run the commands below
 
 
 
