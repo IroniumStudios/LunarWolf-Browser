@@ -62,7 +62,7 @@ export const DefaultBrowser = observer(() => {
           >
             <div
               style={{
-                background: `url(https://cdn.Damon Smith.com/logo/quantum.png)`,
+                background: `url(https://github.com/IroniumStudios/LunarWolf-Browser/blob/main/static/icons/icon.png?raw=true)`,
                 width: '21px',
                 height: '21px',
                 backgroundSize: 'cover',
@@ -71,8 +71,8 @@ export const DefaultBrowser = observer(() => {
               }}
             ></div>
             <HiddenDiv>
-              quantum is not your default browser, for maximum security and
-              privacy, we recommend you to use quantum!
+              LunarWolf is not your default browser, for maximum security and
+              privacy, we recommend you to use LunarWolf!
             </HiddenDiv>
             <ButtonPredeterminado onClick={onButtonClick}>
               Set as default!

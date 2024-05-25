@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { RendererToMainChannel } from '@wexond/rpc-electron';
+import { RendererToMainChannel } from '@ironiumstudios/rpc-electron';
 
 export interface ResponseDetails {
   statusCode: number;

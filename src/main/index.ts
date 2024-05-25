@@ -1,7 +1,7 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
 import { ipcMain, app, webContents } from 'electron';
-import { setIpcMain } from '@wexond/rpc-electron';
+import { setIpcMain } from '@ironiumstudios/rpc-electron';
 setIpcMain(ipcMain);
 
 require('@electron/remote/main').initialize();

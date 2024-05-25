@@ -630,6 +630,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ironiumstudios/rpc-core@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@ironiumstudios/rpc-core@npm:2.0.8"
+  checksum: 10c0/b19d5650d2730502f40cb3da006801126ad4fe028763197f81b5c610bd28edb9af2673245bfc9902551d220ca4adf68fb757bfe3999ab495512f056ffc4844cd
+  languageName: node
+  linkType: hard
+
+"@ironiumstudios/rpc-electron@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@ironiumstudios/rpc-electron@npm:2.0.8"
+  checksum: 10c0/b5e9ec7795fd3e018160f4be8296ec43fb31bfa40e3139658bdf664282c10d092bc84c2c21f5ef4ceb2ca913a084ebabca913532c038d51a7c59db13b3795415
+  languageName: node
+  linkType: hard
+
+"@ironiumstudios/rpc-node@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@ironiumstudios/rpc-node@npm:2.0.8"
+  checksum: 10c0/22fbffb8a9c2ceaccb01c8ed4f4054f33a1563c3ab75c7ec4ca4eab58ff107881b33299d3c6999d0bb980085088f70540c6f2a97cdd2b46272c770477222064a
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1738,27 +1759,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core::locator=LunarWolf%40workspace%3A.":
-  version: 0.0.0-release.0
-  resolution: "@wexond/rpc-core@file:./lunarwolf-rpc/packages/rpc-core#./lunarwolf-rpc/packages/rpc-core::hash=564c72&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/1f0a40804f5ca41a11266f8d592d6fc8411cd3fc1426757ab3495333f2a830bdba07e7783aaee63bdc3596679c237de262fd9fcf6a90518b9c87759ccd23e18b
-  languageName: node
-  linkType: hard
-
-"@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron::locator=LunarWolf%40workspace%3A.":
-  version: 0.0.0-release.0
-  resolution: "@wexond/rpc-electron@file:./lunarwolf-rpc/packages/rpc-electron#./lunarwolf-rpc/packages/rpc-electron::hash=a84609&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/15489ceed4c4c616e6bf14dbb77c03f0521a6130449487b06c0bdc9deddd807423b71ee255af5bd2ebf3fb998ecdbcea29a4ed43dced30457791305c998c949c
-  languageName: node
-  linkType: hard
-
-"@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node::locator=LunarWolf%40workspace%3A.":
-  version: 0.0.0-release.0
-  resolution: "@wexond/rpc-node@file:./lunarwolf-rpc/packages/rpc-node#./lunarwolf-rpc/packages/rpc-node::hash=f052b9&locator=LunarWolf%40workspace%3A."
-  checksum: 10c0/ad09cc058293bb82bab11b2420d2513a3af34276289f6a46cdbd5520721233e755fa46ea46cbdcbc5c232f426750acd06ae5c0c5b654f330bb1417378b6a89c0
-  languageName: node
-  linkType: hard
-
 "@xmldom/xmldom@npm:^0.8.8":
   version: 0.8.10
   resolution: "@xmldom/xmldom@npm:0.8.10"
@@ -1803,6 +1803,9 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
+    "@ironiumstudios/rpc-core": "npm:^2.0.8"
+    "@ironiumstudios/rpc-electron": "npm:^2.0.8"
+    "@ironiumstudios/rpc-node": "npm:^2.0.8"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.11"
     "@seald-io/nedb": "npm:^4.0.4"
     "@types/animejs": "npm:^3.1.12"
@@ -1817,9 +1820,6 @@ __metadata:
     "@types/styled-components": "npm:^5.1.34"
     "@typescript-eslint/eslint-plugin": "npm:^7.7.1"
     "@typescript-eslint/parser": "npm:^7.7.1"
-    "@wexond/rpc-core": "file:./lunarwolf-rpc/packages/rpc-core"
-    "@wexond/rpc-electron": "file:./lunarwolf-rpc/packages/rpc-electron"
-    "@wexond/rpc-node": "file:./lunarwolf-rpc/packages/rpc-node"
     animejs: "npm:^3.2.2"
     awesome-node-loader: "npm:^1.1.1"
     babel-loader: "npm:^9.1.3"
@@ -1828,7 +1828,7 @@ __metadata:
     copy-webpack-plugin: "npm:^12.0.2"
     copyright-header: "npm:^0.4.6"
     cross-env: "npm:^7.0.3"
-    electron: "npm:^28.3.1"
+    electron: "npm:^28.3.3"
     electron-builder: "npm:^24.13.3"
     electron-chrome-extensions: "npm:^3.10.1"
     electron-updater: "npm:6.1.8"
@@ -3996,16 +3996,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^28.3.1":
-  version: 28.3.1
-  resolution: "electron@npm:28.3.1"
+"electron@npm:^28.3.3":
+  version: 28.3.3
+  resolution: "electron@npm:28.3.3"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^18.11.18"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/afd9fffbb4010784ac295965fa12e22700dca76e2c0ce64247f90442a9bb88ba7ccc3ee582c87edb2cab27048e5241c14309cd032f83782ec0bcd57e98f76169
+  checksum: 10c0/e9ff47ed18379f9bdefc49e34f676eb83dde118de83d27e9e98760d02d41dd118b90d854d983831ccf7b8b4fe311966d8c95e43f52b4fb7089a84863e4373e10
   languageName: node
   linkType: hard
 
