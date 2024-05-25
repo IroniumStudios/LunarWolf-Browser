@@ -51,7 +51,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@seald-io/nedb": "^4.0.4",
     "@types/animejs": "^3.1.12",
-    "@types/chrome": "^0.0.266",
+    "@types/chrome": "^0.0.268",
     "@types/crypto-js": "^4.2.2",
     "@types/jszip": "^3.4.1",
     "@types/node": "^20.12.7",
