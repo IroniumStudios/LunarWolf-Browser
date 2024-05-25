@@ -333,10 +333,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-extended-selectors@npm:1.25.1":
-  version: 1.25.1
-  resolution: "@cliqz/adblocker-extended-selectors@npm:1.25.1"
-  checksum: 10c0/013c9a72eb09765ed59d912fe7986ef4d02296d076bf8f2ae208a4ff5aa7e4f877a82b9b2c82238a57da358ce914aacbc85e34f8d988e6146ad071cb52be267f
+"@cliqz/adblocker-extended-selectors@npm:1.27.3":
+  version: 1.27.3
+  resolution: "@cliqz/adblocker-extended-selectors@npm:1.27.3"
+  checksum: 10c0/b893fa9d9e26766cbb82c20cf114c82f2a48a75c602906696a394d9f876639478d0c02fe3be51c6e15c025191890c103ad557ea93ef710660c714515b62c88a2
   languageName: node
   linkType: hard
 
@@ -1796,7 +1796,7 @@ __metadata:
     "@cliqz/adblocker-content": "npm:1.25.1"
     "@cliqz/adblocker-electron": "npm:1.25.1"
     "@cliqz/adblocker-electron-preload": "npm:1.25.1"
-    "@cliqz/adblocker-extended-selectors": "npm:1.25.1"
+    "@cliqz/adblocker-extended-selectors": "npm:1.27.3"
     "@electron/remote": "npm:^2.1.2"
     "@fortawesome/fontawesome-free": "npm:^6.5.2"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.2"
