@@ -121,7 +121,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "electron-chrome-extensions": "^3.10.1",
-    "node-polyfill-webpack-plugin": "^3.0.0",
+    "node-polyfill-webpack-plugin": "^4.0.0",
     "react-query": "^3.39.3",
     "react-use": "^17.5.0",
     "url": "^0.11.3"
