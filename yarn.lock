@@ -280,12 +280,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-content@npm:1.25.1":
-  version: 1.25.1
-  resolution: "@cliqz/adblocker-content@npm:1.25.1"
+"@cliqz/adblocker-content@npm:1.27.5":
+  version: 1.27.5
+  resolution: "@cliqz/adblocker-content@npm:1.27.5"
   dependencies:
-    "@cliqz/adblocker-extended-selectors": "npm:^1.25.1"
-  checksum: 10c0/6565f9c946762249033570f87b0ca9af8e9422ab75fb305e9631bfc32ac3fc81a79fcdaf01670717ed50907a312d04a3094176643d21589a28216364e29afa77
+    "@cliqz/adblocker-extended-selectors": "npm:^1.27.5"
+  checksum: 10c0/e95c65a44c5ee6237743c9d78ae7f088468f4d27e9acfb6065af7258c39899204514bc75ef01dc110e89ddeabf7ac003a70ea09eeb98fb44d02738be984651c5
   languageName: node
   linkType: hard
 
@@ -344,6 +344,13 @@ __metadata:
   version: 1.27.1
   resolution: "@cliqz/adblocker-extended-selectors@npm:1.27.1"
   checksum: 10c0/f2fd8f93c0bde4b293037b8ff6b3ac13c4edc419f0454f63220c35414ecbfa031319b0bb45c6b062d1c66795b7a9133bc96dadf553e5f67269db4380fa1225b0
+  languageName: node
+  linkType: hard
+
+"@cliqz/adblocker-extended-selectors@npm:^1.27.5":
+  version: 1.27.5
+  resolution: "@cliqz/adblocker-extended-selectors@npm:1.27.5"
+  checksum: 10c0/6fd65e7e97dde54c7f742f31adc89420556c8651a0664adb7ab3937796e9bacfdf67a003a44b6bd2301b1bc17b91500dd20bc598b17d93541adac3a44b9587c3
   languageName: node
   linkType: hard
 
@@ -1793,7 +1800,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.24.4"
     "@cliqz/adblocker": "npm:1.25.1"
-    "@cliqz/adblocker-content": "npm:1.25.1"
+    "@cliqz/adblocker-content": "npm:1.27.5"
     "@cliqz/adblocker-electron": "npm:1.25.1"
     "@cliqz/adblocker-electron-preload": "npm:1.25.1"
     "@cliqz/adblocker-extended-selectors": "npm:1.25.1"
