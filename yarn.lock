@@ -1846,7 +1846,7 @@ __metadata:
     node-bookmarks-parser: "npm:^2.0.0"
     node-fetch: "npm:^3.3.2"
     node-polyfill-webpack-plugin: "npm:^3.0.0"
-    parse-ico: "npm:^1.0.1"
+    parse-ico: "npm:^1.0.2"
     prettier: "npm:^3.2.5"
     pretty-bytes: "npm:^6.1.1"
     react: "npm:^18.3.1"
@@ -7579,9 +7579,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse-ico@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "parse-ico@npm:1.0.1"
+"parse-ico@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "parse-ico@npm:1.0.2"
   dependencies:
     bmp-js: "npm:0.1.0"
     decode-ico: "npm:^0.4.1"
@@ -7589,7 +7589,7 @@ __metadata:
     jpeg-js: "npm:^0.4.4"
     pngjs: "npm:^7.0.0"
     to-data-view: "npm:^1.1.0"
-  checksum: 10c0/f2cd04afc19de243a80e34fc809de46ce9090e8a87d68f8d28c03ea033357e3ec4ff27d9f8b73430726d42124b40b76b1f5157a2be0530b0a85f94bc3d388bf6
+  checksum: 10c0/b94f62a679af1906dd78f2ec014e38c844350f3a1f95fb6146dfc4eba529713785a4a242d40859fb248cd8a51c9700f66cf1d8c68a1cb50fd87b2a1bdfce68e8
   languageName: node
   linkType: hard
 

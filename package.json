@@ -86,7 +86,7 @@
     "mobx-react-lite": "^4.0.7",
     "node-bookmarks-parser": "^2.0.0",
     "node-fetch": "^3.3.2",
-    "parse-ico": "^1.0.1",
+    "parse-ico": "^1.0.2",
     "prettier": "^3.2.5",
     "pretty-bytes": "^6.1.1",
     "react": "^18.3.1",
