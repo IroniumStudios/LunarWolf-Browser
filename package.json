@@ -110,7 +110,7 @@
     "x-default-browser": "^0.5.2"
   },
   "dependencies": {
-    "@cliqz/adblocker": "1.25.1",
+    "@cliqz/adblocker": "1.27.6",
     "@cliqz/adblocker-content": "1.25.1",
     "@cliqz/adblocker-electron": "1.25.1",
     "@cliqz/adblocker-electron-preload": "1.25.1",
