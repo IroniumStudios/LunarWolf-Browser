@@ -112,7 +112,7 @@
   "dependencies": {
     "@cliqz/adblocker": "1.25.1",
     "@cliqz/adblocker-content": "1.25.1",
-    "@cliqz/adblocker-electron": "1.25.1",
+    "@cliqz/adblocker-electron": "1.27.10",
     "@cliqz/adblocker-electron-preload": "1.25.1",
     "@cliqz/adblocker-extended-selectors": "1.25.1",
     "@fortawesome/fontawesome-free": "^6.5.2",
