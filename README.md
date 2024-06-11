@@ -10,8 +10,6 @@ if you consider supporting me, please donate to my cashapp
 
 If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved (see the [License](#license) section).
 
-NOTE: this repo has the latest features for LunarWolf but as a cost of stability, if you want a more stable platform check out the original repo here: https://github.com/IroniumStudios/LunarWolf-Browser
-
 This Browser is a fork of the wexond Browser Basse project, which can be found [`here`](https://github.com/ironiumstudios/browser-base)
 
 </div>
@@ -114,11 +112,11 @@ nvm alias default 22.1.0 # Sets the node version as the main defalt alias on lin
 
 
 
-make sure you have the 30.0.6 version of electron installed, you can do so by running this command in your terminal or command prompt
+make sure you have the 31.0.0 version of electron installed, you can do so by running this command in your terminal or command prompt
 
 
 ```bash
-npm install -g electron@30.0.6
+npm install -g electron@31.0.0
 ```
 
 
