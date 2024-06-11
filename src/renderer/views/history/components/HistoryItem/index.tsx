@@ -1,5 +1,3 @@
-/* Copyright (c) 2021-2024 Damon Smith */
-
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
 
@@ -10,15 +8,13 @@ import { formatTime } from '../../utils';
 import store from '../../store';
 import { ICON_PAGE } from '~/renderer/constants/icons';
 
-const onClick = (item: IHistoryItem) => (e: React.MouseEvent<HTMLDivElement>) => {
-  if (e.ctrlKey) {
-    const index = store.selectedItems.indexOf(item._id);
+const onClick = (item: IHistoryItem) => () => {
+  const index = store.selectedItems.indexOf(item._id);
 
-    if (index === -1) {
-      store.selectedItems.push(item._id);
-    } else {
-      store.selectedItems.splice(index, 1);
-    }
+  if (index === -1) {
+    store.selectedItems.push(item._id);
+  } else {
+    store.selectedItems.splice(index, 1);
   }
 };
 
@@ -28,7 +24,6 @@ const onRemoveClick = (item: IHistoryItem) => (
   e.stopPropagation();
   store.removeItems([item._id]);
 };
-
 
 const onTitleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
   e.stopPropagation();

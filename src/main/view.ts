@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { BrowserView, app, ipcMain } from 'electron';
+import { WebContentsView, app, ipcMain } from 'electron';
 import { URL } from 'url';
 import { getViewMenu } from './menus/view';
 import { AppWindow } from './windows';
@@ -26,7 +26,7 @@ interface IAuthInfo {
 }
 
 export class View {
-  public browserView: BrowserView;
+  public webContentsView: WebContentsView;
 
   public isNewTab = false;
   public homeUrl: string;
@@ -68,7 +68,7 @@ export class View {
 
   public constructor(window: AppWindow, url: string, incognito: boolean) {
     const { object: webset } = Application.instance.settings;
-    this.browserView = new BrowserView({
+    this.webContentsView = new WebContentsView({
       webPreferences: {
         preload: `${app.getAppPath()}/build/view-preload.bundle.js`,
         nodeIntegration: false,
@@ -86,7 +86,7 @@ export class View {
       },
     });
 
-    this.browserView.setBackgroundColor('#FFFFFFFF');
+    this.webContentsView.setBackgroundColor('#FFFFFFFF');
 
     this.incognito = incognito;
 
@@ -122,7 +122,7 @@ export class View {
     this.webContents.addListener('found-in-page', (e, result) => {
       Application.instance.dialogs
         .getDynamic('find')
-        .browserView.webContents.send('found-in-page', result);
+        .webContentsView.webContents.send('found-in-page', result);
     });
 
     this.webContents.addListener('page-title-updated', async (e, title) => {
@@ -134,7 +134,7 @@ export class View {
     });
 
     this.webContents.addListener('did-navigate', async (e, url) => {
-      this.browserView.setBackgroundColor('#FFFFFFFF');
+      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.emitEvent('did-navigate', url);
       await this.addHistoryItem(url);
       await this.updateURL(url);
@@ -144,13 +144,13 @@ export class View {
       'did-navigate-in-page',
       async (e, url, isMainFrame) => {
         if (isMainFrame) {
-          this.browserView.setBackgroundColor('#FFFFFFFF');
+          this.webContentsView.setBackgroundColor('#FFFFFFFF');
           this.window.updateTitle();
           await this.updateData();
 
           this.emitEvent(
             'title-updated',
-            this.browserView.webContents.getTitle(),
+            this.webContentsView.webContents.getTitle(),
           );
           this.emitEvent('did-navigate', url);
 
@@ -161,14 +161,14 @@ export class View {
     );
 
     this.webContents.addListener('did-stop-loading', async () => {
-      this.browserView.setBackgroundColor('#FFFFFFFF');
+      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.updateNavigationState();
       this.emitEvent('loading', false);
       await this.updateURL(this.webContents.getURL());
     });
 
     this.webContents.addListener('did-start-loading', async () => {
-      this.browserView.setBackgroundColor('#FFFFFFFF');
+      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.hasError = false;
       this.updateNavigationState();
       this.emitEvent('loading', true);
@@ -176,7 +176,7 @@ export class View {
     });
 
     this.webContents.addListener('did-start-navigation', async (e, ...args) => {
-      this.browserView.setBackgroundColor('#FFFFFFFF');
+      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.updateNavigationState();
 
       this.favicon = '';
@@ -227,27 +227,33 @@ export class View {
       },
     );
 
-    this.webContents.addListener(
-      'page-favicon-updated',
-      async (e, favicons) => {
+    this.webContents.addListener('page-favicon-updated', async (event, favicons) => {
+      if (favicons.length > 0) {
         this.favicon = favicons[0];
-
-        await this.updateData();
-
-        try {
-          let fav = this.favicon;
-
-          if (fav.startsWith('http')) {
-            fav = await Application.instance.storage.addFavicon(fav);
-          }
-
-          this.emitEvent('favicon-updated', fav);
-        } catch (e) {
-          this.favicon = '';
-          console.error(e);
+      } else {
+        console.error('Favicon array was empty.');
+        this.favicon = 'default_favicon_url'; // Set a default favicon URL
+      }
+    
+      await this.updateData();
+    
+      await this.updateFavicon();
+    });
+    
+    this.updateFavicon = async () => {
+      try {
+        let faviconUrl = this.favicon;
+    
+        if (faviconUrl.startsWith('http')) {
+          faviconUrl = await Application.instance.storage.addFavicon(faviconUrl);
         }
-      },
-    );
+    
+        this.emitEvent('favicon-updated', faviconUrl);
+      } catch (error) {
+        this.favicon = 'default_favicon_url'; // Fallback to default favicon on error
+        console.error('Error updating favicon:', error);
+      }
+    };
 
     this.webContents.addListener('zoom-changed', (e, zoomDirection) => {
       const newZoomFactor =
@@ -304,16 +310,20 @@ export class View {
       await this.webContents.loadURL(url);
     })();
 
-    this.browserView.setAutoResize({
-      width: true,
-      height: true,
-      horizontal: false,
-      vertical: false,
-    });
+//      TODO:
+//    this.webContentsView.setAutoResize({
+//      width: true,
+//      height: true,
+//      horizontal: false,
+//      vertical: false,
+//    });
+  }
+  updateFavicon() {
+    throw new Error('Method not implemented.');
   }
 
   public get webContents() {
-    return this.browserView.webContents;
+    return this.webContentsView.webContents;
   }
 
   public get url() {
@@ -333,7 +343,7 @@ export class View {
   }
 
   public updateNavigationState() {
-    if (this.browserView.webContents.isDestroyed()) return;
+    if (this.webContentsView.webContents.isDestroyed()) return;
 
     if (this.window.viewManager.selectedId === this.id) {
       this.window.send('update-navigation-state', {
@@ -347,14 +357,14 @@ export class View {
   }
 
   public destroy() {
-    (this.browserView.webContents as any).destroy();
-    this.browserView = null;
+    (this.webContentsView.webContents as any).destroy();
+    this.webContentsView = null;
   }
 
   public async updateCredentials() {
     if (
       !process.env.ENABLE_AUTOFILL ||
-      this.browserView.webContents.isDestroyed()
+      this.webContentsView.webContents.isDestroyed()
     )
       return;
 

@@ -24,7 +24,7 @@ export const showDownloadsDialog = (
 
       height = Math.round(Math.min(winBounds.height, height + 28));
 
-      dialog.browserView.webContents.send(
+      dialog.webContentsView.webContents.send(
         `max-height`,
         Math.min(maxHeight, height),
       );

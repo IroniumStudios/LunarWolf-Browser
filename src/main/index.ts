@@ -1,8 +1,11 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { ipcMain, app, webContents } from 'electron';
+import { ipcMain, app, crashReporter, webContents } from 'electron';
 import { setIpcMain } from '@ironiumstudios/rpc-electron';
 setIpcMain(ipcMain);
+
+console.log(app.getPath('crashDumps'))
+crashReporter.start({ submitURL: '', uploadToServer: false })
 
 require('@electron/remote/main').initialize();
 

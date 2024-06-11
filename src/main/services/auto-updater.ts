@@ -32,7 +32,7 @@ export const runAutoUpdaterService = () => {
       window.send('update-available');
       Application.instance.dialogs
         .getDynamic('menu')
-        ?.browserView?.webContents?.send('update-available');
+        ?.webContentsView?.webContents?.send('update-available');
     }
   });
 };

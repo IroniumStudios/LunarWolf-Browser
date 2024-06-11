@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 export interface IForecastRequest {
   city: string;
   lang: forecastLangCode;

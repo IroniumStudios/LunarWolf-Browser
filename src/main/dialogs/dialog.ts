@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { BrowserView, app, ipcMain, BrowserWindow } from 'electron';
+import { WebContentsView, app, ipcMain, BrowserWindow } from 'electron';
 import { join } from 'path';
 import { roundifyRectangle } from '../services/dialogs-service';
 
@@ -22,7 +22,7 @@ interface IRectangle {
 
 export class PersistentDialog {
   public browserWindow: BrowserWindow;
-  public browserView: BrowserView;
+  public webContentsView: WebContentsView;
 
   public visible = false;
 
@@ -42,7 +42,7 @@ export class PersistentDialog {
   private showCallback: any = null;
 
   public constructor({ bounds, name, hideTimeout, webPreferences }: IOptions) {
-    this.browserView = new BrowserView({
+    this.webContentsView = new WebContentsView({
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
@@ -51,13 +51,13 @@ export class PersistentDialog {
         ...webPreferences,
       },
     });
-    require('@electron/remote/main').enable(this.browserView.webContents);
+    require('@electron/remote/main').enable(this.webContentsView.webContents);
 
     this.bounds = { ...this.bounds, ...bounds };
     this.hideTimeout = hideTimeout;
     this.name = name;
 
-    const { webContents } = this.browserView;
+    const { webContents } = this.webContentsView;
 
     ipcMain.on(`hide-${webContents.id}`, () => {
       this.hide(false, false);
@@ -86,7 +86,7 @@ export class PersistentDialog {
   }
 
   public get webContents() {
-    return this.browserView.webContents;
+    return this.webContentsView.webContents;
   }
 
   public get id() {
@@ -102,7 +102,7 @@ export class PersistentDialog {
     });
 
     if (this.visible) {
-      this.browserView.setBounds(this.bounds as any);
+      this.webContentsView.setBounds(this.bounds as any);
     }
   }
 
@@ -126,7 +126,7 @@ export class PersistentDialog {
 
         this.visible = true;
 
-        browserWindow.addBrowserView(this.browserView);
+        browserWindow.contentView.addChildView(this.webContentsView);
         this.rearrange();
 
         if (focus) this.webContents.focus();
@@ -172,10 +172,10 @@ export class PersistentDialog {
 
     if (this.hideTimeout) {
       this.timeout = setTimeout(() => {
-        this.browserWindow.removeBrowserView(this.browserView);
+        this.browserWindow.contentView.removeChildView(this.webContentsView);
       }, this.hideTimeout);
     } else {
-      this.browserWindow.removeBrowserView(this.browserView);
+      this.browserWindow.contentView.removeChildView(this.webContentsView);
     }
 
     this.visible = false;
@@ -184,11 +184,15 @@ export class PersistentDialog {
   }
 
   public bringToTop() {
-    this.browserWindow.removeBrowserView(this.browserView);
-    this.browserWindow.addBrowserView(this.browserView);
+    this.browserWindow.contentView.removeChildView(this.webContentsView);
+    this.browserWindow.contentView.addChildView(this.webContentsView);
   }
 
   public destroy() {
-    this.browserView = null;
-  }
+    if (this.browserWindow && this.webContentsView) {
+      this.browserWindow.contentView.removeChildView(this.webContentsView);
+  
+      this.webContentsView = null;
+    }
+  }  
 }

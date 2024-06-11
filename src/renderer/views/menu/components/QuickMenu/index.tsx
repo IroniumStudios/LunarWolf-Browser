@@ -234,7 +234,7 @@ export const QuickMenu = observer(() => {
                 marginLeft: '10px',
                 // marginRight: '10px',
               }}
-              title="Reset Zoom"
+              // TODO title="Reset Zoom"
               onClick={onReset}
             />
           </MenuItemZoom>

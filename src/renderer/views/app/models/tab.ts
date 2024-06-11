@@ -18,6 +18,7 @@ import { animateTab } from '../utils/tabs';
 import { NEWTAB_URL } from '~/constants/tabs';
 
 export class ITab {
+  [x: string]: any;
   public id = -1;
 
   public addressbarFocused = false;
@@ -140,7 +141,8 @@ export class ITab {
         favicon: this.favicon,
         pinned: !!this.isPinned,
         title: this.title,
-        color: this.color,
+//          TODO:
+//        color: this.color,
         isUserDefined: false,
         order: store.tabs.list.indexOf(this),
       });
@@ -155,7 +157,7 @@ export class ITab {
     if (!this.isClosing) {
       store.tabs.selectedTabId = this.id;
 
-      ipcRenderer.send(`browserview-show-${store.windowId}`);
+      ipcRenderer.send(`web-contents-view-show-${store.windowId}`);
 
       const focused = this.addressbarFocused;
 

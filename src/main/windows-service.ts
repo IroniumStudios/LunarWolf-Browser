@@ -3,7 +3,7 @@
 import { AppWindow } from './windows/app';
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { SessionsService } from './sessions-service';
-import { ElectronChromeExtensions } from 'electron-chrome-extensions';
+import { ElectronChromeExtensions } from 'electron-chrome-extensions-suit';
 
 export class WindowsService {
   public list: AppWindow[] = [];
@@ -15,7 +15,7 @@ export class WindowsService {
   constructor(sessions: SessionsService) {
     if (process.env.ENABLE_EXTENSIONS) {
       sessions.chromeExtensions = new ElectronChromeExtensions({
-        modulePath: `${app.getAppPath()}/node_modules/electron-chrome-extensions`,
+        modulePath: `${app.getAppPath()}/node_modules/electron-chrome-extensions-suit`,
         session: sessions.view,
         createTab: async (details) => {
           const win =
@@ -71,7 +71,7 @@ export class WindowsService {
     return window;
   }
 
-  public findByBrowserView(webContentsId: number) {
+  public findByContentsView(webContentsId: number) {
     return this.list.find((x) => !!x.viewManager.views.get(webContentsId));
   }
 

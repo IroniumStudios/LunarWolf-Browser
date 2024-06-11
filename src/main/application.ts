@@ -108,7 +108,7 @@ export class Application {
     app.on('login', async (e, webContents, request, authInfo, callback) => {
       e.preventDefault();
 
-      const window = this.windows.findByBrowserView(webContents.id);
+      const window = this.windows.findByContentsView(webContents.id);
       const credentials = await requestAuth(
         window.win,
         request.url,

@@ -36,25 +36,25 @@ export const lightTheme: ITheme = {
 };
 
 export const darkTheme: ITheme = {
-  'titlebar.backgroundColor': '#232323', // Slightly darker titlebar color
+  'titlebar.backgroundColor': '#232323',
   'addressbar.backgroundColor': '#262626',
   'addressbar.textColor': '#fff',
-  'toolbar.backgroundColor': '#373737', // Lighter toolbar color
+  'toolbar.backgroundColor': '#373737',
   'toolbar.bottomLine.backgroundColor': 'rgba(255, 255, 255, 0.08)',
   'toolbar.lightForeground': true,
   'toolbar.separator.color': 'rgba(255, 255, 255, 0.12)',
   'tab.selected.textColor': '#fff',
-  'tab.textColor': 'rgba(255, 255, 255, 0.7)', // Lighter tab text color
+  'tab.textColor': 'rgba(255, 255, 255, 0.7)',
   'control.backgroundColor': 'rgba(255, 255, 255, 0.1)',
   'control.hover.backgroundColor': 'rgba(255, 255, 255, 0.12)',
   'control.valueColor': '#fff',
   'control.lightIcon': true,
   'switch.backgroundColor': 'rgba(255, 255, 255, 0.24)',
-  'dialog.backgroundColor': '#282828',
+  'dialog.backgroundColor': '#1f1f1f',
   'dialog.separator.color': 'rgba(255, 255, 255, 0.12)',
   'dialog.textColor': '#fff',
   'dialog.lightForeground': true,
-  'searchBox.backgroundColor': '#272727', // Slightly lighter textbox color
+  'searchBox.backgroundColor': '#272727',
   'searchBox.lightForeground': true,
   'pages.backgroundColor': '#212121',
   'pages.lightForeground': true,

@@ -69,7 +69,6 @@ const createWebview = (url: string, inspect: boolean) => {
               },
             },
           ]);
-
           menu.popup();
         },
       );

@@ -22,7 +22,7 @@ import { countVisitedTimes } from '~/utils/history';
 import { promises } from 'fs';
 import { Application } from '../application';
 import { requestURL } from '../network/request';
-import * as parse from 'node-bookmarks-parser';
+import * as parse from 'node-parse-bookmarks';
 import { Settings } from '../models/settings';
 
 interface Databases {

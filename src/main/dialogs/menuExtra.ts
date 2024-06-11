@@ -38,7 +38,7 @@ export const showMenuExtraDialog = async (
   };
 
   if (!dialog) return;
-  dialog.browserView.webContents.send('data', data);
+  dialog.webContentsView.webContents.send('data', data);
 
   dialog.handle('tab-id', () => tabId);
 };

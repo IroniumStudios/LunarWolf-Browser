@@ -195,14 +195,16 @@ export class AppWindow {
       this.send('html-fullscreen', false);
     });
 
-    this.win.on('scroll-touch-begin', () => {
-      this.send('scroll-touch-begin');
-    });
+//    TODO:
+//    this.win.on('scroll-touch-begin', () => {
+//      this.send('scroll-touch-begin');
+//    });
 
-    this.win.on('scroll-touch-end', () => {
-      this.viewManager.selected.send('scroll-touch-end');
-      this.send('scroll-touch-end');
-    });
+//    TODO:
+//    this.win.on('scroll-touch-end', () => {
+//      this.viewManager.selected.send('scroll-touch-end');
+//      this.send('scroll-touch-end');
+//    });
 
     this.win.on('focus', () => {
       Application.instance.windows.current = this;

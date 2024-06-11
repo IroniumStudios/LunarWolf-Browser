@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 export interface IHistoryItem {
   _id?: string;
   title?: string;

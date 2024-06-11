@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { BrowserView, app, ipcMain } from 'electron';
+import { WebContentsView, app, ipcMain } from 'electron';
 import { join } from 'path';
 import { SearchDialog } from '../dialogs/search';
 import { PreviewDialog } from '../dialogs/preview';
@@ -29,7 +29,7 @@ interface IDialogShowOptions {
 
 interface IDialog {
   name: string;
-  browserView: BrowserView;
+  webContentsView: WebContentsView;
   id: number;
   tabIds: number[];
   _sendTabInfo: (tabId: number) => void;
@@ -48,21 +48,21 @@ export const roundifyRectangle = (rect: IRectangle): IRectangle => {
 };
 
 export class DialogsService {
-  public browserViews: BrowserView[] = [];
-  public browserViewDetails = new Map<number, boolean>();
+  public childViews: WebContentsView[] = [];
+  public childViewDetails = new Map<number, boolean>();
   public dialogs: IDialog[] = [];
 
   public persistentDialogs: PersistentDialog[] = [];
 
   public run() {
-    this.createBrowserView();
+    this.createChildView();
 
     this.persistentDialogs.push(new SearchDialog());
     this.persistentDialogs.push(new PreviewDialog());
   }
 
-  private createBrowserView() {
-    const view = new BrowserView({
+  private createChildView() {
+    const view = new WebContentsView({
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
@@ -73,9 +73,9 @@ export class DialogsService {
 
     view.webContents.loadURL(`about:blank`);
 
-    this.browserViews.push(view);
+    this.childViews.push(view);
 
-    this.browserViewDetails.set(view.webContents.id, false);
+    this.childViewDetails.set(view.webContents.id, false);
 
     return view;
   }
@@ -94,14 +94,14 @@ export class DialogsService {
 
     const foundDialog = this.getDynamic(name);
 
-    let browserView = foundDialog
-      ? foundDialog.browserView
-      : this.browserViews.find(
-          (x) => !this.browserViewDetails.get(x.webContents.id),
+    let webContentsView = foundDialog
+      ? foundDialog.webContentsView
+      : this.childViews.find(
+          (x) => !this.childViewDetails.get(x.webContents.id),
         );
 
-    if (!browserView) {
-      browserView = this.createBrowserView();
+    if (!webContentsView) {
+      webContentsView = this.createChildView();
     }
 
     const appWindow =
@@ -114,19 +114,19 @@ export class DialogsService {
 
     browserWindow.webContents.send('dialog-visibility-change', name, true);
 
-    this.browserViewDetails.set(browserView.webContents.id, true);
+    this.childViewDetails.set(webContentsView.webContents.id, true);
 
     if (foundDialog) {
-      browserWindow.addBrowserView(browserView);
+      browserWindow.contentView.addChildView(webContentsView);
       foundDialog.rearrange();
       return null;
     }
 
-    browserWindow.addBrowserView(browserView);
-    browserView.setBounds({ x: 0, y: 0, width: 1, height: 1 });
+    browserWindow.contentView.addChildView(webContentsView);
+    webContentsView.setBounds({ x: 0, y: 0, width: 1, height: 1 });
 
     if (devtools) {
-      browserView.webContents.openDevTools({ mode: 'detach' });
+      webContentsView.webContents.openDevTools({ mode: 'detach' });
     }
 
     const tabsEvents: {
@@ -142,32 +142,32 @@ export class DialogsService {
     const channels: string[] = [];
 
     const dialog: IDialog = {
-      browserView,
-      id: browserView.webContents.id,
+      webContentsView,
+      id: webContentsView.webContents.id,
       name,
       tabIds: [tabAssociation?.tabId],
       _sendTabInfo: (tabId) => {
         if (tabAssociation.getTabInfo) {
           const data = tabAssociation.getTabInfo(tabId);
-          browserView.webContents.send('update-tab-info', tabId, data);
+          webContentsView.webContents.send('update-tab-info', tabId, data);
         }
       },
       hide: (tabId) => {
         const { selectedId } = appWindow.viewManager;
 
         dialog.tabIds = dialog.tabIds.filter(
-          (x) => x !== (tabId || selectedId),
+          (x) => x !== (tabId || selectedId)
         );
 
         if (tabId && tabId !== selectedId) return;
 
         browserWindow.webContents.send('dialog-visibility-change', name, false);
 
-        browserWindow.removeBrowserView(browserView);
+        browserWindow.contentView.removeChildView(webContentsView);
 
         if (tabAssociation && dialog.tabIds.length > 0) return;
 
-        ipcMain.removeAllListeners(`hide-${browserView.webContents.id}`);
+        ipcMain.removeAllListeners(`hide-${webContentsView.webContents.id}`);
         channels.forEach((x) => {
           ipcMain.removeHandler(x);
           ipcMain.removeAllListeners(x);
@@ -175,14 +175,14 @@ export class DialogsService {
 
         this.dialogs = this.dialogs.filter((x) => x.id !== dialog.id);
 
-        this.browserViewDetails.set(browserView.webContents.id, false);
+        this.childViewDetails.set(webContentsView.webContents.id, false);
 
-        if (this.browserViews.length > 1) {
-          // this.browserViewDetails.delete(browserView.id);
-          // browserView.destroy();
-          // this.browserViews.splice(1, 1);
+        if (this.childViews.length > 1) {
+          // this.childViewDetails.delete(WebContentsView.id);
+          // webContentsView.destroy();
+          // this.childViews.splice(1, 1);
         } else {
-          browserView.webContents.loadURL('about:blank');
+          webContentsView.webContents.loadURL('about:blank');
         }
 
         if (tabAssociation) {
@@ -196,18 +196,18 @@ export class DialogsService {
         if (onHide) onHide(dialog);
       },
       handle: (name, cb) => {
-        const channel = `${name}-${browserView.webContents.id}`;
+        const channel = `${name}-${webContentsView.webContents.id}`;
         ipcMain.handle(channel, (...args) => cb(...args));
         channels.push(channel);
       },
       on: (name, cb) => {
-        const channel = `${name}-${browserView.webContents.id}`;
+        const channel = `${name}-${webContentsView.webContents.id}`;
         ipcMain.on(channel, (...args) => cb(...args));
         channels.push(channel);
       },
       rearrange: (rect) => {
         rect = rect || {};
-        browserView.setBounds({
+        webContentsView.setBounds({
           x: 0,
           y: 0,
           width: 0,
@@ -216,6 +216,8 @@ export class DialogsService {
           ...roundifyRectangle(rect),
         });
       },
+      //TODO:
+      // webContentsView: new WebContentsView
     };
 
     tabsEvents.activate = (id) => {
@@ -224,10 +226,10 @@ export class DialogsService {
 
       if (visible) {
         dialog._sendTabInfo(id);
-        browserWindow.removeBrowserView(browserView);
-        browserWindow.addBrowserView(browserView);
+        browserWindow.contentView.removeChildView(webContentsView);
+        browserWindow.contentView.addChildView(webContentsView);
       } else {
-        browserWindow.removeBrowserView(browserView);
+        browserWindow.contentView.removeChildView(webContentsView);
       }
     };
 
@@ -262,20 +264,20 @@ export class DialogsService {
       browserWindow.on('move', windowEvents.move);
     }
 
-    browserView.webContents.once('dom-ready', () => {
+    webContentsView.webContents.once('dom-ready', () => {
       dialog.rearrange();
-      browserView.webContents.focus();
+      webContentsView.webContents.focus();
     });
 
     if (process.env.NODE_ENV === 'development') {
-      browserView.webContents.loadURL(`http://localhost:4444/${name}.html`);
+      webContentsView.webContents.loadURL(`http://localhost:4444/${name}.html`);
     } else {
-      browserView.webContents.loadURL(
+      webContentsView.webContents.loadURL(
         join('file:///', app.getAppPath(), `build/${name}.html`),
       );
     }
 
-    ipcMain.on(`hide-${browserView.webContents.id}`, () => {
+    ipcMain.on(`hide-${webContentsView.webContents.id}`, () => {
       dialog.hide();
     });
 
@@ -296,18 +298,18 @@ export class DialogsService {
     return dialog;
   }
 
-  public getBrowserViews = () => {
-    return this.browserViews.concat(
-      Array.from(this.persistentDialogs).map((x) => x.browserView),
+  public getChildViews = () => {
+    return this.childViews.concat(
+      Array.from(this.persistentDialogs).map((x) => x.webContentsView),
     );
   };
 
   public destroy = () => {
-    this.getBrowserViews().forEach((x) => (x.webContents as any).destroy());
+    this.getChildViews().forEach((x) => (x.webContents as any).destroy());
   };
 
   public sendToAll = (channel: string, ...args: any[]) => {
-    this.getBrowserViews().forEach(
+    this.getChildViews().forEach(
       (x) =>
         !x.webContents.isDestroyed() && x.webContents.send(channel, ...args),
     );

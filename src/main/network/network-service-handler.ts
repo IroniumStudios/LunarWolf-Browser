@@ -1,4 +1,4 @@
-import { RpcMainEvent, RpcMainHandler } from '@wexond/rpc-electron';
+import { RpcMainEvent, RpcMainHandler } from '@ironiumstudios/rpc-electron';
 import { networkMainChannel, NetworkService } from '~/common/rpc/network';
 import { requestURL } from './request';
 

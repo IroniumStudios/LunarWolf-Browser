@@ -147,7 +147,7 @@ const onContextMenu = (tab: ITab) => () => {
       label: 'Reload',
       accelerator: 'CmdOrCtrl+R',
       click: () => {
-        tab.callViewMethod('webContents.reload');
+        tab.webContents.reload();
       },
     },
     {

@@ -3,16 +3,16 @@
 </p>
 
 <div align="center">
-  <h1>LunarWolf Browser</h1>
+  <h1>LunarWolf Browser nightly</h1>
 
 if you consider supporting me, please donate to my cashapp
 <CashApp><https://cash.app/$smithy920>
 
 If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved (see the [License](#license) section).
 
-This Browser is a fork of the Wexond Browser Basse project, which can be found [`here`](https://github.com/wexond/browser-base)
+NOTE: this repo has the latest features for LunarWolf but as a cost of stability, if you want a more stable platform check out the original repo here: https://github.com/IroniumStudios/LunarWolf-Browser
 
-if you want a more up to date browsing platform check out my nightly releases here: https://github.com/IroniumStudios/LunarWolf-Browser-nightly
+This Browser is a fork of the wexond Browser Basse project, which can be found [`here`](https://github.com/ironiumstudios/browser-base)
 
 </div>
 
@@ -57,6 +57,8 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 
 
 ### Instructions for setting up your build environment for windows, Linux and mac os
+
+
 
 
 
@@ -107,20 +109,20 @@ and if your using linux or mac os run this command alongsize the other one
 
 
 ```bash
-nvm alias default 21.7.2 # Sets the node version as the main defalt alias on linux and mac os
+nvm alias default 22.1.0 # Sets the node version as the main defalt alias on linux and mac os
 ```
 
 
 
-make sure you have the 30.0.1 version of electron installed, you can do so by running this command in your terminal or command prompt
+make sure you have the 30.0.6 version of electron installed, you can do so by running this command in your terminal or command prompt
 
 
 ```bash
-npm install -g electron@30.0.1
+npm install -g electron@30.0.6
 ```
 
 
-+ Next up is installing yarn package manegar version 4.1.1, which you can find from [`here`](https://yarnpkg.com/getting-started/install)
++ Next up is installing yarn package manegar version 4.2.2, which you can find from [`here`](https://yarnpkg.com/getting-started/install)
 
 
 
@@ -140,9 +142,13 @@ npm install -g electron@30.0.1
 yarn install # Install needed depedencies for base-rpc.
 ```
 
+after installing needed deps for base-rpc you need to run this command inside that folder
 
+```bash
+lerna run --stream build:prod # builds the needed headers for base-rpc
+```
 
-#### Now go back to the main LunarWolf-Browser-main folder and run the commands below
+#### Now go back to the main LunarWolf-nightly-master folder and run the commands below
 
 
 

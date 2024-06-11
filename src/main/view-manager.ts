@@ -92,7 +92,7 @@ export class ViewManager extends EventEmitter {
 
     ipcMain.removeHandler('get-tab-zoom');
     ipcMain.handle('get-tab-zoom', (e: any, tabId: number) => {
-      // const zoom = this.findByBrowserView(tabId).viewManager.views.get(tabId)
+      // const zoom = this.findByContentView(tabId).viewManager.views.get(tabId)
       //  .webContents.zoomFactor;
       return this.selected.webContents.zoomFactor;
     });
@@ -111,7 +111,7 @@ export class ViewManager extends EventEmitter {
       view.webContents.setAudioMuted(false);
     });
 
-    ipcMain.on(`browserview-clear-${id}`, () => {
+    ipcMain.on(`web-contents-view-clear-${id}`, () => {
       this.clear();
     });
 
@@ -188,7 +188,7 @@ export class ViewManager extends EventEmitter {
   ) {
     const view = new View(this.window, details.url, this.incognito);
 
-    const { webContents } = view.browserView;
+    const { webContents } = view.webContentsView;
     const { id } = view;
 
     this.views.set(id, view);
@@ -215,7 +215,7 @@ export class ViewManager extends EventEmitter {
   }
 
   public clear() {
-    this.window.win.setBrowserView(null);
+    this.window.win.setContentView(null);
     Object.values(this.views).forEach((x) => x.destroy());
   }
 
@@ -229,10 +229,10 @@ export class ViewManager extends EventEmitter {
     this.selectedId = id;
 
     if (selected) {
-      this.window.win.removeBrowserView(selected.browserView);
+      this.window.win.contentView.removeChildView(selected.webContentsView);
     }
 
-    this.window.win.addBrowserView(view.browserView);
+    this.window.win.contentView.addChildView(view.webContentsView);
 
     if (focus) {
       // Also fixes switching tabs with Ctrl + Tab
@@ -291,13 +291,13 @@ export class ViewManager extends EventEmitter {
     };
 
     if (newBounds !== view.bounds) {
-      view.browserView.setBounds(newBounds);
+      view.webContentsView.setBounds(newBounds);
       view.bounds = newBounds;
     }
   }
 
   private async setBoundsListener() {
-    // resize the BrowserView's height when the toolbar height changes
+    // resize the WebContentsView's height when the toolbar height changes
     // ex: when the bookmarks bar appears
     await this.window.webContents.executeJavaScript(`
         const {ipcRenderer} = require('electron');
@@ -320,8 +320,8 @@ export class ViewManager extends EventEmitter {
 
     this.views.delete(id);
 
-    if (view && !view.browserView.webContents.isDestroyed()) {
-      this.window.win.removeBrowserView(view.browserView);
+    if (view && !view.webContentsView.webContents.isDestroyed()) {
+      this.window.win.contentView.removeChildView(view.webContentsView);
       view.destroy();
       this.emit('removed', id);
     }
@@ -330,7 +330,7 @@ export class ViewManager extends EventEmitter {
   public emitZoomUpdate(showDialog = true) {
     Application.instance.dialogs
       .getDynamic('zoom')
-      ?.browserView?.webContents?.send(
+      ?.webContentsView?.webContents?.send(
         'zoom-factor-updated',
         this.selected.webContents.zoomFactor,
       );

@@ -93,10 +93,10 @@ export class Settings extends EventEmitter {
 
     if (this.object.themeAuto) {
       this.object.theme = nativeTheme.shouldUseDarkColors
-        ? 'wexond-dark'
-        : 'wexond-light';
+        ? 'ironiumstudios-dark'
+        : 'ironiumstudios-light';
     } else {
-      themeSource = this.object.theme === 'wexond-light' ? 'light' : 'dark';
+      themeSource = this.object.theme === 'ironiumstudios-light' ? 'light' : 'dark';
     }
 
     if (themeSource !== nativeTheme.themeSource) {

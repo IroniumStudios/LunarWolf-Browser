@@ -1,6 +1,6 @@
 /* Copyright (c) 2021-2024 Damon Smith */
 
-import { RpcMainEvent, RpcMainHandler } from '@wexond/rpc-electron';
+import { RpcMainEvent, RpcMainHandler } from '@ironiumstudios/rpc-electron';
 import { webContents } from 'electron';
 import {
   extensionMainChannel,

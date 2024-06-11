@@ -38,7 +38,7 @@ export const showExtensionDialog = (
     dialog.rearrange();
   });
 
-  dialog.browserView.webContents.on(
+  dialog.webContentsView.webContents.on(
     'will-attach-webview',
     (e, webPreferences, params) => {
       webPreferences.sandbox = true;

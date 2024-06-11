@@ -13,7 +13,7 @@ import { pathExists } from '~/utils/files';
 import { extractZip } from '~/utils/zip';
 import { requestPermission } from './dialogs/permissions';
 import { promisify } from 'util';
-import { ElectronChromeExtensions } from 'electron-chrome-extensions';
+import { ElectronChromeExtensions } from 'electron-chrome-extensions-suit';
 
 const rimraf = require('rimraf');
 
@@ -66,26 +66,30 @@ export class SessionsService {
 
     this.view.setPermissionRequestHandler(
       async (webContents, permission, callback, details) => {
-        const window = Application.instance.windows.findByBrowserView(
+        const window = Application.instance.windows.findByContentsView(
           webContents.id,
         );
-
+    
         if (webContents.id !== window.viewManager.selectedId) return;
-
+    
         if (permission === 'fullscreen') {
           callback(true);
         } else {
           try {
             const { hostname } = new URL(details.requestingUrl);
+            let mediaTypes = '';
+            if ('mediaTypes' in details) {
+              mediaTypes = JSON.stringify(details.mediaTypes);
+            }
             const perm: any = await Application.instance.storage.findOne({
               scope: 'permissions',
               query: {
                 url: hostname,
                 permission,
-                mediaTypes: JSON.stringify(details.mediaTypes) || '',
+                mediaTypes,
               },
             });
-
+    
             if (!perm) {
               const response = await requestPermission(
                 window.win,
@@ -94,16 +98,16 @@ export class SessionsService {
                 details,
                 webContents.id,
               );
-
+    
               callback(response);
-
+    
               await Application.instance.storage.insert({
                 scope: 'permissions',
                 item: {
                   url: hostname,
                   permission,
                   type: response ? 1 : 2,
-                  mediaTypes: JSON.stringify(details.mediaTypes) || '',
+                  mediaTypes,
                 },
               });
             } else {
@@ -114,7 +118,7 @@ export class SessionsService {
           }
         }
       },
-    );
+    );    
 
     const getDownloadItem = (
       item: Electron.DownloadItem,
@@ -130,7 +134,7 @@ export class SessionsService {
     });
 
     const downloadsDialog = () =>
-      Application.instance.dialogs.getDynamic('downloads-dialog')?.browserView
+      Application.instance.dialogs.getDynamic('downloads-dialog')?.webContentsView
         ?.webContents;
 
     const downloads: IDownloadItem[] = [];
@@ -143,7 +147,7 @@ export class SessionsService {
     this.view.on('will-download', (event, item, webContents) => {
       const fileName = item.getFilename();
       const id = makeId(32);
-      const window = Application.instance.windows.findByBrowserView(
+      const window = Application.instance.windows.findByContentsView(
         webContents.id,
       );
 
