@@ -132,23 +132,9 @@ npm install -g electron@31.0.0
 
 
 
-#### open the base-rpc folder and run this command
 
 
-
-```bash
-yarn install # Install needed depedencies for base-rpc.
-```
-
-after installing needed deps for base-rpc you need to run this command inside that folder
-
-```bash
-lerna run --stream build:prod # builds the needed headers for base-rpc
-```
-
-#### Now go back to the main LunarWolf-nightly-master folder and run the commands below
-
-
+#### Now go back to the main LunarWolf-main folder and run the commands below
 
 ```bash
  yarn install # Install needed depedencies.
