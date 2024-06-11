@@ -1260,12 +1260,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.18":
-  version: 18.19.31
-  resolution: "@types/node@npm:18.19.31"
+"@types/node@npm:^20.9.0":
+  version: 20.14.2
+  resolution: "@types/node@npm:20.14.2"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/bfebae8389220c0188492c82eaf328f4ba15e6e9b4abee33d6bf36d3b13f188c2f53eb695d427feb882fff09834f467405e2ed9be6aeb6ad4705509822d2ea08
+  checksum: 10c0/2d86e5f2227aaa42212e82ea0affe72799111b888ff900916376450b02b09b963ca888b20d9c332d8d2b833ed4781987867a38eaa2e4863fa8439071468b0a6f
   languageName: node
   linkType: hard
 
@@ -1828,7 +1828,7 @@ __metadata:
     copy-webpack-plugin: "npm:^12.0.2"
     copyright-header: "npm:^0.4.6"
     cross-env: "npm:^7.0.3"
-    electron: "npm:^28.3.3"
+    electron: "npm:^31.0.0"
     electron-builder: "npm:^24.13.3"
     electron-chrome-extensions: "npm:^3.10.1"
     electron-updater: "npm:6.1.8"
@@ -3996,16 +3996,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^28.3.3":
-  version: 28.3.3
-  resolution: "electron@npm:28.3.3"
+"electron@npm:^31.0.0":
+  version: 31.0.0
+  resolution: "electron@npm:31.0.0"
   dependencies:
     "@electron/get": "npm:^2.0.0"
-    "@types/node": "npm:^18.11.18"
+    "@types/node": "npm:^20.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/e9ff47ed18379f9bdefc49e34f676eb83dde118de83d27e9e98760d02d41dd118b90d854d983831ccf7b8b4fe311966d8c95e43f52b4fb7089a84863e4373e10
+  checksum: 10c0/1030a670969465744e1edf11117ce0f1367622b6bf1346ae1250fea2e3091077aa5571c25bca9e8d27d7c9666cd718496f2fc3dbaf64da313b4e047ba93bdf86
   languageName: node
   linkType: hard
 
