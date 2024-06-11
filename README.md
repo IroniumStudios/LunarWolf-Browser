@@ -134,7 +134,7 @@ npm install -g electron@31.0.0
 
 
 
-#### Now go back to the main LunarWolf-main folder and run the commands below
+#### Now in the main LunarWolf-main folder run the commands below
 
 ```bash
  yarn install # Install needed depedencies.
