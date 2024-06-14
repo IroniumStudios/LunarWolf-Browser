@@ -680,10 +680,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ironiumstudios/rpc-core@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@ironiumstudios/rpc-core@npm:3.0.0"
-  checksum: 10c0/14ab56ec23bc5c43c7bfca88c844405d8624f8abdc3defd8119c057c027eec5980c537c354014b9aa737afabb54fbcff07f23433bd7c887585eceb904493b69f
+"@ironiumstudios/rpc-core@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@ironiumstudios/rpc-core@npm:3.0.1"
+  checksum: 10c0/36088c01f219f295cdf04d620c6c9721c3cf157e2e26ef6a5a5ac6cf32fa4c1afe07c11fdf9d079c209d580557613bcdd53a38e7a1a1455ac6781448cb43347c
   languageName: node
   linkType: hard
 
@@ -1829,7 +1829,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.2"
-    "@ironiumstudios/rpc-core": "npm:^3.0.0"
+    "@ironiumstudios/rpc-core": "npm:^3.0.1"
     "@ironiumstudios/rpc-electron": "npm:^3.0.0"
     "@ironiumstudios/rpc-node": "npm:^3.0.0"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.15"
