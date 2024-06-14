@@ -46,7 +46,7 @@
     "@babel/core": "^7.24.7",
     "@electron/remote": "^2.1.2",
     "@ironiumstudios/rpc-core": "^3.0.0",
-    "@ironiumstudios/rpc-electron": "^3.0.0",
+    "@ironiumstudios/rpc-electron": "^3.0.1",
     "@ironiumstudios/rpc-node": "^3.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@seald-io/nedb": "^4.0.4",
