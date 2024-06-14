@@ -694,10 +694,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ironiumstudios/rpc-node@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@ironiumstudios/rpc-node@npm:3.0.0"
-  checksum: 10c0/ff561596077f196d0b39a49174a12f33d5dd48ed4917e97e9d3852a3f7b5a2bc73da5871819b60e2ebf3ce2a74e9e5e58465d95eed6bb2e5e99e7796c7d10099
+"@ironiumstudios/rpc-node@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@ironiumstudios/rpc-node@npm:3.0.1"
+  checksum: 10c0/f13462e04ca98c3e0d542fd0ab4a2ee7f100c0d31e5e2e6e231b6f3750a79137ce9a1555ae084b2f35094bf77034e31fcb0935ab9a5b4bf92af842d4e9aab0ea
   languageName: node
   linkType: hard
 
@@ -1831,7 +1831,7 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^0.2.2"
     "@ironiumstudios/rpc-core": "npm:^3.0.0"
     "@ironiumstudios/rpc-electron": "npm:^3.0.0"
-    "@ironiumstudios/rpc-node": "npm:^3.0.0"
+    "@ironiumstudios/rpc-node": "npm:^3.0.1"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.15"
     "@seald-io/nedb": "npm:^4.0.4"
     "@types/animejs": "npm:^3.1.12"
