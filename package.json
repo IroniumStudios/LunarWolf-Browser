@@ -71,7 +71,7 @@
     "electron": "^31.0.0",
     "electron-builder": "^24.13.3",
     "electron-updater": "^6.2.1",
-    "eslint": "^9.4.0",
+    "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.2",
