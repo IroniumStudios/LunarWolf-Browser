@@ -1298,12 +1298,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.6":
-  version: 20.14.6
-  resolution: "@types/node@npm:20.14.6"
+"@types/node@npm:^20.14.10":
+  version: 20.14.10
+  resolution: "@types/node@npm:20.14.10"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/22640f0eb2a955872e4529a93be1b719f67b527b80fdab51419756d20e21b5ce0f4ccbee9a3e2ff20e5def647f77baf77b4b0434ff8896791c102165ec0c3e48
+  checksum: 10c0/0b06cff14365c2d0085dc16cc8cbea5c40ec09cfc1fea966be9eeecf35562760bfde8f88e86de6edfaf394501236e229d9c1084fad04fb4dec472ae245d8ae69
   languageName: node
   linkType: hard
 
@@ -1838,7 +1838,7 @@ __metadata:
     "@types/chrome": "npm:^0.0.268"
     "@types/crypto-js": "npm:^4.2.2"
     "@types/jszip": "npm:^3.4.1"
-    "@types/node": "npm:^20.14.6"
+    "@types/node": "npm:^20.14.10"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-helmet": "npm:^6.1.11"
