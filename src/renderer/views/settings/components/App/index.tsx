@@ -8,9 +8,9 @@ import { Appearance } from '../Appearance';
 import { AddressBar, ManageSearchEngines } from '../AddressBar';
 import { Privacy } from '../Privacy';
 import { About } from '../About';
-import { Party } from '../Party';
+import { Party } from '../ThirdPartyComponents';
 import { Performance } from '../Performance';
-import { Other } from '../Other';
+import { Other } from '../telem';
 import store from '../../store';
 import { NavigationDrawer } from '~/renderer/components/NavigationDrawer';
 import { Button } from '~/renderer/components/Button';
@@ -269,13 +269,10 @@ export default observer(() => {
           <MenuItem icon={ICON_SHIELD} section="privacy">
             Privacy
           </MenuItem>
-          <MenuItem icon={ICON_DASHBOARD} section="party">
-            Third Party
-          </MenuItem>
           <MenuItem icon={ICON_FIRE} section="about">
             About
           </MenuItem>
-          {/*<MenuItem icon={ICON_ADD} section="other">
+          {/*<MenuItem icon={ICON_ADD} section="telem">
             Other
           </MenuItem>*/}
           {/* <MenuItem section="permissions">Site permissions</MenuItem> */}
