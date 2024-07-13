@@ -26,19 +26,15 @@ const mainConfig = getConfig({
     new CopyPlugin({
       patterns: [
         {
-          from:
-            'node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js',
+          from: 'node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js',
           to: 'preload.js',
-          transform: async (fileContent, path) => {
-            return (
-              await terser.minify(fileContent.toString())
-            ).code.toString();
+          transform: async (fileContent) => {
+            return (await terser.minify(fileContent.toString())).code;
           },
         },
       ],
     }),
   ],
-  
 
   optimization: {
     splitChunks: {
@@ -50,7 +46,7 @@ const mainConfig = getConfig({
 
   resolve: {
     fallback: {
-      "url": require.resolve("url/")
+      url: require.resolve('url/'),
     },
     alias: {
       '@services': path.resolve(__dirname, 'src/services'),
@@ -81,7 +77,7 @@ const preloadConfig = getConfig({
 
   resolve: {
     fallback: {
-      "url": require.resolve("url/")
+      url: require.resolve('url/'),
     },
     alias: {
       '@services': path.resolve(__dirname, 'src/services'),
@@ -91,8 +87,7 @@ const preloadConfig = getConfig({
 
 if (process.env.ENABLE_EXTENSIONS) {
   preloadConfig.entry['popup-preload'] = './src/preloads/popup-preload';
-  preloadConfig.entry['extensions-preload'] =
-    './src/preloads/extensions-preload';
+  preloadConfig.entry['extensions-preload'] = './src/preloads/extensions-preload';
 }
 
 if (process.env.START === '1') {
