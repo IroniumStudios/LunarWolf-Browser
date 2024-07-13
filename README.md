@@ -112,11 +112,11 @@ nvm alias default 22.1.0 # Sets the node version as the main defalt alias on lin
 
 
 
-make sure you have the 31.0.1 version of electron installed, you can do so by running this command in your terminal or command prompt
+make sure you have the 31.2.0 version of electron installed, you can do so by running this command in your terminal or command prompt
 
 
 ```bash
-npm install -g electron@31.0.1
+npm install -g electron@31.2.0
 ```
 
 
