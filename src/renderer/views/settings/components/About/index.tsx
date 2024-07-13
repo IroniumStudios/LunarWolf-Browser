@@ -26,7 +26,7 @@ export const About = () => {
   return (
     <>
       <Header>About Lunarwolf Browser</Header>
-      <Title>Your version of lunarwolf is v1.0.1</Title>
+      <Title>Your version of lunarwolf is v1.0.1-beta.1`</Title>
       <Location />
     </>
   );
