@@ -1946,7 +1946,7 @@ __metadata:
     rimraf: "npm:^6.0.1"
     source-map-support: "npm:^0.5.21"
     styled-components: "npm:^6.1.11"
-    terser: "npm:^5.31.2"
+    terser: "npm:^5.31.3"
     terser-webpack-plugin: "npm:^5.3.10"
     ts-loader: "npm:^9.5.1"
     tsconfig-paths-webpack-plugin: "npm:^4.1.0"
@@ -9615,9 +9615,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:^5.31.2":
-  version: 5.31.2
-  resolution: "terser@npm:5.31.2"
+"terser@npm:^5.31.3":
+  version: 5.31.3
+  resolution: "terser@npm:5.31.3"
   dependencies:
     "@jridgewell/source-map": "npm:^0.3.3"
     acorn: "npm:^8.8.2"
@@ -9625,7 +9625,7 @@ __metadata:
     source-map-support: "npm:~0.5.20"
   bin:
     terser: bin/terser
-  checksum: 10c0/5b72f58421f69267f67cb60cf4398282afcdec697e9b6f1909035cdf52d9960226fc1df5968e27ba96736b7a7ba76609d0b7b060ee5da7769553940726059b63
+  checksum: 10c0/eb2b525dada9febd3db74e94bd295f9cd7abd809e4f9c6bbc795a3048ad50fd327c15eab99db383fa820239680eef6d2dbd7dc05361769c204ddee5cf684d41e
   languageName: node
   linkType: hard
 
