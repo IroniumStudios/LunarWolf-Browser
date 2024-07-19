@@ -15,6 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "esnext"],
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*"]
