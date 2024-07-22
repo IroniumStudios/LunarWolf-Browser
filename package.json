@@ -125,7 +125,7 @@
     "electron-chrome-extensions-suit": "^1.0.2",
     "node-polyfill-webpack-plugin": "^4.0.0",
     "react-query": "^3.39.3",
-    "react-use": "^17.5.0",
+    "react-use": "^17.5.1",
     "url": "^0.11.3"
   },
   "patches": {
