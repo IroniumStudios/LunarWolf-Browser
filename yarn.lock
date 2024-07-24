@@ -3991,13 +3991,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-chrome-extensions-suit@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "electron-chrome-extensions-suit@npm:1.0.2"
+"electron-chrome-extensions-suit@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "electron-chrome-extensions-suit@npm:1.0.3"
   dependencies:
     "@types/debug": "npm:^4.1.12"
     debug: "npm:^4.3.5"
-  checksum: 10c0/b677cbae173fc9a0376f5b0c096c1d431a2251736a35c7dfd337684ddb553fa614185ea3b8531a7810b42ec114c2f329c42d91efb8c7059761a091615d2904a7
+  checksum: 10c0/6745da93f683d05ab3e753c3834f32ccb3007d72560a580743b601359fcdefb4644ff35ae247a64c7a79bf692b3009462b7c538472cbfd17d14c4789e6e880a6
   languageName: node
   linkType: hard
 
@@ -6795,7 +6795,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     electron: "npm:^31.2.1"
     electron-builder: "npm:^24.13.3"
-    electron-chrome-extensions-suit: "npm:^1.0.2"
+    electron-chrome-extensions-suit: "npm:^1.0.3"
     electron-updater: "npm:6.2.1"
     eslint: "npm:^9.7.0"
     eslint-config-prettier: "npm:^9.1.0"
