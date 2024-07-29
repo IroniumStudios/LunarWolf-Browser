@@ -126,7 +126,7 @@
     "node-polyfill-webpack-plugin": "^4.0.0",
     "react-query": "^3.39.3",
     "react-use": "^17.5.0",
-    "url": "^0.11.3"
+    "url": "^0.11.4"
   },
   "patches": {
     "@cliqz/adblocker-electron": {
