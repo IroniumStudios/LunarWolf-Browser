@@ -87,7 +87,7 @@ sudo apt install npm # this command will install npm for linux and mac os
 
   
 ```bash
-nvm install 22.1.0 # this installed the compatible version of node.js for this project
+nvm install 22.5.1 # this installed the compatible version of node.js for this project
 ```
 
 
@@ -97,7 +97,7 @@ after installing the correct version of node.js we want the nvm to use this vers
 
 
 ```bash
-nvm use 22.1.0 # sets the version you specified as defalt if your on windows but this command is also required to be ran on linux and mac os as well
+nvm use 22.5.1 # sets the version you specified as defalt if your on windows but this command is also required to be ran on linux and mac os as well
 ```
 
 
@@ -107,7 +107,7 @@ and if your using linux or mac os run this command alongsize the other one
 
 
 ```bash
-nvm alias default 22.1.0 # Sets the node version as the main defalt alias on linux and mac os
+nvm alias default 22.5.1 # Sets the node version as the main defalt alias on linux and mac os
 ```
 
 
@@ -120,7 +120,7 @@ npm install -g electron@31.2.1
 ```
 
 
-+ Next up is installing yarn package manegar version 4.2.2, which you can find from [`here`](https://yarnpkg.com/getting-started/install)
++ Next up is installing yarn package manegar, which you can find from [`here`](https://yarnpkg.com/getting-started/install)
 
 
 
