@@ -47,7 +47,7 @@
     "copyright": "copyright-header --templateId minimal --forceModificationYear 2024 --fix --copyrightHolder Damon Smith --include src"
   },
   "devDependencies": {
-    "@babel/core": "7.18.13",
+    "@babel/core": "7.25.2",
     "@electron/remote": "^2.1.2",
     "@ironiumstudios/rpc-core": "^3.0.1",
     "@ironiumstudios/rpc-electron": "^3.0.1",
