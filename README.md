@@ -8,6 +8,9 @@
 if you consider supporting me, please donate to my cashapp
 <CashApp><https://cash.app/$smithy920>
 
+> ## Notice
+>i am thinking of discontenuing this project, without help its getting harder to fix these bugs that are present, the wexond code was dated but this prpoject has been updated to the best of my abilitys but i dont have much help so i cannot make the project as smooth and efficiant as i would like to, and also theres weird menu bugs i cannot fix overall the project is in a stable state tho but there are many kinks and bugs to work out and thin.
+
 If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved (see the [License](#license) section).
 
 This Browser is a fork of the wexond Browser Basse project, which can be found [`here`](https://github.com/ironiumstudios/browser-base)
