@@ -2,8 +2,8 @@ import { ipcRenderer } from 'electron';
 import * as React from 'react';
 import store from '../../store';
 import { observer } from 'mobx-react-lite';
+import styled from 'styled-components';
 import {
-  BookmarkButton,
   BookmarkBar as StyledBookmarkBar,
   BookmarkSection,
   Favicon,
@@ -16,6 +16,23 @@ import {
   ICON_ARROW_RIGHT,
 } from '~/renderer/constants/icons';
 import { IBookmark } from '~/interfaces';
+
+type BookmarkButtonProps = {
+  width: number;
+  theme: any; // Adjust the type as needed
+  toggled: boolean;
+  disabled: boolean;
+};
+
+const BookmarkButton = styled.div<BookmarkButtonProps>`
+  display: flex;
+  align-items: center;
+  width: ${(props) => props.width}px;
+  background: ${(props) => (props.toggled ? props.theme.activeBackground : 'transparent')};
+  color: ${(props) => (props.disabled ? props.theme.disabledColor : props.theme.color)};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  /* Add more styles as needed */
+`;
 
 type BookmarkProps = {
   title: string;
@@ -45,7 +62,6 @@ const Bookmark = observer(
     }
     return (
       <BookmarkButton
-        dense
         width={buttonWidth}
         theme={store.theme}
         toggled={false}

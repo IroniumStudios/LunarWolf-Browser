@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import styled, { css } from 'styled-components';
 import { shadows } from '~/renderer/mixins';
 import { ITheme } from '~/interfaces';

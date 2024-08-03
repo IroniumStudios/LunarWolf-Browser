@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import styled from 'styled-components';
 
 export const Root = styled.div`

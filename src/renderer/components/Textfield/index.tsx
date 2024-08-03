@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import * as React from 'react';
 
 import { ERROR_COLOR, BLUE_500 } from '~/renderer/constants';
@@ -123,16 +125,8 @@ export class Textfield extends React.PureComponent<TextFieldProps, State> {
   }
 
   public render() {
-    const {
-      color,
-      label,
-      placeholder,
-      icon,
-      inputType,
-      style,
-      width,
-      dark,
-    } = this.props;
+    const { color, label, placeholder, icon, inputType, style, width, dark } =
+      this.props;
     const { activated, focused, error, value } = this.state;
 
     const hasLabel = label != null && label !== '';

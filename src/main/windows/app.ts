@@ -137,7 +137,7 @@ export class AppWindow {
       windowState.fullscreen = this.win.isFullScreen();
       writeFileSync(windowDataPath, JSON.stringify(windowState));
 
-      this.win.setBrowserView(null);
+      this.win.setContentView(null);
 
       this.viewManager.clear();
 

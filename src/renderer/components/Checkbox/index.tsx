@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import * as React from 'react';
 
 import { Label } from '../RadioButton/styles';

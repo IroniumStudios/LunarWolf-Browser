@@ -1,3 +1,5 @@
+/* Copyright (c) 2021-2024 Damon Smith */
+
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
 
@@ -8,6 +10,7 @@ import { SelectionDialog } from '~/renderer/components/SelectionDialog';
 import { HistorySection } from '../HistorySection';
 import { Container, Content, LeftContent } from '~/renderer/components/Pages';
 import { GlobalNavigationDrawer } from '~/renderer/components/GlobalNavigationDrawer';
+import { IHistorySection } from '~/interfaces';
 import {
   ICON_HISTORY,
   ICON_ALL,
@@ -78,9 +81,11 @@ const onInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
   store.search(e.currentTarget.value);
 };
 
-const onClearClick = () => {
-  store.clear();
+const onClearClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  e.stopPropagation();
+  (window as any).store.clear();
 
+  // store.clear();
   // TODO: ipcRenderer.send('clear-browsing-data');
 };
 
@@ -90,7 +95,7 @@ export default observer(() => {
       <Container>
         <WebUIStyle />
         <GlobalNavigationDrawer></GlobalNavigationDrawer>
-        <NavigationDrawer title="History" search onSearchInput={onInput}>
+        <NavigationDrawer title="Search History" search onSearchInput={onInput}>
           <RangeItem icon={ICON_ALL} range="all">
             All
           </RangeItem>
@@ -101,15 +106,19 @@ export default observer(() => {
             Yesterday
           </RangeItem>
           <RangeItem icon={ICON_WEEK} range="last-week">
-            Last week
+            Last Week
           </RangeItem>
           <RangeItem icon={ICON_CALENDAR} range="older">
             Older
           </RangeItem>
           <div style={{ flex: 1 }} />
           <NavigationDrawer.Item icon={ICON_TRASH} onClick={onClearClick}>
-            Clear browsing data
+            Clear search history
           </NavigationDrawer.Item>
+          <p>
+            Keep in mind, This button only clears search history, not favicons
+            nor suggestions. Please go to settings for advance clear features.
+          </p>
         </NavigationDrawer>
         <Content onScroll={onScroll}>
           <HistorySections />

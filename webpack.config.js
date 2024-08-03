@@ -5,11 +5,14 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
-
-let terser = require('terser');
+const fs = require('fs');
+const terser = require('terser');
 /* eslint-enable */
 
 let electronProcess;
+
+// Function to check if a file exists
+const fileExists = (filePath) => fs.existsSync(filePath);
 
 const mainConfig = getConfig({
   target: 'electron-main',
@@ -26,14 +29,22 @@ const mainConfig = getConfig({
     new CopyPlugin({
       patterns: [
         {
-          from: 'node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js',
+          from: fileExists('node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js') 
+            ? 'node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js'
+            : path.resolve(__dirname, 'src/preloads/adblocker-preload.ts'),
           to: 'preload.js',
           transform: async (fileContent) => {
-            return (await terser.minify(fileContent.toString())).code;
+            // Transform only if the file exists
+            if (fileExists('node_modules/@cliqz/adblocker-electron-preload/dist/preload.cjs.js')) {
+              return (await terser.minify(fileContent.toString())).code;
+            }
+            console.warn('using a custom preload file for adblocking instead');
+            return fileContent.toString();
           },
         },
       ],
     }),
+    // Add other plugins as needed
   ],
 
   optimization: {
