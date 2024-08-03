@@ -447,10 +447,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-extended-selectors@npm:1.26.5":
-  version: 1.26.5
-  resolution: "@cliqz/adblocker-extended-selectors@npm:1.26.5"
-  checksum: 10c0/fd23eaa0c7e03d5304882997ff8a127212784b6b3ae8ec074343087b37a67f0f2e4ee00974ea00e20efe8b0b3305aeaffefe76eaebd3c3ffc6ecd90fe1cfe3db
+"@cliqz/adblocker-extended-selectors@npm:1.31.1":
+  version: 1.31.1
+  resolution: "@cliqz/adblocker-extended-selectors@npm:1.31.1"
+  checksum: 10c0/747771f1a252fa492493700c92d8993ede5cd847b036de239b27d3210276f7f76253a0005cf82e9e802ec5c95696211015e5412ddabace8b97161fa070673f93
   languageName: node
   linkType: hard
 
@@ -8144,7 +8144,7 @@ __metadata:
     "@cliqz/adblocker-content": "npm:1.26.5"
     "@cliqz/adblocker-electron": "npm:1.26.5"
     "@cliqz/adblocker-electron-preload": "npm:1.26.5"
-    "@cliqz/adblocker-extended-selectors": "npm:1.26.5"
+    "@cliqz/adblocker-extended-selectors": "npm:1.31.1"
     "@electron/remote": "npm:^2.1.2"
     "@fortawesome/fontawesome-free": "npm:6.4.0"
     "@fortawesome/fontawesome-svg-core": "npm:6.4.0"
