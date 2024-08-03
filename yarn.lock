@@ -8189,7 +8189,7 @@ __metadata:
     gitmoji-changelog: "npm:2.3.0"
     html-webpack-plugin: "npm:^5.6.0"
     jszip: "npm:3.10.1"
-    mobx: "npm:6.3.3"
+    mobx: "npm:6.13.1"
     mobx-react-lite: "npm:3.4.0"
     node-fetch: "npm:^3.3.2"
     node-parse-bookmarks: "npm:^1.0.2"
@@ -8732,10 +8732,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:6.3.3":
-  version: 6.3.3
-  resolution: "mobx@npm:6.3.3"
-  checksum: 10c0/fb0a4868690e65973739d1d55b5b6d1fd8e978f91caa67fe98f168903a53ee5699dadb8ebc498834ed8d0e4149e4c02ea1043dc5384f06514cccd0d996f066a5
+"mobx@npm:6.13.1":
+  version: 6.13.1
+  resolution: "mobx@npm:6.13.1"
+  checksum: 10c0/5c1933b6d36bab9f253ec252f42ec3ff4b76d8b3d416a2a3948d097d7aca1eea773a4fa483437409754e60fbed9903432e1f26cc69aae74151750b0052d55cc5
   languageName: node
   linkType: hard
 
