@@ -9,7 +9,7 @@ if you consider supporting me, please donate to my cashapp
 <CashApp><https://cash.app/$smithy920>
 
 > ## Notice
->i am currently working on another project that dosent use chromium, so if everything goes as planned then this projects and its other assets will be discontenued unless someone else would like to maintain this repo
+>The support for this project has ended, i am working on something better
 
 If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved (see the [License](#license) section).
 
