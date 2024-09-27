@@ -8192,7 +8192,7 @@ __metadata:
     mobx: "npm:6.3.3"
     mobx-react-lite: "npm:3.4.0"
     node-fetch: "npm:^3.3.2"
-    node-parse-bookmarks: "npm:^1.0.2"
+    node-parse-bookmarks: "npm:^1.0.3"
     node-polyfill-webpack-plugin: "npm:1.1.4"
     parse-ico: "npm:^1.0.2"
     prettier: "npm:2.8.8"
@@ -8991,12 +8991,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-parse-bookmarks@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "node-parse-bookmarks@npm:1.0.2"
+"node-parse-bookmarks@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "node-parse-bookmarks@npm:1.0.3"
   dependencies:
     cheerio: "npm:^1.0.0-rc.12"
-  checksum: 10c0/f1c5b57d4eb12e7575552fa1bf3718aeb64d9dd0a35fb320573d240cd8fb9bea10a025b32824ace8ced36fa3c1fd7d3dd1b8d32692a4b991fd28f61f0bcde19b
+  checksum: 10c0/e864d7fc5165574b85a1518a0955b82fcac4e834ffec8cfb7e278ad9c4291a061ccc2664a622c37fd5f5c161cb38c6f6333d901d62d418b11ab4e49c0ec25d93
   languageName: node
   linkType: hard
 
