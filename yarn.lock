@@ -1155,10 +1155,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/animejs@npm:3.1.7":
-  version: 3.1.7
-  resolution: "@types/animejs@npm:3.1.7"
-  checksum: 10c0/0a6720c01fbca07c7495bfdf2d0e14c3fe84b041810b3e7669723fa225afd4dc3318adc1993388031c21742c41bf43c98c19a1495c4b96fd18433beacc1c9aa0
+"@types/animejs@npm:3.1.12":
+  version: 3.1.12
+  resolution: "@types/animejs@npm:3.1.12"
+  checksum: 10c0/21d10ed4fbaa99572e252b4d6e666b62a19089f63b13b0e9f8edf5fb0b708afc2b38c3055c52f6a4771bc71793d7a7aec83754c16d0e5606a0ad92b34778ba61
   languageName: node
   linkType: hard
 
@@ -2227,10 +2227,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"animejs@npm:3.2.1":
-  version: 3.2.1
-  resolution: "animejs@npm:3.2.1"
-  checksum: 10c0/fcdff698fb56939f3585f81f40f9321e4e5932ca602b5109b323c2c7b97f66cb82b96ca48b7c595851b7e3a4e809b44583023d3c5a23a018fa2ffd8e42a0e160
+"animejs@npm:3.2.2":
+  version: 3.2.2
+  resolution: "animejs@npm:3.2.2"
+  checksum: 10c0/f43dfcc0c743a2774e76fbfcb16a22350da7104f413d9d1b85c48128b0c078090642809deb631e21dfa0a40651111be39d9d7f694c9c1b70d8637ce8b6d63116
   languageName: node
   linkType: hard
 
@@ -8156,7 +8156,7 @@ __metadata:
     "@ironiumstudios/rpc-node": "npm:^3.0.1"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.15"
     "@seald-io/nedb": "npm:4.0.2"
-    "@types/animejs": "npm:3.1.7"
+    "@types/animejs": "npm:3.1.12"
     "@types/chrome": "npm:^0.0.269"
     "@types/crypto-js": "npm:4.1.1"
     "@types/jszip": "npm:3.4.1"
@@ -8167,7 +8167,7 @@ __metadata:
     "@types/styled-components": "npm:^5.1.34"
     "@typescript-eslint/eslint-plugin": "npm:5.57.1"
     "@typescript-eslint/parser": "npm:^7.18.0"
-    animejs: "npm:3.2.1"
+    animejs: "npm:3.2.2"
     awesome-node-loader: "npm:1.1.1"
     babel-loader: "npm:8.2.5"
     concurrently: "npm:8.2.0"
