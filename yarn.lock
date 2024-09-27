@@ -1232,10 +1232,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/crypto-js@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@types/crypto-js@npm:4.1.1"
-  checksum: 10c0/e53b712c5d3b72d19c67a06c8bbaaafd989d78f71a2168f1376c8fb84d5744e5166b58d79528a124645e13f13fe4d2c97ee8f03d649ef913e93ca6b8cee41370
+"@types/crypto-js@npm:4.2.2":
+  version: 4.2.2
+  resolution: "@types/crypto-js@npm:4.2.2"
+  checksum: 10c0/760a2078f36f2a3a1089ef367b0d13229876adcf4bcd6e8824d00d9e9bfad8118dc7e6a3cc66322b083535e12be3a29044ccdc9603bfb12519ff61551a3322c6
   languageName: node
   linkType: hard
 
@@ -8158,7 +8158,7 @@ __metadata:
     "@seald-io/nedb": "npm:4.0.2"
     "@types/animejs": "npm:3.1.7"
     "@types/chrome": "npm:^0.0.269"
-    "@types/crypto-js": "npm:4.1.1"
+    "@types/crypto-js": "npm:4.2.2"
     "@types/jszip": "npm:3.4.1"
     "@types/node": "npm:^22.0.0"
     "@types/react": "npm:^18.3.3"
