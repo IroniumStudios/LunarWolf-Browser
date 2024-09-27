@@ -1213,6 +1213,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/chrome@npm:^0.0.272":
+  version: 0.0.272
+  resolution: "@types/chrome@npm:0.0.272"
+  dependencies:
+    "@types/filesystem": "npm:*"
+    "@types/har-format": "npm:*"
+  checksum: 10c0/ce36f991c011431d5f70a4c9b0219032fabd95b79d9b0217980513ee5a722b1a51602f6f96f2d3e76995cd2f24f9f03481dbc12d49ac305545c665db6a394723
+  languageName: node
+  linkType: hard
+
 "@types/connect-history-api-fallback@npm:^1.5.4":
   version: 1.5.4
   resolution: "@types/connect-history-api-fallback@npm:1.5.4"
@@ -8157,7 +8167,7 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.15"
     "@seald-io/nedb": "npm:4.0.2"
     "@types/animejs": "npm:3.1.7"
-    "@types/chrome": "npm:^0.0.269"
+    "@types/chrome": "npm:^0.0.272"
     "@types/crypto-js": "npm:4.1.1"
     "@types/jszip": "npm:3.4.1"
     "@types/node": "npm:^22.0.0"
