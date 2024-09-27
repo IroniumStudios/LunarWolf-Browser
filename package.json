@@ -102,7 +102,7 @@
     "styled-components": "^6.1.12",
     "terser": "5.16.8",
     "terser-webpack-plugin": "5.3.7",
-    "ts-loader": "9.3.1",
+    "ts-loader": "9.5.1",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "typescript": "^5.5.4",
     "typescript-plugin-styled-components": "^3.0.0",
