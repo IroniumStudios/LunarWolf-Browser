@@ -115,7 +115,7 @@
   },
   "dependencies": {
     "@cliqz/adblocker": "1.26.5",
-    "@cliqz/adblocker-content": "1.26.5",
+    "@cliqz/adblocker-content": "1.33.2",
     "@cliqz/adblocker-electron": "1.26.5",
     "@cliqz/adblocker-electron-preload": "1.26.5",
     "@cliqz/adblocker-extended-selectors": "1.26.5",
