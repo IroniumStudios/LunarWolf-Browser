@@ -99,7 +99,7 @@
     "react-windows-controls": "^1.1.1",
     "rimraf": "^6.0.1",
     "source-map-support": "0.5.21",
-    "styled-components": "^6.1.12",
+    "styled-components": "^6.1.13",
     "terser": "5.16.8",
     "terser-webpack-plugin": "5.3.7",
     "ts-loader": "9.3.1",
