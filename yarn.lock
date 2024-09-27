@@ -851,7 +851,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/source-map@npm:^0.3.2, @jridgewell/source-map@npm:^0.3.3":
+"@jridgewell/source-map@npm:^0.3.3":
   version: 0.3.6
   resolution: "@jridgewell/source-map@npm:0.3.6"
   dependencies:
@@ -2105,7 +2105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.12.0, acorn@npm:^8.5.0":
+"acorn@npm:^8.12.0":
   version: 8.12.1
   resolution: "acorn@npm:8.12.1"
   bin:
@@ -8206,7 +8206,7 @@ __metadata:
     rimraf: "npm:^6.0.1"
     source-map-support: "npm:0.5.21"
     styled-components: "npm:^6.1.12"
-    terser: "npm:5.16.8"
+    terser: "npm:5.34.0"
     terser-webpack-plugin: "npm:5.3.7"
     ts-loader: "npm:9.3.1"
     tsconfig-paths-webpack-plugin: "npm:4.1.0"
@@ -12106,17 +12106,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:5.16.8":
-  version: 5.16.8
-  resolution: "terser@npm:5.16.8"
+"terser@npm:5.34.0":
+  version: 5.34.0
+  resolution: "terser@npm:5.34.0"
   dependencies:
-    "@jridgewell/source-map": "npm:^0.3.2"
-    acorn: "npm:^8.5.0"
+    "@jridgewell/source-map": "npm:^0.3.3"
+    acorn: "npm:^8.8.2"
     commander: "npm:^2.20.0"
     source-map-support: "npm:~0.5.20"
   bin:
     terser: bin/terser
-  checksum: 10c0/b49772a10ed4fa12bfaf231ff018d818c48b80ae9093fe52ef9753acd25fd40bef20dd4b0a226a5d46e52e7904be6b94e51cf41be0159913e13114d0c3372f82
+  checksum: 10c0/74e8ef4e565e5600415cd9377a90eed419b8076465d453c0c76aef4053c45371512d2de76c34d01e004cdd49ea5a749d77eeb343f7e665b2d172158ca08ba23e
   languageName: node
   linkType: hard
 
