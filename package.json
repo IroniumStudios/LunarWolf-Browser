@@ -53,7 +53,7 @@
     "@ironiumstudios/rpc-electron": "^3.0.1",
     "@ironiumstudios/rpc-node": "^3.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-    "@seald-io/nedb": "4.0.2",
+    "@seald-io/nedb": "4.0.4",
     "@types/animejs": "3.1.7",
     "@types/chrome": "^0.0.269",
     "@types/crypto-js": "4.1.1",

@@ -1107,14 +1107,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@seald-io/nedb@npm:4.0.2":
-  version: 4.0.2
-  resolution: "@seald-io/nedb@npm:4.0.2"
+"@seald-io/nedb@npm:4.0.4":
+  version: 4.0.4
+  resolution: "@seald-io/nedb@npm:4.0.4"
   dependencies:
     "@seald-io/binary-search-tree": "npm:^1.0.3"
     localforage: "npm:^1.9.0"
     util: "npm:^0.12.4"
-  checksum: 10c0/a0baf3cb1446c8597214aa802227f6ee77bb5e1753dba8d583d7e2eb3bc7238bb7434ba5eaa9cb7e534fece74816e6ced0c12d9c09aafe21b142020fc429b9b4
+  checksum: 10c0/1136c924401390f3f108c6a337b685f341e094549bdcfb9be1e40a10e7886996663418fdd847a3e0925417d4ff85c42cfc7e30dac8fafbc6b1686d9a7fd34272
   languageName: node
   linkType: hard
 
@@ -8155,7 +8155,7 @@ __metadata:
     "@ironiumstudios/rpc-electron": "npm:^3.0.1"
     "@ironiumstudios/rpc-node": "npm:^3.0.1"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.15"
-    "@seald-io/nedb": "npm:4.0.2"
+    "@seald-io/nedb": "npm:4.0.4"
     "@types/animejs": "npm:3.1.7"
     "@types/chrome": "npm:^0.0.269"
     "@types/crypto-js": "npm:4.1.1"
