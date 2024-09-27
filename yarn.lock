@@ -412,14 +412,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-electron-preload@npm:1.26.5":
-  version: 1.26.5
-  resolution: "@cliqz/adblocker-electron-preload@npm:1.26.5"
+"@cliqz/adblocker-content@npm:^1.33.2":
+  version: 1.33.2
+  resolution: "@cliqz/adblocker-content@npm:1.33.2"
   dependencies:
-    "@cliqz/adblocker-content": "npm:^1.26.5"
+    "@cliqz/adblocker-extended-selectors": "npm:^1.33.2"
+  checksum: 10c0/5fba5667224e14c435d8534065b60be66c9cbc82efb1eaeb4c4120d237b28e456c13dc518cfac9aac116c70ae19f2cd256a323302afa4b3bb11c07853edfa73a
+  languageName: node
+  linkType: hard
+
+"@cliqz/adblocker-electron-preload@npm:1.33.2":
+  version: 1.33.2
+  resolution: "@cliqz/adblocker-electron-preload@npm:1.33.2"
+  dependencies:
+    "@cliqz/adblocker-content": "npm:^1.33.2"
   peerDependencies:
     electron: ">11"
-  checksum: 10c0/3e62039d90c3e7e2808d16f448c6a1d4f0ca85ed387d4abcd5b076bb6856d577d7150232bb494958621b0bcc1fff3820e10326048d9506873e1f37e8d4e571db
+  checksum: 10c0/d29050bf6cf1a9fa2d36f877e3640c050562ed7c27a42217b52dfaa42565543ad6a1fc4e57b1123c2085f64789ef2b85479c952c6b3c7638b4b5c8f2a73c80bc
   languageName: node
   linkType: hard
 
@@ -458,6 +467,13 @@ __metadata:
   version: 1.30.1
   resolution: "@cliqz/adblocker-extended-selectors@npm:1.30.1"
   checksum: 10c0/f3304e72d06d3cb03c677ba280d99a78bf00862e0a26d36f5695da52aebdb3f0e6b5a3b2fc8a06f0437832df6520c593552abe1b080d0ef452fca87d7c9d5fff
+  languageName: node
+  linkType: hard
+
+"@cliqz/adblocker-extended-selectors@npm:^1.33.2":
+  version: 1.33.2
+  resolution: "@cliqz/adblocker-extended-selectors@npm:1.33.2"
+  checksum: 10c0/4b44dd2c492e51ac4cdde74dc14b62125d754560f862d1a88626df93fcd564c9fa8790be97439e6e62ba19915f091e6e898919d049de6b332b1edebbb48d75fd
   languageName: node
   linkType: hard
 
@@ -8143,7 +8159,7 @@ __metadata:
     "@cliqz/adblocker": "npm:1.26.5"
     "@cliqz/adblocker-content": "npm:1.26.5"
     "@cliqz/adblocker-electron": "npm:1.26.5"
-    "@cliqz/adblocker-electron-preload": "npm:1.26.5"
+    "@cliqz/adblocker-electron-preload": "npm:1.33.2"
     "@cliqz/adblocker-extended-selectors": "npm:1.26.5"
     "@electron/remote": "npm:^2.1.2"
     "@fortawesome/fontawesome-free": "npm:6.4.0"
