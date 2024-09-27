@@ -118,7 +118,7 @@
     "@cliqz/adblocker-content": "1.26.5",
     "@cliqz/adblocker-electron": "1.26.5",
     "@cliqz/adblocker-electron-preload": "1.26.5",
-    "@cliqz/adblocker-extended-selectors": "1.26.5",
+    "@cliqz/adblocker-extended-selectors": "1.33.2",
     "@fortawesome/fontawesome-free": "6.4.0",
     "@fortawesome/fontawesome-svg-core": "6.4.0",
     "@fortawesome/free-regular-svg-icons": "6.4.0",
