@@ -84,7 +84,7 @@
     "file-type": "18.2.1",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "gitmoji-changelog": "2.3.0",
-    "html-webpack-plugin": "^5.6.0",
+    "html-webpack-plugin": "^5.6.3",
     "jszip": "3.10.1",
     "mobx": "6.3.3",
     "mobx-react-lite": "3.4.0",
