@@ -74,7 +74,7 @@
     "copyright-header": "^0.4.6",
     "cross-env": "7.0.3",
     "electron": "^31.4.0",
-    "electron-builder": "^24.13.3",
+    "electron-builder": "^25.1.8",
     "electron-updater": "6.2.1",
     "eslint": "9.8.0",
     "eslint-config-prettier": "9.1.0",
