@@ -48,7 +48,7 @@ export const About = () => {
          <a rel="noopener" target="_blank" href="https://github.com/lunarwolf-project/lunarwolf-browser">App Version</a>: {AppVer}
          <br/>
          <br/>
-         <small>Copyright © <a href="https://thorium.rocks/about" target="_blank" rel="noopener">Alexander D. Frick</a></small>
+         <small>Copyright © <a href="https://github.com/LunarWolf-Browser-Projects/LunarWolf-Browser/blob/main/intensions.md" target="_blank" rel="noopener">Damon Smith</a></small>
        </p>
      </Row>
     </a>
