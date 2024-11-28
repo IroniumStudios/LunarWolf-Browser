@@ -132,7 +132,7 @@ function getConfig(...cfg) {
 
 const getHtml = (name) => {
   return new HtmlWebpackPlugin({
-    title: 'LunarWolf',
+    title: 'lunarwolf',
     template: 'static/pages/app.html',
     filename: `${name}.html`,
     chunks: [name],

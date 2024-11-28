@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { ipcMain, nativeTheme, dialog, app } from 'electron';
 
@@ -120,14 +120,19 @@ export class Settings extends EventEmitter {
       Application.instance.sessions.viewIncognito,
     ];
 
-    contexts.forEach(async (e) => {
-      if (this.object.shield) {
-        await runAdblockService(e);
-      } else {
-        stopAdblockService(e);
+    contexts.forEach((e) => {
+      try {
+        if (this.object.shield) {
+          runAdblockService(e);
+        } else {
+          stopAdblockService(e);
+        }
+      } catch (error) {
+        console.error('Error handling Adblock Service:', error);
       }
     });
-
+    
+    // TODO: -- fix this code
     // if (
     //   this.object.defaultBrowser &&
     //   !(

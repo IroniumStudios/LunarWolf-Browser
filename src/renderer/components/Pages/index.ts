@@ -1,14 +1,19 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+// Define the prop type for Container
+interface ContainerProps {
+  darken?: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   overflow: auto;
   height: 100vh;
   overflow: hidden;
 
-  ${({ darken }: { darken?: boolean }) => css`
+  ${({ darken }) => css`
     &:after {
       opacity: ${darken ? 0.54 : 0};
       pointer-events: ${darken ? 'inherit' : 'none'};

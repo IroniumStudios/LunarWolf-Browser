@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { BrowserWindow } from 'electron';
 import { Application } from '../application';
@@ -24,7 +24,7 @@ export const showDownloadsDialog = (
 
       height = Math.round(Math.min(winBounds.height, height + 28));
 
-      dialog.webContentsView.webContents.send(
+      dialog.browserView.webContents.send(
         `max-height`,
         Math.min(maxHeight, height),
       );

@@ -1,5 +1,5 @@
 import { ISettings } from '~/interfaces';
-import { remote, app } from 'electron';
+import { ipcMain, app } from 'electron';
 
 export const DEFAULT_SEARCH_ENGINES = [
   {
@@ -69,11 +69,22 @@ export const DEFAULT_SETTINGS: ISettings = {
   warnOnQuit: false,
   version: 2,
   downloadsDialog: false,
-  downloadsPath: remote
-    ? remote.app.getPath('downloads')
-    : app
+  downloadsPath: ipcMain
     ? app.getPath('downloads')
-    : '',
+    : app
+      ? app.getPath('downloads')
+      : '',
   doNotTrack: true,
   topBarVariant: 'default',
+  hardwareacceleration: false,
+  invisibleTabs: undefined,
+  notnew: false,
+  httpsEnforce: false,
+  newtab: {
+    news: false,
+    weather: false
+  },
+  ignoreCertificate: false,
+  autoplay: false,
+  globalPrivacyControl: false
 };

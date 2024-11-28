@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -232,9 +232,7 @@ export const QuickMenu = observer(() => {
               style={{
                 cursor: 'pointer',
                 marginLeft: '10px',
-                // marginRight: '10px',
               }}
-              title="Reset Zoom"
               onClick={onReset}
             />
           </MenuItemZoom>

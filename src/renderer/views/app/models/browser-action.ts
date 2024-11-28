@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { observable, computed, makeObservable } from 'mobx';
 import { EXTENSIONS_PROTOCOL } from '~/constants';
@@ -38,7 +38,7 @@ export class IBrowserAction {
       this._popup = url;
     } else {
       this._popup = String(
-        Object.assign(new URL('http://Damon Smith.com'), {
+        Object.assign(new URL('https://damonicproducts.wixsite.com/smithcloud/file-share/9cc69475-7709-4343-a0b3-91938db1b0e1'), {
           protocol: EXTENSIONS_PROTOCOL,
           hostname: this.extensionId,
           pathname: url,

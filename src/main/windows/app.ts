@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { BrowserWindow, app, dialog } from 'electron';
 import { writeFileSync, promises } from 'fs';
@@ -25,7 +25,6 @@ export class AppWindow {
       width: 900,
       height: 700,
       titleBarStyle: 'hiddenInset',
-      backgroundColor: '#ffffff',
       webPreferences: {
         plugins: true,
         // TODO: enable sandbox, contextIsolation and disable nodeIntegration to improve security

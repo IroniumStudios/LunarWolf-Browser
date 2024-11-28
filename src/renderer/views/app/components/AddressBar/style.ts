@@ -2,7 +2,12 @@ import styled, { css } from 'styled-components';
 import { ITheme } from '~/interfaces';
 import { BLUE_300 } from '~/renderer/constants';
 
-export const StyledAddressBar = styled.div`
+interface StyledAddressBarProps {
+  theme: ITheme;
+  focus: boolean;
+}
+
+export const StyledAddressBar = styled.div<StyledAddressBarProps>`
   height: 30px;
   flex: 1;
   border-radius: 4px;
@@ -10,11 +15,10 @@ export const StyledAddressBar = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-
   font-size: 15px;
   overflow: hidden;
 
-  ${({ theme, focus }: { theme: ITheme; focus: boolean }) => css`
+  ${({ theme, focus }) => css`
     background-color: ${theme['addressbar.backgroundColor']};
     border: 1px solid
       ${theme.isCompact
@@ -48,7 +52,11 @@ export const InputContainer = styled.div`
   overflow: hidden;
 `;
 
-export const Text = styled.div`
+interface TextProps {
+  visible: boolean;
+}
+
+export const Text = styled.div<TextProps>`
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -60,12 +68,17 @@ export const Text = styled.div`
   white-space: nowrap;
   overflow: hidden;
   font-size: 14px;
-  ${({ visible }: { visible: boolean; theme: ITheme }) => css`
+  ${({ visible }) => css`
     display: ${visible ? 'flex' : 'none'};
   `};
 `;
 
-export const Input = styled.input`
+interface InputProps {
+  visible: boolean;
+  theme: ITheme;
+}
+
+export const Input = styled.input<InputProps>`
   outline: none;
   min-width: 0;
   width: 100%;
@@ -79,7 +92,7 @@ export const Input = styled.input`
   word-spacing: inherit;
   font-size: 14px;
 
-  ${({ visible, theme }: { visible: boolean; theme: ITheme }) => css`
+  ${({ visible, theme }) => css`
     color: ${visible ? 'inherit' : 'transparent'};
 
     &::placeholder {

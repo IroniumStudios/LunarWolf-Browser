@@ -1,0 +1,3 @@
+this project is just to help out the community, for the parts of the code that belog to the browser base project 
+i gave them full credit i am not taking credit for there work, i am just contenuing it with my own twist, therefor i am using the code they originally had with the open source license before the current project ehy have became closed sourcee so i am trying to keep everything clean and clear any confusion
+i really liked there project and wish that they dident discontenue or sell it , so i did others a favor and preserved the project so that we can keep it modern and fresh.

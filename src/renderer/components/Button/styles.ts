@@ -1,14 +1,14 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 
 interface StyledButtonProps {
-  background: string;
-  foreground: string;
+  background?: string;
+  foreground?: string;
   type?: 'contained' | 'outlined';
 }
 
-export const StyledButton = styled.div`
+export const StyledButton = styled.div<StyledButtonProps>`
   min-width: 80px;
   width: fit-content;
   height: 32px;
@@ -37,17 +37,13 @@ export const StyledButton = styled.div`
     opacity: 0.12;
   }
 
-  ${({ background, foreground, type }: StyledButtonProps) => css`
-    color: ${foreground || '#fff'};
-    border: ${type === 'outlined'
-      ? `1px solid ${background || '#2196F3'}`
-      : 'unset'};
-    background-color: ${type === 'outlined'
-      ? 'transparent'
-      : background || '#2196F3'};
+  ${({ background = '#2196F3', foreground = '#fff', type }: StyledButtonProps) => css`
+    color: ${foreground};
+    border: ${type === 'outlined' ? `1px solid ${background}` : 'unset'};
+    background-color: ${type === 'outlined' ? 'transparent' : background};
 
     &::before {
-      background-color: ${foreground || '#fff'};
+      background-color: ${foreground};
     }
   `};
 `;

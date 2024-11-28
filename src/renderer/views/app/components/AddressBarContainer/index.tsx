@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -7,11 +7,10 @@ import { StyledAddressBarContainer } from './style';
 import store from '../../store';
 
 export const AddressBarContainer = observer(() => {
+  if (!store.addressbarFocused && !store.addressbarEditing) return null;
+
   return (
-    <StyledAddressBarContainer
-      onMouseDown={() => store.inputRef.blur()}
-      visible={store.addressbarFocused || store.addressbarEditing}
-    >
+    <StyledAddressBarContainer onMouseDown={() => store.inputRef.blur()}>
       <AddressBar />
     </StyledAddressBarContainer>
   );

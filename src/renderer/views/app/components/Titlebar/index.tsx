@@ -35,8 +35,8 @@ export const Titlebar = observer(() => {
   return (
     <StyledTitlebar
       onMouseDown={onMouseDown}
-      isFullscreen={store.isFullscreen}
-      isHTMLFullscreen={store.isHTMLFullscreen}
+    // TODO:  isFullscreen={store.isFullscreen}
+    // TODO  isHTMLFullscreen={store.isHTMLFullscreen}
     >
       {store.isCompact && <NavigationButtons />}
       <Tabbar />

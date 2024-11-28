@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -34,7 +34,6 @@ const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
   }
 
   if (store.isCompact) {
-    // ipcRenderer.send(`window-fix-dragging-${store.windowId}`);
     e.currentTarget.select();
   }
 };
@@ -122,9 +121,6 @@ const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
   store.addressbarFocused = false;
   mouseUpped = false;
 
-  // if (store.isCompact && !store.addressbarEditing)
-  //   ipcRenderer.send(`window-fix-dragging-${store.windowId}`);
-
   const { selectedTab } = store.tabs;
 
   if (selectedTab) {
@@ -165,6 +161,7 @@ export const AddressBar = observer(() => {
   const searchValue = React.useMemo(() => {
     return searchEngine ?? store.addressbarValue;
   }, [store.addressbarValue]);
+
   return (
     <StyledAddressBar
       ref={(r) => (addressbarRef = r)}
@@ -176,7 +173,8 @@ export const AddressBar = observer(() => {
         icon={ICON_SEARCH}
         size={16}
         dense
-        inhertTextColor
+  //     TODO: fix bug with text colors when on other platforms and fix type errer
+//        inhertTextColor={true} // Corrected to boolean
         iconStyle={{ transform: 'scale(-1,1)' }}
       />
       <InputContainer>
@@ -193,7 +191,7 @@ export const AddressBar = observer(() => {
           placeholder="Search or type in a URL"
           visible={!store.addressbarTextVisible || searchValue === ''}
           value={searchValue}
-        ></Input>
+        />
         <Text visible={store.addressbarTextVisible && searchValue !== ''}>
           {searchEngine ? (
             <div>{searchValue}</div>

@@ -1,7 +1,7 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { ipcMain, app, crashReporter, webContents } from 'electron';
-import { setIpcMain } from '@ironiumstudios/rpc-electron';
+import { setIpcMain } from '@wexondrpc-electron';
 setIpcMain(ipcMain);
 
 console.log(app.getPath('crashDumps'))
@@ -16,9 +16,11 @@ if (process.env.NODE_ENV === 'development') {
 import { platform } from 'os';
 import { Application } from './application';
 
+export const isProduction = app.name === 'LunarWolf';
+
 export const isNightly = app.name === 'lunarwolf-nightly';
 
-app.name = isNightly ? 'lunarwolf Nightly' : 'LunarWolf';
+app.name = isNightly ? 'LunarWolf Nightly' : 'LunarWolf';
 
 app.commandLine.appendSwitch('new-canvas-2d-api');
 app.commandLine.appendSwitch('enable-local-file-accesses');
@@ -26,7 +28,6 @@ app.commandLine.appendSwitch('enable-quic');
 app.commandLine.appendSwitch('enable-ui-devtools');
 app.commandLine.appendSwitch('ignore-gpu-blocklist');
 app.commandLine.appendSwitch('enable-gpu-rasterization');
-app.commandLine.appendSwitch('enable-zero-copy');
 app.commandLine.appendSwitch('enable-webgl-draft-extensions');
 app.commandLine.appendSwitch('enable-transparent-visuals');
 app.commandLine.appendSwitch('disable-background-timer-throttling');
@@ -102,10 +103,25 @@ ipcMain.handle(
   },
 );
 
-// We need to prevent extension background pages from being garbage collected.
-const backgroundPages: Electron.WebContents[] = [];
+const extensionServiceWorkers: Electron.WebContents[] = [];
 
 app.on('web-contents-created', (e, webContents) => {
-  if (webContents.getType() === 'backgroundPage')
-    backgroundPages.push(webContents);
+  // We can't check for 'serviceworker' directly, but we can use the 'did-finish-load' or other events
+  // to detect when the service worker is likely to be loaded or active.
+  
+  // Listen for the 'did-finish-load' event to check when a service worker is active
+  webContents.on('did-finish-load', () => {
+    // Check if the content is related to a service worker script or extension
+    if (webContents.getURL().includes('service-worker.js')) {
+      extensionServiceWorkers.push(webContents);
+      
+      // Keep the service worker alive by monitoring the 'destroyed' event
+      webContents.on('destroyed', () => {
+        const index = extensionServiceWorkers.indexOf(webContents);
+        if (index !== -1) {
+          extensionServiceWorkers.splice(index, 1);
+        }
+      });
+    }
+  });
 });

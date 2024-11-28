@@ -15,7 +15,7 @@ import {
 import { ICON_VOLUME_HIGH, ICON_VOLUME_OFF } from '~/renderer/constants';
 import { ITab, ITabGroup } from '../../models';
 import store from '../../store';
-import { ipcRenderer, nativeImage, Menu } from 'electron';
+import { ipcRenderer, nativeImage, Menu, NativeImage } from 'electron';
 import { COMPACT_TAB_MARGIN_TOP } from '~/constants/design';
 
 const removeTab = (tab: ITab) => (e: React.MouseEvent<HTMLDivElement>) => {
@@ -147,9 +147,17 @@ const onContextMenu = (tab: ITab) => () => {
       label: 'Reload',
       accelerator: 'CmdOrCtrl+R',
       click: () => {
-        tab.webContents.reload();
+        try {
+          if (tab && tab.webContents) {
+            tab.webContents.reloadIgnoringCache();
+          } else {
+            console.error('Tab or webContents not found');
+          }
+        } catch (error) {
+          console.error('Error reloading the tab:', error);
+        }
       },
-    },
+    },    
     {
       label: 'Duplicate',
       click: () => {
@@ -266,9 +274,9 @@ const tabGroupLabel = (tabGroup: ITabGroup): string => {
   return label;
 };
 
-const tabGroupIcon = (color: string): nativeImage => {
-  var canvas = document.createElement('canvas');
-  var context = canvas.getContext('2d');
+const tabGroupIcon = (color: string): NativeImage => {
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
   canvas.width = canvas.height = 12;
 
   context.fillStyle = color;

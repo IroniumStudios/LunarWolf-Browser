@@ -1,6 +1,6 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer, ipcMain, BrowserWindow } from 'electron';
 import { makeObservable, observable } from 'mobx';
 import { DialogStore } from '~/models/dialog-store';
 
@@ -26,12 +26,14 @@ export class Store extends DialogStore {
   }
 
   public async capturePage() {
-    return await remote
-      .getCurrentWindow()
-      .capturePage()
-      .then((img: { toDataURL: () => any }) => {
-        return img.toDataURL();
-      });
+    // Access the current window via the renderer's window object
+    const currentWindow = BrowserWindow.getFocusedWindow();
+
+    if (currentWindow) {
+      const img = await currentWindow.capturePage();
+      return img.toDataURL();
+    }
+    throw new Error("No focused window found.");
   }
 
   // public async init() {  }

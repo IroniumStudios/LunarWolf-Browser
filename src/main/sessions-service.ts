@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { session, ipcMain } from 'electron';
 import { getPath, makeId } from '~/utils';
@@ -56,17 +56,9 @@ export class SessionsService {
       });
     }
 
-    /*
-    // TODO:
-    ipcMain.handle(`inspect-extension`, (e, incognito, id) => {
-      const context = incognito ? this.extensionsIncognito : this.extensions;
-      context.extensions[id].backgroundPage.webContents.openDevTools();
-    });
-    */
-
     this.view.setPermissionRequestHandler(
       async (webContents, permission, callback, details) => {
-        const window = Application.instance.windows.findByContentsView(
+        const window = Application.instance.windows.findByContentView(
           webContents.id,
         );
     
@@ -118,7 +110,7 @@ export class SessionsService {
           }
         }
       },
-    );    
+    );
 
     const getDownloadItem = (
       item: Electron.DownloadItem,
@@ -143,11 +135,10 @@ export class SessionsService {
       return downloads;
     });
 
-    // TODO(sentialx): clean up the download listeners
     this.view.on('will-download', (event, item, webContents) => {
       const fileName = item.getFilename();
       const id = makeId(32);
-      const window = Application.instance.windows.findByContentsView(
+      const window = Application.instance.windows.findByContentView(
         webContents.id,
       );
 
@@ -313,7 +304,6 @@ export class SessionsService {
     */
   }
 
-  // Loading extensions in an off the record BrowserContext is not supported.
   public async loadExtensions() {
     if (!process.env.ENABLE_EXTENSIONS) return;
 
@@ -338,10 +328,6 @@ export class SessionsService {
         console.error(e);
       }
     }
-
-    /*if (session === 'incognito') {
-      this.incognitoExtensionsLoaded = true;
-    }*/
 
     this.extensionsLoaded = true;
   }

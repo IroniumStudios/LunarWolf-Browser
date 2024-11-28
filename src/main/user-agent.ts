@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { app } from 'electron';
 
@@ -13,9 +13,11 @@ const COMPONENTS_TO_REMOVE = [
   ` ${app.name}/${app.getVersion()}`,
 ];
 
-// TODO(sentialx): script to update stable Chrome version?
+// Dynamically get the current Chromium version
+const chromiumVersion = process.versions.chrome;
+
 const COMPONENTS_TO_REPLACE: [string | RegExp, string][] = [
-  [CHROME_COMPONENT_PATTERN, ' Chrome/126.0.6478.234'],
+  [CHROME_COMPONENT_PATTERN, ` Chrome/${chromiumVersion}`],
 ];
 
 const urlMatchesPatterns = (url: string, patterns: RegExp[]) =>

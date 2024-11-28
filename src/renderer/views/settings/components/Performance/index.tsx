@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 
@@ -27,7 +27,7 @@ export const Performance = () => {
     <>
       <Header>Performance Settings</Header>
       <span>
-        lunarwolf offers an easy way to control startup options regarding performance and other perfromance options you may find useful. Typically, we do not recommend editing the settings unless you know what you are doing.
+        LunarWolf Browser offers an easy way to control startup options regarding performance and other perfromance options you may find useful. Typically, we do not recommend editing the settings unless you know what you are doing.
       </span>
       <br></br>
       <HWAToggle />

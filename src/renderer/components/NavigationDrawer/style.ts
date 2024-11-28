@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 
@@ -6,7 +6,11 @@ import { transparency, ICON_SEARCH } from '~/renderer/constants';
 import { ITheme } from '~/interfaces';
 import { centerIcon, noButtons } from '~/renderer/mixins';
 
-export const StyledNavigationDrawer = styled.div`
+interface StyledNavigationDrawerProps {
+  dense?: boolean;
+}
+
+export const StyledNavigationDrawer = styled.div<StyledNavigationDrawerProps>`
   height: 100%;
   left: 0;
   display: flex;
@@ -15,9 +19,7 @@ export const StyledNavigationDrawer = styled.div`
 
   ${({ theme, dense }: { theme?: ITheme; dense?: boolean }) => css`
     padding: ${dense ? 0 : '0 32px'};
-
     width: ${dense ? 56 : 320}px;
-
     background-color: ${dense
       ? theme['pages.navigationDrawer1.backgroundColor']
       : theme['pages.navigationDrawer2.backgroundColor']};
@@ -48,7 +50,6 @@ export const Title = styled.div`
 export const Input = styled.input`
   border: none;
   outline: none;
-
   width: 100%;
   padding-left: 42px;
   background-color: transparent;
@@ -72,7 +73,6 @@ export const Search = styled.div`
   margin-top: 24px;
   height: 42px;
   border-radius: 30px;
-
   position: relative;
 
   ${({ theme }: { theme?: ITheme }) => css`

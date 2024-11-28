@@ -1,8 +1,10 @@
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
+
 import { ITheme } from '~/interfaces';
 import { BLUE_500 } from './colors';
 
 export const lightTheme: ITheme = {
-  'titlebar.backgroundColor': '#e0e0e0', // Lightened titlebar color
+  'titlebar.backgroundColor': '#d4d4d4',
   'addressbar.backgroundColor': '#fff',
   'addressbar.textColor': '#000',
   'toolbar.backgroundColor': '#f8f8f8',
@@ -36,25 +38,25 @@ export const lightTheme: ITheme = {
 };
 
 export const darkTheme: ITheme = {
-  'titlebar.backgroundColor': '#232323',
+  'titlebar.backgroundColor': '#1c1c1c',
   'addressbar.backgroundColor': '#262626',
   'addressbar.textColor': '#fff',
-  'toolbar.backgroundColor': '#373737',
+  'toolbar.backgroundColor': '#333333',
   'toolbar.bottomLine.backgroundColor': 'rgba(255, 255, 255, 0.08)',
   'toolbar.lightForeground': true,
   'toolbar.separator.color': 'rgba(255, 255, 255, 0.12)',
   'tab.selected.textColor': '#fff',
-  'tab.textColor': 'rgba(255, 255, 255, 0.7)',
+  'tab.textColor': 'rgba(255, 255, 255, 0.54)',
   'control.backgroundColor': 'rgba(255, 255, 255, 0.1)',
   'control.hover.backgroundColor': 'rgba(255, 255, 255, 0.12)',
   'control.valueColor': '#fff',
   'control.lightIcon': true,
   'switch.backgroundColor': 'rgba(255, 255, 255, 0.24)',
-  'dialog.backgroundColor': '#1f1f1f',
+  'dialog.backgroundColor': '#383838',
   'dialog.separator.color': 'rgba(255, 255, 255, 0.12)',
   'dialog.textColor': '#fff',
   'dialog.lightForeground': true,
-  'searchBox.backgroundColor': '#272727',
+  'searchBox.backgroundColor': '#262626',
   'searchBox.lightForeground': true,
   'pages.backgroundColor': '#212121',
   'pages.lightForeground': true,

@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 
@@ -6,7 +6,15 @@ import { shadows, centerIcon } from '~/renderer/mixins';
 import { ITheme } from '~/interfaces';
 import { DIALOG_EASING } from '~/renderer/constants';
 
-export const ContextMenu = styled.div`
+// Types for ContextMenu props
+interface ContextMenuProps {
+  visible: boolean;
+  theme?: ITheme;
+  bigger?: boolean;
+  translucent?: boolean;
+}
+
+export const ContextMenu = styled.div<ContextMenuProps>`
   outline: none;
   position: absolute;
   backface-visibility: hidden;
@@ -18,17 +26,7 @@ export const ContextMenu = styled.div`
   box-shadow: ${shadows(8)};
   border-radius: 4px;
 
-  ${({
-    visible,
-    theme,
-    bigger,
-    translucent,
-  }: {
-    visible: boolean;
-    theme?: ITheme;
-    bigger?: boolean;
-    translucent?: boolean;
-  }) => css`
+  ${({ visible, theme, bigger, translucent }) => css`
     padding: ${bigger ? 8 : 4}px 0;
     transition: ${visible
       ? `0.35s opacity ${DIALOG_EASING}, 0.35s transform ${DIALOG_EASING}`
@@ -37,17 +35,23 @@ export const ContextMenu = styled.div`
     transform: translate3d(0px, ${visible ? 0 : -10}px, 0px);
     pointer-events: ${visible ? 'inherit' : 'none'};
     background-color: ${translucent
-      ? theme['dropdown.backgroundColor.translucent']
-      : theme['dropdown.backgroundColor']};
+      ? theme?.['dropdown.backgroundColor.translucent']
+      : theme?.['dropdown.backgroundColor']};
   `}
 `;
 
-export const ContextMenuSeparator = styled.div`
+// Types for ContextMenuSeparator props
+interface ContextMenuSeparatorProps {
+  theme?: ITheme;
+  bigger?: boolean;
+}
+
+export const ContextMenuSeparator = styled.div<ContextMenuSeparatorProps>`
   height: 1.5px;
   width: 100%;
 
-  ${({ theme, bigger }: { theme?: ITheme; bigger?: boolean }) => css`
-    background-color: ${theme['dropdown.separator.color']};
+  ${({ theme, bigger }) => css`
+    background-color: ${theme?.['dropdown.separator.color']};
     margin: ${bigger ? 8 : 4}px 0px;
   `}
 `;
@@ -58,6 +62,7 @@ export const ContextMenuRow = styled.div`
   align-items: center;
 `;
 
+// Props for ContextMenuItem
 export interface ContextMenuItemProps {
   icon?: string;
   selected?: boolean;
@@ -68,20 +73,12 @@ export interface ContextMenuItemProps {
   disabled?: boolean;
 }
 
-export const ContextMenuItem = styled.div`
+export const ContextMenuItem = styled.div<ContextMenuItemProps>`
   padding: 12px 24px;
   font-weight: 400;
   position: relative;
 
-  ${({
-    icon,
-    selected,
-    theme,
-    bigger,
-    visible,
-    iconSize,
-    disabled,
-  }: ContextMenuItemProps) => css`
+  ${({ icon, selected, theme, bigger, visible, iconSize = 23, disabled }) => css`
     pointer-events: ${disabled ? 'none' : 'inherit'};
     opacity: ${disabled ? 0.38 : 1};
     font-size: ${bigger ? 14 : 13}px;
@@ -89,13 +86,13 @@ export const ContextMenuItem = styled.div`
     align-items: center;
     display: ${visible === undefined || visible ? 'flex' : 'none'};
     background-color: ${selected
-      ? theme['control.lightIcon']
+      ? theme?.['control.lightIcon']
         ? 'rgba(255, 255, 255, 0.15)'
         : 'rgba(0, 0, 0, 0.1)'
       : 'none'};
 
     &:hover {
-      background-color: ${theme['control.lightIcon']
+      background-color: ${theme?.['control.lightIcon']
         ? `rgba(255, 255, 255, ${selected ? 0.15 : 0.08})`
         : `rgba(0, 0, 0, ${selected ? 0.1 : 0.06})`};
     }
@@ -105,7 +102,7 @@ export const ContextMenuItem = styled.div`
       padding-left: ${16 + iconSize + 12}px;
       &:before {
         content: '';
-        filter: ${theme['control.lightIcon'] ? 'invert(100%)' : 'none'};
+        filter: ${theme?.['control.lightIcon'] ? 'invert(100%)' : 'none'};
         opacity: 0.54;
         ${centerIcon()};
         width: ${iconSize}px;

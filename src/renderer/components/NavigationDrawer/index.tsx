@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 
@@ -12,14 +12,8 @@ import {
 } from './style';
 import { NavigationDrawerItem } from './NavigationDrawerItem';
 
-export const NavigationDrawer = ({
-  children,
-  title,
-  search,
-  onSearchInput,
-  style,
-  dense,
-}: {
+// Define the prop type for StyledNavigationDrawer to include dense
+interface NavigationDrawerProps {
   children?: any;
   title?: string;
   search?: boolean;
@@ -27,6 +21,20 @@ export const NavigationDrawer = ({
   onBackClick?: (e?: React.MouseEvent<HTMLDivElement>) => void;
   style?: any;
   dense?: boolean;
+}
+
+// Create a custom type for NavigationDrawer with an Item static property
+interface NavigationDrawerComponent extends React.FC<NavigationDrawerProps> {
+  Item: typeof NavigationDrawerItem;
+}
+
+export const NavigationDrawer: NavigationDrawerComponent = ({
+  children,
+  title,
+  search,
+  onSearchInput,
+  style,
+  dense,
 }) => {
   return (
     <StyledNavigationDrawer style={style} dense={dense}>

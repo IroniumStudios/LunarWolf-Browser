@@ -1,6 +1,6 @@
 # Extensions
 
-lunarwolf has partial support for Chrome extensions (see [#110](https://github.com/lunarwolf/desktop/issues/110)).
+lunarwolf has partial support for Chrome extensions
 
 # Installing an extension
 

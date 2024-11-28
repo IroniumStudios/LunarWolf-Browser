@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { WebContentsView, app, ipcMain } from 'electron';
 import { URL } from 'url';
@@ -86,8 +86,6 @@ export class View {
       },
     });
 
-    this.webContentsView.setBackgroundColor('#FFFFFFFF');
-
     this.incognito = incognito;
 
     this.webContents.userAgent = getUserAgentForURL(
@@ -134,7 +132,6 @@ export class View {
     });
 
     this.webContents.addListener('did-navigate', async (e, url) => {
-      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.emitEvent('did-navigate', url);
       await this.addHistoryItem(url);
       await this.updateURL(url);
@@ -144,7 +141,6 @@ export class View {
       'did-navigate-in-page',
       async (e, url, isMainFrame) => {
         if (isMainFrame) {
-          this.webContentsView.setBackgroundColor('#FFFFFFFF');
           this.window.updateTitle();
           await this.updateData();
 
@@ -161,14 +157,12 @@ export class View {
     );
 
     this.webContents.addListener('did-stop-loading', async () => {
-      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.updateNavigationState();
       this.emitEvent('loading', false);
       await this.updateURL(this.webContents.getURL());
     });
 
     this.webContents.addListener('did-start-loading', async () => {
-      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.hasError = false;
       this.updateNavigationState();
       this.emitEvent('loading', true);
@@ -176,7 +170,6 @@ export class View {
     });
 
     this.webContents.addListener('did-start-navigation', async (e, ...args) => {
-      this.webContentsView.setBackgroundColor('#FFFFFFFF');
       this.updateNavigationState();
 
       this.favicon = '';
@@ -309,14 +302,7 @@ export class View {
     (async () => {
       await this.webContents.loadURL(url);
     })();
-
-//      TODO:
-//    this.webContentsView.setAutoResize({
-//      width: true,
-//      height: true,
-//      horizontal: false,
-//      vertical: false,
-//    });
+    // if i am correct WebContentsView does not require a setAudoResize Value.
   }
   updateFavicon() {
     throw new Error('Method not implemented.');
@@ -347,8 +333,8 @@ export class View {
 
     if (this.window.viewManager.selectedId === this.id) {
       this.window.send('update-navigation-state', {
-        canGoBack: this.webContents.canGoBack(),
-        canGoForward: this.webContents.canGoForward(),
+        canGoBack: this.webContents.navigationHistory.canGoBack(),
+        canGoForward: this.webContents.navigationHistory.canGoForward(),
       });
       this.window.send('update-navigation-state-ui', {
         url: this.webContents.getURL(),

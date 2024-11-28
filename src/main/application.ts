@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { app, ipcMain, Menu } from 'electron';
 import { isAbsolute, extname } from 'path';
@@ -108,7 +108,7 @@ export class Application {
     app.on('login', async (e, webContents, request, authInfo, callback) => {
       e.preventDefault();
 
-      const window = this.windows.findByContentsView(webContents.id);
+      const window = this.windows.findByContentView(webContents.id);
       const credentials = await requestAuth(
         window.win,
         request.url,

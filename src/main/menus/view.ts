@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { AppWindow } from '../windows';
 import { clipboard, Menu } from 'electron';
@@ -218,7 +218,7 @@ export const getViewMenu = (
       {
         label: 'Go back',
         accelerator: 'Alt+Left',
-        enabled: webContents.canGoBack(),
+        enabled: webContents.navigationHistory.canGoBack(),
         click: () => {
           webContents.goBack();
         },
@@ -226,7 +226,7 @@ export const getViewMenu = (
       {
         label: 'Go forward',
         accelerator: 'Alt+Right',
-        enabled: webContents.canGoForward(),
+        enabled: webContents.navigationHistory.canGoForward(),
         click: () => {
           webContents.goForward();
         },

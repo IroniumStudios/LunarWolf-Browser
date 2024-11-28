@@ -1,6 +1,6 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer, ipcMain } from 'electron';
 import { makeObservable, observable } from 'mobx';
 import { DialogStore } from '~/models/dialog-store';
 

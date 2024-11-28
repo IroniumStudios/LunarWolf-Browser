@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* Copyright (c) 2021-2024 lunarwolf Browser Project */
 
 import styled, { css } from 'styled-components';
 import { Button } from '../ToolbarButton/style';
@@ -19,7 +19,6 @@ import {
 
 export const StyledDefaultBrowser = styled.div`
   position: relative;
-  /* z-index: 100; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,7 +47,7 @@ export const Line = styled.div`
   height: 1px;
   width: 100%;
 
-  ${({ theme }: { theme?: ITheme }) => css`
+  ${({ theme }: { theme: ITheme }) => css`
     background-color: ${theme['dialog.separator.color']};
   `};
 `;
@@ -80,14 +79,13 @@ export const ButtonPredeterminado = styled.div`
   border-radius: 5px;
   cursor: pointer;
   transition: 0.2s;
-  /* margin: 2.5px 0 0 0; */
   margin-left: 25px;
   font-size: 12px;
   font-weight: 500;
   width: auto;
   min-width: 200px;
 
-  ${({ theme }: { theme?: ITheme }) => css`
+  ${({ theme }: { theme: ITheme }) => css`
     background: ${theme['addressbar.textColor'] == '#fff'
       ? '#8ab4f8'
       : '#267ae9'};
@@ -101,7 +99,12 @@ export const ButtonPredeterminado = styled.div`
   `};
 `;
 
-export const Close = styled.div`
+type CloseProps = {
+  icon: string;
+  theme: ITheme;
+};
+
+export const Close = styled.div<CloseProps>`
   width: 18px;
   height: 18px;
   opacity: ${transparency.icons.inactive};
@@ -111,7 +114,7 @@ export const Close = styled.div`
   margin-right: 1.5%;
   ${centerIcon('contain')};
 
-  ${({ icon, theme }: { icon: string; theme?: ITheme }) => css`
+  ${({ icon, theme }) => css`
     background-image: url(${icon});
     filter: ${theme['pages.lightForeground'] ? 'invert(100%)' : 'none'};
   `};

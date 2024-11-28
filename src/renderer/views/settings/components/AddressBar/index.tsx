@@ -1,22 +1,27 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
-
 import { Dropdown } from '~/renderer/components/Dropdown';
 import { Switch } from '~/renderer/components/Switch';
 import { Title, Control, Header, Back, Row } from '../App/style';
 import store from '../../store';
 import { onSwitchChange } from '../../utils';
 import { observer } from 'mobx-react-lite';
+import styled from 'styled-components';
 import {
   EnginesTable,
-  TableRow,
+  TableRow as StyledTableRow,
   TableCell,
   TableHeader,
   MoreButton,
 } from './style';
 import { NormalButton } from '../App';
 import { ISearchEngine } from '~/interfaces';
+
+// Update TableRow to accept a `bold` prop
+const TableRow = styled(StyledTableRow)<{ bold?: boolean }>`
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+`;
 
 const SuggestionsToggle = observer(() => {
   const { suggestions } = store.settings;
@@ -100,8 +105,6 @@ const onAddClick = () => {
   store.searchEngineUrlInputRef.current.value = '';
 };
 
-{
-  /*
 export const ManageSearchEngines = observer(() => {
   return (
     <>
@@ -130,9 +133,6 @@ export const ManageSearchEngines = observer(() => {
   );
 });
 
-*/
-}
-
 const onManageSearchEngines = () => {
   store.selectedSection = 'search-engines';
 };
@@ -143,10 +143,10 @@ export const AddressBar = observer(() => {
       <Header>Address bar</Header>
       <SuggestionsToggle />
       <SearchEngineRow />
-      {/*  <Row onClick={onManageSearchEngines}>
-         <Title>Manage search engines</Title>
-         <Control></Control>
-         </Row> */}
+      <Row onClick={onManageSearchEngines}>
+        <Title>Manage search engines</Title>
+        <Control></Control>
+      </Row>
     </>
   );
 });
