@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { observable, computed, makeObservable } from 'mobx';
 import * as React from 'react';

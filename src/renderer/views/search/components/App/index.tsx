@@ -106,7 +106,7 @@ export const App = observer(() => {
 
   if (suggestion && suggestionsVisible) {
     // Check if the suggestion has a valid favicon URL
-    if (suggestion.favicon && suggestion.favicon.trim() !== '') {
+    if (suggestion.favicon && typeof suggestion.favicon === 'string' && suggestion.favicon.trim() !== '') {
       favicon = suggestion.favicon;
       customIcon = false;
 

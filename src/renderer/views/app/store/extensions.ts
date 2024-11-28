@@ -44,8 +44,11 @@ export class ExtensionsStore {
     if (this.defaultBrowserActions.find((x) => x.extensionId === extension.id))
       return;
 
-    if (extension.manifest.browser_action) {
-      const { default_icon, default_title } = extension.manifest.browser_action;
+    // In Manifest V3, we use "action" instead of "browser_action"
+    const action = extension.manifest.action;
+
+    if (action) {
+      const { default_icon, default_title } = action;
 
       let icon1 = default_icon;
 
@@ -69,7 +72,7 @@ export class ExtensionsStore {
         extensionId: extension.id,
         icon,
         title: default_title,
-        popup: extension.manifest?.browser_action?.default_popup,
+        popup: action?.default_popup,
       });
 
       this.defaultBrowserActions.push(browserAction);

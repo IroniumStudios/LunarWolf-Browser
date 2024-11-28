@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import styled, { css } from 'styled-components';
@@ -20,7 +20,11 @@ export const CloseButton = () => {
   );
 };
 
-export const Dialog = styled.div`
+interface DialogProps {
+  visible: boolean;
+}
+
+export const Dialog = styled.div<DialogProps>`
   width: 100%;
   max-width: 512px;
   height: fit-content;
@@ -31,7 +35,7 @@ export const Dialog = styled.div`
   transition: 0.15s transform ${EASING_FUNCTION};
   ${robotoRegular()};
 
-  ${({ visible }: { visible: boolean }) => css`
+  ${({ visible }) => css`
     pointer-events: ${visible ? 'inherit' : 'none'};
     opacity: ${visible ? 1 : 0};
     transform: ${visible ? 'translate3d(0, 0, 0)' : 'translate3d(0, -24px, 0)'};

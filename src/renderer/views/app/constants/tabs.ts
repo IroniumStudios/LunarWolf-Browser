@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 export const TAB_MAX_WIDTH = 240;
 export const TAB_MIN_WIDTH = 72;

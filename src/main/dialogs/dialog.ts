@@ -1,6 +1,10 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
-import { WebContentsView, app, ipcMain, BrowserWindow } from 'electron';
+// NOTE: in the current version of electron BrowserView is used for more 
+// backend rendering for ui components
+// meanwhile WebContentsView is for the main web rendering.
+
+import { BrowserView, app, ipcMain, BrowserWindow, WebContentsView } from 'electron';
 import { join } from 'path';
 import { roundifyRectangle } from '../services/dialogs-service';
 
@@ -22,6 +26,7 @@ interface IRectangle {
 
 export class PersistentDialog {
   public browserWindow: BrowserWindow;
+  public browserView: BrowserView;
   public webContentsView: WebContentsView;
 
   public visible = false;
@@ -42,7 +47,7 @@ export class PersistentDialog {
   private showCallback: any = null;
 
   public constructor({ bounds, name, hideTimeout, webPreferences }: IOptions) {
-    this.webContentsView = new WebContentsView({
+    this.browserView = new BrowserView({
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
@@ -51,13 +56,13 @@ export class PersistentDialog {
         ...webPreferences,
       },
     });
-    require('@electron/remote/main').enable(this.webContentsView.webContents);
+    require('@electron/remote/main').enable(this.browserView.webContents);
 
     this.bounds = { ...this.bounds, ...bounds };
     this.hideTimeout = hideTimeout;
     this.name = name;
 
-    const { webContents } = this.webContentsView;
+    const { webContents } = this.browserView;
 
     ipcMain.on(`hide-${webContents.id}`, () => {
       this.hide(false, false);
@@ -86,7 +91,7 @@ export class PersistentDialog {
   }
 
   public get webContents() {
-    return this.webContentsView.webContents;
+    return this.browserView.webContents;
   }
 
   public get id() {
@@ -102,7 +107,7 @@ export class PersistentDialog {
     });
 
     if (this.visible) {
-      this.webContentsView.setBounds(this.bounds as any);
+      this.browserView.setBounds(this.bounds as any);
     }
   }
 
@@ -126,7 +131,8 @@ export class PersistentDialog {
 
         this.visible = true;
 
-        browserWindow.contentView.addChildView(this.webContentsView);
+        // when electron fixes it use browserWindow.contentView.addChildView(this.webContentsView);
+        browserWindow.addBrowserView(this.browserView);
         this.rearrange();
 
         if (focus) this.webContents.focus();
@@ -172,10 +178,12 @@ export class PersistentDialog {
 
     if (this.hideTimeout) {
       this.timeout = setTimeout(() => {
-        this.browserWindow.contentView.removeChildView(this.webContentsView);
+        // when electron fixes it use browserWindow.contentView.removeChildView(this.webContentsView);
+        this.browserWindow.removeBrowserView(this.browserView);
       }, this.hideTimeout);
     } else {
-      this.browserWindow.contentView.removeChildView(this.webContentsView);
+      // when electron fixes it use browserWindow.contentView.removeChildView(this.webContentsView);
+      this.browserWindow.removeBrowserView(this.browserView);
     }
 
     this.visible = false;
@@ -184,15 +192,15 @@ export class PersistentDialog {
   }
 
   public bringToTop() {
-    this.browserWindow.contentView.removeChildView(this.webContentsView);
-    this.browserWindow.contentView.addChildView(this.webContentsView);
+    // when electron fixes it use browserWindow.contentView.removeChildView(this.webContentsView);
+    this.browserWindow.removeBrowserView(this.browserView);
+
+    // when electron fixes it use browserWindow.contentView.addChildView(this.webContentsView);
+    this.browserWindow.addBrowserView(this.browserView); 
   }
 
   public destroy() {
-    if (this.browserWindow && this.webContentsView) {
-      this.browserWindow.contentView.removeChildView(this.webContentsView);
-  
-      this.webContentsView = null;
-    }
-  }  
+    this.browserView = null;
+    this.webContentsView = null;
+  }
 }

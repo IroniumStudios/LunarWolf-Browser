@@ -56,8 +56,11 @@ const mainConfig = getConfig({
   },
 
   resolve: {
+    // Added resolve.mainFields
+    mainFields: ['module', 'main'], // Ensure Webpack resolves `file-type` correctly
     fallback: {
       url: require.resolve('url/'),
+      fs: false, // Add fallback for `fs` if `file-type` or other modules depend on it
     },
     alias: {
       '@services': path.resolve(__dirname, 'src/services'),
@@ -89,6 +92,7 @@ const preloadConfig = getConfig({
   resolve: {
     fallback: {
       url: require.resolve('url/'),
+      fs: false, // Add fallback for `fs` in preload config as well
     },
     alias: {
       '@services': path.resolve(__dirname, 'src/services'),

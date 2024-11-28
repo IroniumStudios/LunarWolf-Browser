@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { dialog, ipcMain } from 'electron';
 import { View } from './view';
@@ -22,6 +22,7 @@ export class ViewManager extends EventEmitter {
   public incognito: boolean;
 
   private readonly window: AppWindow;
+  findByContentView: any;
 
   public get fullscreen() {
     return this._fullscreen;
@@ -92,8 +93,6 @@ export class ViewManager extends EventEmitter {
 
     ipcMain.removeHandler('get-tab-zoom');
     ipcMain.handle('get-tab-zoom', (e: any, tabId: number) => {
-      // const zoom = this.findByContentView(tabId).viewManager.views.get(tabId)
-      //  .webContents.zoomFactor;
       return this.selected.webContents.zoomFactor;
     });
 

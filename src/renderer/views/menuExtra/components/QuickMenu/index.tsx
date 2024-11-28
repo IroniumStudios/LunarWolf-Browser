@@ -1,8 +1,5 @@
-/* Copyright (c) 2021-2024 Damon Smith */
-
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
-
 import {
   Line,
   MenuItem,
@@ -14,9 +11,8 @@ import {
   RightControl,
 } from './style';
 import store from '../../store';
-import { ipcRenderer, remote, shell } from 'electron';
+import { ipcRenderer, shell } from 'electron';
 import * as copy from 'copy-to-clipboard';
-// import { WEBUI_BASE_URL, WEBUI_URL_SUFFIX } from '~/constants/files';
 import {
   ICON_FIRE,
   ICON_TOPMOST,
@@ -30,7 +26,10 @@ import {
   ICON_PRINT,
 } from '~/renderer/constants/icons';
 import { getWebUIURL } from '~/common/webui';
-// import { saveAs } from '~/main/menus/common-actions';
+
+interface StoreData {
+  url: string;
+}
 
 const onPrintClick = () => {
   ipcRenderer.send('Print', null);
@@ -60,24 +59,23 @@ const goToURL = (url: string) => () => {
 
 const onDuplicateTab = () => {
   ipcRenderer.send(`add-tab-${store.windowId}`, {
-    url: store.data.url,
+    url: (store.data as StoreData).url,
     active: true,
   });
 };
 
 const guardarComo = () => {
-  //saveAs();
   ipcRenderer.send('save-as-menu-extra');
 };
 
 const copiarUrl = async () => {
-  await copy(store.data.url);
+  await copy((store.data as StoreData).url);
   store.hide();
 };
 
 const shareUrl = () => {
   shell.openExternal(
-    'mailto:?subject=Shared From lunarwolf Browser&body=' + store.data.url,
+    'mailto:?subject=Shared From lunarwolf Browser&body=' + (store.data as StoreData).url,
   );
 };
 
@@ -85,48 +83,47 @@ const capture = async () => {
   copy(await store.capturePage());
 };
 
+interface IconProps {
+  icon: string;
+}
+
 export const QuickMenu = observer(() => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexFlow: 'column',
-      }}
-    >
+    <div style={{ display: 'flex', flexFlow: 'column' }}>
       <Content>
         <MenuItems>
           <MenuItem style={{ cursor: 'pointer' }} onClick={onDuplicateTab}>
-            <Icon icon={ICON_TAB} />
+            <Icon icon={ICON_TAB as IconProps['icon']} />
             <MenuItemTitle>Duplicate tab</MenuItemTitle>
           </MenuItem>
           <Line />
           <MenuItem style={{ cursor: 'pointer' }} onClick={copiarUrl}>
-            <Icon icon={ICON_TOPMOST} />
+            <Icon icon={ICON_TOPMOST as IconProps['icon']} />
             <MenuItemTitle>Copy link</MenuItemTitle>
           </MenuItem>
           <MenuItem style={{ cursor: 'pointer' }} onClick={shareUrl}>
-            <Icon icon={ICON_STAR} />
+            <Icon icon={ICON_STAR as IconProps['icon']} />
             <MenuItemTitle>Share</MenuItemTitle>
           </MenuItem>
           <Line />
           <MenuItem style={{ cursor: 'pointer' }} onClick={guardarComo}>
-            <Icon icon={ICON_DOWNLOAD} />
+            <Icon icon={ICON_DOWNLOAD as IconProps['icon']} />
             <MenuItemTitle>Save as</MenuItemTitle>
             <Shortcut>Ctrl+S</Shortcut>
           </MenuItem>
           <Line />
-          <MenuItem disabled style={{ cursor: 'pointer' }}>
-            <Icon icon={ICON_VOLUME_HIGH} />
+          <MenuItem disabled={true} style={{ cursor: 'pointer' }}>
+            <Icon icon={ICON_VOLUME_HIGH as IconProps['icon']} />
             <MenuItemTitle>Read out loud</MenuItemTitle>
           </MenuItem>
           <Line />
           <MenuItem style={{ cursor: 'pointer' }} onClick={onFindInPageClick}>
-            <Icon icon={ICON_FIND} />
+            <Icon icon={ICON_FIND as IconProps['icon']} />
             <MenuItemTitle>Find on the page</MenuItemTitle>
             <Shortcut>Ctrl+F</Shortcut>
           </MenuItem>
           <MenuItem style={{ cursor: 'pointer' }} onClick={onPrintClick}>
-            <Icon icon={ICON_PRINT} />
+            <Icon icon={ICON_PRINT as IconProps['icon']} />
             <MenuItemTitle>Print</MenuItemTitle>
             <Shortcut>Ctrl+P</Shortcut>
           </MenuItem>

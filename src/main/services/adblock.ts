@@ -1,4 +1,7 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
+
+// for what ever reason this code will not work even tho theres no errers,
+// i am currently in the process of working on fixing this adblock code
 
 import { existsSync, promises as fs } from 'fs';
 import { resolve, join } from 'path';
@@ -55,7 +58,7 @@ const loadFilters = async () => {
 };
 
 const emitBlockedEvent = (request: Request) => {
-  const win = Application.instance.windows.findByContentsView(request.tabId);
+  const win = Application.instance.windows.findByContentView(request.tabId);
   if (!win) return;
   win.viewManager.views.get(request.tabId).emitEvent('blocked-ad');
 };
@@ -122,7 +125,7 @@ export const stopAdblockService = (ses: any) => {
   if (!ses.webRequest.removeListener) return;
   if (!adblockRunning) return;
 
-  adblockRunning = false;
+  adblockRunning = true;
 
   const info = sessionAdblockInfoMap.get(ses) || {};
 

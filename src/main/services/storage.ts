@@ -1,9 +1,9 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { ipcMain, dialog } from 'electron';
 import Nedb, * as Datastore from '@seald-io/nedb';
 import { fileTypeFromBuffer } from 'file-type';
-import * as icojs from 'parse-ico';
+import * as icojs from 'icojs';
 //currently using an alternitive package i sourced from this one -- import { isICO, parseICO } from 'icojs';
 import fetch from 'node-fetch';
 
@@ -164,7 +164,7 @@ export class StorageService {
 
   public find<T>(data: IFindOperation): Promise<T[]> {
     const { scope, query } = data;
-
+  
     return new Promise((resolve, reject) => {
       this.databases[scope].find(query, (err: any, docs: any) => {
         if (err) reject(err);
@@ -172,10 +172,10 @@ export class StorageService {
       });
     });
   }
-
+  
   public findOne<T>(data: IFindOperation): Promise<T> {
     const { scope, query } = data;
-
+  
     return new Promise((resolve, reject) => {
       this.databases[scope].findOne(query, (err: any, doc: any) => {
         if (err) reject(err);
@@ -337,27 +337,27 @@ export class StorageService {
 
   public async removeBookmark(id: string) {
     const item = this.bookmarks.find((x) => x._id === id);
-
+  
     if (!item) return;
-
+  
     this.bookmarks = this.bookmarks.filter((x) => x._id !== id);
     const parent = this.bookmarks.find((x) => x._id === item.parent);
-
+  
     parent.children = parent.children.filter((x) => x !== id);
     await this.updateBookmark(item.parent, { children: parent.children });
-
+  
     await this.remove({ scope: 'bookmarks', query: { _id: id } });
-
+  
     if (item.isFolder) {
       this.bookmarks = this.bookmarks.filter((x) => x.parent !== id);
       const removed = this.bookmarks.filter((x) => x.parent === id);
-
+  
       await this.remove({
         scope: 'bookmarks',
         query: { parent: id },
         multi: true,
       });
-
+  
       for (const i of removed) {
         if (i.isFolder) {
           await this.removeBookmark(i._id);
@@ -372,13 +372,13 @@ export class StorageService {
       this.bookmarks.find((x) => x._id === id),
     );
     this.bookmarks[index] = { ...this.bookmarks[index], ...change };
-
+  
     await this.update({
       scope: 'bookmarks',
       query: { _id: id },
       value: change,
     });
-
+  
     if (change.parent) {
       const parent = this.bookmarks.find((x) => x._id === change.parent);
       if (!parent.children.includes(change._id))
@@ -386,7 +386,7 @@ export class StorageService {
           children: [...parent.children, change._id],
         });
     }
-
+  
     Application.instance.windows.broadcast('reload-bookmarks');
   }
 
@@ -394,33 +394,32 @@ export class StorageService {
     if (item.parent === undefined) {
       item.parent = null;
     }
-
+  
     if (item.parent === null && !item.static) {
       throw new Error('Parent bookmark should be specified');
     }
-
+  
     if (item.isFolder) {
       item.children = item.children || [];
-    } else {
     }
-
+  
     if (item.order === undefined) {
       item.order = this.bookmarks.filter((x) => !Boolean(x.static)).length;
     }
-
+  
     const doc = await this.insert<IBookmark>({ item, scope: 'bookmarks' });
-
+  
     if (item.parent) {
       const parent = this.bookmarks.find((x) => x._id === item.parent);
       await this.updateBookmark(parent._id, {
         children: [...parent.children, doc._id],
       });
     }
-
+  
     this.bookmarks.push(doc);
-
+  
     Application.instance.windows.broadcast('reload-bookmarks');
-
+  
     return doc;
   }
 
@@ -490,8 +489,15 @@ export class StorageService {
 
     for (const bookmark of bookmarks) {
       if (!bookmark.isFolder && bookmark.url) {
-        title = encodeTitle(bookmark.title);
-        const href = encodeHref(bookmark.url);
+        title = ((str: string) => {
+          return (str || '')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        })(bookmark.title);
+        const href = ((str: string) => {
+          return (str || '').replace(/"/g, '&quot;');
+        })(bookmark.url);
         let icon = bookmark.favicon;
 
         if (!icon.startsWith('data:')) {
@@ -502,7 +508,12 @@ export class StorageService {
           `${indentNext}<DT><A HREF="${href}" ICON="${icon}">${title}</A>`,
         );
       } else if (bookmark.isFolder) {
-        title = encodeTitle(bookmark.title);
+        title = ((str: string) => {
+          return (str || '')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        })(bookmark.title);
         payload.push(`${indentNext}<DT><H3>${title}</H3>`);
         payload = payload.concat(
           this.createBookmarkArray(bookmark._id, true, depth + 1),
@@ -519,16 +530,16 @@ export class StorageService {
     const { filePath, canceled } = await dialog.showSaveDialog({
       filters: [{ name: 'Bookmark file', extensions: ['html'] }],
     });
-
+  
     if (canceled) return;
-
+  
     const breakTag = process.platform === 'win32' ? '\r\n' : '\n';
     const documentTitle = 'Bookmarks';
-
+  
     const bar = this.createBookmarkArray(
       this.bookmarks.find((x) => x.static === 'main')._id,
     );
-
+  
     const other = this.createBookmarkArray(
       this.bookmarks.find((x) => x.static === 'other')._id,
       false,
@@ -547,10 +558,9 @@ ${bar.join(breakTag)}
 ${other.join(breakTag)}
 </DL><p>`;
 
-    try {
-      await promises.writeFile(filePath, html, 'utf8');
-    } catch (err) {
-      console.error(err);
-    }
-  };
-}
+  try {
+    await promises.writeFile(filePath, html, 'utf8');
+  } catch (err) {
+    console.error(err);
+  }
+}};

@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { AppWindow } from './windows/app';
 import { app, BrowserWindow, ipcMain } from 'electron';
@@ -71,7 +71,7 @@ export class WindowsService {
     return window;
   }
 
-  public findByContentsView(webContentsId: number) {
+  public findByContentView(webContentsId: number) {
     return this.list.find((x) => !!x.viewManager.views.get(webContentsId));
   }
 

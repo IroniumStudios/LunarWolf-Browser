@@ -1,9 +1,14 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 import { ITheme } from '~/interfaces';
 import { centerIcon } from '~/renderer/mixins';
 import { ICON_ARROW_RIGHT } from '~/renderer/constants/icons';
+
+// Extend DefaultTheme to include ITheme properties
+declare module 'styled-components' {
+  export interface DefaultTheme extends ITheme {}
+}
 
 export const Line = styled.div`
   height: 1px;
@@ -11,12 +16,12 @@ export const Line = styled.div`
   margin-top: 4px;
   margin-bottom: 4px;
 
-  ${({ theme }: { theme?: ITheme }) => css`
+  ${({ theme }) => css`
     background-color: ${theme['dialog.separator.color']};
   `};
 `;
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<{ arrow?: boolean; disabled?: boolean }>`
   height: 36px;
   align-items: center;
   display: flex;
@@ -24,7 +29,7 @@ export const MenuItem = styled.div`
   padding: 0 12px;
   font-size: 12px;
 
-  ${({ arrow }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ arrow, theme }) =>
     arrow &&
     css`
       &:after {
@@ -36,20 +41,18 @@ export const MenuItem = styled.div`
         opacity: 0.54;
         ${centerIcon(20)};
         background-image: url(${ICON_ARROW_RIGHT});
-        ${({ theme }: { theme?: ITheme }) => css`
-          filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
-        `};
+        filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
       }
     `};
 
-  ${({ disabled }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ disabled }) =>
     css`
       pointer-events: ${disabled ? 'none' : 'inherit'};
       opacity: ${disabled ? 0.54 : 1};
     `};
 
   &:hover {
-    ${({ theme }: { theme?: ITheme }) => css`
+    ${({ theme }) => css`
       background-color: ${theme['dialog.lightForeground']
         ? 'rgba(255, 255, 255, 0.06)'
         : 'rgba(0, 0, 0, 0.03)'};
@@ -67,7 +70,7 @@ export const MenuItems = styled.div`
   padding-top: 4px;
   padding-bottom: 4px;
 
-  ${({ theme }: { theme?: ITheme }) => css`
+  ${({ theme }) => css`
     background-color: ${theme['dialog.backgroundColor']};
     color: ${theme['dialog.textColor']};
   `};
@@ -79,14 +82,14 @@ export const Content = styled.div`
   position: relative;
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<{ icon?: string }>`
   margin-right: 12px;
   width: 20px;
   height: 20px;
   ${centerIcon()};
   opacity: 0.8;
 
-  ${({ icon, theme }: { icon?: string; theme?: ITheme }) => css`
+  ${({ icon, theme }) => css`
     background-image: url(${icon});
     filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
   `};

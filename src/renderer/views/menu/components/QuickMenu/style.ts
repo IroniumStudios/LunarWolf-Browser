@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import styled, { css } from 'styled-components';
 import { ITheme } from '~/interfaces';
@@ -16,7 +16,7 @@ export const Line = styled.div`
   `};
 `;
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<{ arrow?: boolean; disabled?: boolean }>`
   height: 36px;
   align-items: center;
   display: flex;
@@ -24,7 +24,7 @@ export const MenuItem = styled.div`
   padding: 0 12px;
   font-size: 12px;
 
-  ${({ arrow }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ arrow }) =>
     arrow &&
     css`
       &:after {
@@ -36,16 +36,14 @@ export const MenuItem = styled.div`
         opacity: 0.54;
         ${centerIcon(20)};
         background-image: url(${ICON_ARROW_RIGHT});
-        ${({ theme }: { theme?: ITheme }) => css`
-          filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
-        `};
       }
     `};
 
-  ${({ disabled }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ disabled }) =>
+    disabled &&
     css`
-      pointer-events: ${disabled ? 'none' : 'inherit'};
-      opacity: ${disabled ? 0.54 : 1};
+      pointer-events: none;
+      opacity: 0.54;
     `};
 
   &:hover {
@@ -54,7 +52,6 @@ export const MenuItem = styled.div`
         ? 'rgba(255, 255, 255, 0.06)'
         : 'rgba(0, 0, 0, 0.03)'};
     `};
-  }
 `;
 
 export const Label = styled.div`
@@ -63,7 +60,7 @@ export const Label = styled.div`
   text-align: center;
 `;
 
-export const MenuItemZoom = styled.div`
+export const MenuItemZoom = styled.div<{ arrow?: boolean; disabled?: boolean }>`
   height: 36px;
   align-items: center;
   display: flex;
@@ -71,7 +68,7 @@ export const MenuItemZoom = styled.div`
   padding: 0 12px;
   font-size: 12px;
 
-  ${({ arrow }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ arrow }) =>
     arrow &&
     css`
       &:after {
@@ -83,16 +80,14 @@ export const MenuItemZoom = styled.div`
         opacity: 0.54;
         ${centerIcon(20)};
         background-image: url(${ICON_ARROW_RIGHT});
-        ${({ theme }: { theme?: ITheme }) => css`
-          filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
-        `};
       }
     `};
 
-  ${({ disabled }: { arrow?: boolean; disabled?: boolean }) =>
+  ${({ disabled }) =>
+    disabled &&
     css`
-      pointer-events: ${disabled ? 'none' : 'inherit'};
-      opacity: ${disabled ? 0.54 : 1};
+      pointer-events: none;
+      opacity: 0.54;
     `};
 `;
 
@@ -118,16 +113,16 @@ export const Content = styled.div`
   position: relative;
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<{ icon?: string; theme?: ITheme }>`
   margin-right: 12px;
   width: 20px;
   height: 20px;
   ${centerIcon()};
-  opacity: 0.8;
 
-  ${({ icon, theme }: { icon?: string; theme?: ITheme }) => css`
+  ${({ icon, theme }) => css`
     background-image: url(${icon});
     filter: ${theme['dialog.lightForeground'] ? 'invert(100%)' : 'none'};
+    opacity: 0.8;
   `};
 `;
 

@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -20,6 +20,7 @@ import {
   ICON_TRASH,
 } from '~/renderer/constants';
 import { WebUIStyle } from '~/renderer/mixins/default-styles';
+import { ipcRenderer } from 'electron';
 
 const onScroll = (e: any) => {
   const scrollPos = e.target.scrollTop;
@@ -85,8 +86,8 @@ const onClearClick = (e: React.MouseEvent<HTMLDivElement>) => {
   e.stopPropagation();
   (window as any).store.clear();
 
-  // store.clear();
-  // TODO: ipcRenderer.send('clear-browsing-data');
+   store.clear();
+   ipcRenderer.send('clear-browsing-data');
 };
 
 export default observer(() => {

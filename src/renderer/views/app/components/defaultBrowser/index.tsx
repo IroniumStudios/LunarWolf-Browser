@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* Copyright (c) 2021-2024 lunarwolf Browser Project */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -7,7 +7,7 @@ import {
   StyledDefaultBrowserSection,
   Line,
   ButtonPredeterminado,
-  Close,
+  Close as StyledClose,
   HiddenDiv,
 } from './style';
 import * as os from 'os';
@@ -43,6 +43,30 @@ const onCloseClick = () => {
   document.getElementById('Line').style.display = 'none';
 };
 
+// Define the Close component to accept an icon prop
+type CloseProps = {
+  icon: string;
+  title: string;
+  onClick: () => void;
+};
+
+const Close: React.FC<CloseProps> = ({ icon, title, onClick }) => (
+  <StyledClose
+    icon={icon} // passing icon here
+    onClick={onClick}
+    title={title}
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      padding: '4px', // Optional: add padding for better click area
+    }}
+  >
+    <img src={icon} alt="close icon" style={{ width: '16px', height: '16px' }} />
+  </StyledClose>
+);
+
 export const DefaultBrowser = observer(() => {
   // localStorage.setItem('hide-banner', "0")
 
@@ -62,7 +86,7 @@ export const DefaultBrowser = observer(() => {
           >
             <div
               style={{
-                background: `url(https://github.com/IroniumStudios/LunarWolf-Browser/blob/main/static/icons/icon.png?raw=true)`,
+                background: `url(https://github.com/lunarwolf-project/lunarwolf-browser/blob/main/static/icons/icon.png?raw=true)`,
                 width: '21px',
                 height: '21px',
                 backgroundSize: 'cover',
@@ -71,15 +95,15 @@ export const DefaultBrowser = observer(() => {
               }}
             ></div>
             <HiddenDiv>
-              LunarWolf is not your default browser, for maximum security and
-              privacy, we recommend you to use LunarWolf!
+              lunarwolf is not your default browser; for maximum security and
+              privacy, we recommend you to use lunarwolf!
             </HiddenDiv>
             <ButtonPredeterminado onClick={onButtonClick}>
               Set as default!
             </ButtonPredeterminado>
           </div>
           <Close
-            icon={ICON_CLOSE}
+            icon={ICON_CLOSE} // passing ICON_CLOSE as the icon prop
             title="Don't ask again."
             onClick={onCloseClick}
           />

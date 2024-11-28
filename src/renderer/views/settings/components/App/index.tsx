@@ -1,4 +1,4 @@
-/* Copyright (c) 2021-2024 Damon Smith */
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
@@ -8,9 +8,9 @@ import { Appearance } from '../Appearance';
 import { AddressBar, ManageSearchEngines } from '../AddressBar';
 import { Privacy } from '../Privacy';
 import { About } from '../About';
-import { Party } from '../ThirdPartyComponents';
+import { Party } from '../Party';
 import { Performance } from '../Performance';
-import { Other } from '../telem';
+import { Other } from '../Other';
 import store from '../../store';
 import { NavigationDrawer } from '~/renderer/components/NavigationDrawer';
 import { Button } from '~/renderer/components/Button';
@@ -269,10 +269,13 @@ export default observer(() => {
           <MenuItem icon={ICON_SHIELD} section="privacy">
             Privacy
           </MenuItem>
+          <MenuItem icon={ICON_DASHBOARD} section="party">
+            Third Party
+          </MenuItem>
           <MenuItem icon={ICON_FIRE} section="about">
             About
           </MenuItem>
-          {/*<MenuItem icon={ICON_ADD} section="telem">
+          {/*<MenuItem icon={ICON_ADD} section="other">
             Other
           </MenuItem>*/}
           {/* <MenuItem section="permissions">Site permissions</MenuItem> */}

@@ -1,3 +1,5 @@
+/* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
+
 export const ICON_ADD = require('~/renderer/resources/icons/add.svg');
 export const ICON_BACK = require('~/renderer/resources/icons/back.svg');
 export const ICON_FORWARD = require('~/renderer/resources/icons/forward.svg');
@@ -53,9 +55,6 @@ export const ICON_MAGNIFY_MINUS = require('~/renderer/resources/icons/magnify-mi
 export const ICON_VOLUME_HIGH = require('~/renderer/resources/icons/volume-high.svg');
 export const ICON_VOLUME_OFF = require('~/renderer/resources/icons/volume-off.svg');
 export const ICON_FULLSCREEN_EXIT = require('~/renderer/resources/icons/fullscreen-exit.svg');
-export const ICON_PAUSE = require('~/renderer/resources/icons/pause.svg');
-export const ICON_RESUME = require('~/renderer/resources/icons/play.svg');
-export const ICON_LINK = require('~/renderer/resources/icons/link.svg');
 
 export const ICON_WEATHER_DAY_CLEAR = require('~/renderer/resources/icons/weather/day/clear.png');
 export const ICON_WEATHER_DAY_FEW_CLOUDS = require('~/renderer/resources/icons/weather/day/few-clouds.png');
