@@ -24,6 +24,9 @@ This Browser is a fork of the Wexond Browser Basse project, which can be found [
 - [Documentation](#documentation)
 - [License](#license)
 
+# my motivation
+If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved
+
 # Motivation
 Compiling and editing Chromium directly may be challenging and time consuming, so i decided to fork the once active Wexond project and fix it with modern web technologies. Hence, the development effort and time is greatly reduced. Either way Firefox is based on Web Components and Chrome implements new dialogs in WebUI (which essentially is hosted in WebContents).
 
@@ -173,4 +176,8 @@ Guides and the API reference are located in [`docs`](docs) directory.
 
 # License
 
-This Project Uses a MIT License, Which is free.
+this is the code of the project before it became closed sourcee, this is also the version of the code that used the GPL 3.0 license
+now that i learned more about there name and liceensing as a whole i am taking procossion to ensure i am not doing anything wrong
+all i am doing is preserving the project and more, if you want to know more about my intensions read the intensions file for that 
+which can be found here: https://github.com/LunarWolf-Browser-Projects/LunarWolf-Browser/blob/main/intensions.md so for the company reading this
+my intensions where to never claim credit for your work, i just wanted to expand on it because i loved this project
