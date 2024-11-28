@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <h1>lunarwolf Browser</h1>
+  <h1>LunarWolf Browser</h1>
 
 > Looking for help, as of now there is only one person {me} doing everything, it would be nice to have some help, if you would like to help, pleasee email me.
 
@@ -30,14 +30,14 @@ Compiling and editing Chromium directly may be challenging and time consuming, s
 # Features
 
 
-- **lunarwolf Shield** - Browse the web without any ads and don't let websites to track you. Thanks to the lunarwolf Shield powered by [Cliqz](https://github.com/cliqz-oss/adblocker), websites can load even 8 times faster! --NOTE: this feature is currently not working properly and i am working to fix it.
+- **LunarWolf Shield** - Browse the web without any ads and don't let websites to track you. Thanks to the LunarWolf Shield powered by [Cliqz](https://github.com/cliqz-oss/adblocker), websites can load even 8 times faster! --NOTE: this feature is currently not working properly and i am working to fix it.
 - **Chromium without Google services and low resources usage** - Since lunarwolf uses Electron under the hood which is based on only several and the most important Chromium components, it's not bloated with redundant Google tracking services and others.
 - **Fast and fluent UI** - The animations are really smooth and their timings are perfectly balanced.
 - **Highly customizable new tab page** - Customize almost an every aspect of the new tab page!
-- **Customizable browser UI** - Choose whether lunarwolf should have compact or normal UI.
+- **Customizable browser UI** - Choose whether LunarWolf should have compact or normal UI.
 - **Tab groups** - Easily group tabs, so it's hard to get lost.
 - **Scrollable tabs**
-- **lunarwolf supports Chrome extensions** - so far, only a select few extensions work properly, partly to do with the electron extension support in WebContentsView
+- **LunarWolf supports Chrome extensions** - so far, only a select few extensions work properly, partly to do with the electron extension support in WebContentsView
 
 ## Other basic features
 
@@ -133,13 +133,13 @@ npm install -g electron@latest
 
 
 
-#### Now in the main lunarwolf-main folder run the commands below
+#### Now in the main LunarWolf-Browser-main folder run the commands below
 
 ```bash
  yarn install # Install needed depedencies.
  yarn run build # Builds native modules using Electron headers.
  yarn run rebuild # Rebuilds native modules using Electron headers.
- yarn run start # Starts the lunarwolf App
+ yarn run start # Starts the LunarWolf App
 ```
 
 ### Compiling and yarn lint Commands for Windows
@@ -147,7 +147,7 @@ npm install -g electron@latest
 
 
 ```bash
- yarn compile-win32 # Package lunarwolf for Windows
+ yarn compile-win32 # Package LunarWolf for Windows
  yarn lint # Runs linter
  yarn lint-fix # Runs linter and automatically applies fixes
 ```
@@ -158,8 +158,8 @@ npm install -g electron@latest
 
 
 ```bash
-$ yarn compile-linux # Package lunarwolf for Linux
-$ yarn compile-darwin # Package lunarwolf for macOS
+$ yarn compile-linux # Package LunarWolf for Linux
+$ yarn compile-darwin # Package LunarWolf for macOS
 ```
 
 
