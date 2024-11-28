@@ -1,6 +1,6 @@
 /* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
-import { RendererToMainChannel } from '@wexondrpc-electron';
+import { RendererToMainChannel } from '@wexond/rpc-electron';
 
 export interface ExtensionMainService {
   uninstall(id: string): void;

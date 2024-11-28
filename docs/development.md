@@ -2,7 +2,7 @@
 
 ## IPC
 
-Now, the preferred way to communicate between processes is to use [`@wexondrpc-electron`](https://github.com/wexond/rpc/tree/master/packages/rpc-electron) package.
+Now, the preferred way to communicate between processes is to use [`@wexond/rpc-electron`](https://github.com/wexond/rpc/tree/master/packages/rpc-electron) package.
 
 Example:
 
