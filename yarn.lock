@@ -1870,6 +1870,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wexond/rpc-core@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@wexond/rpc-core@npm:1.0.3"
+  checksum: 10c0/6678924899f081cd8d0b816a0bd6d20f4153f26bf6b01d7656bb385b9ee4c57e892cd25c9a1c9a304492fdb11a292f8bb145bb9df7b87451fa514d1fbed53736
+  languageName: node
+  linkType: hard
+
+"@wexond/rpc-electron@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@wexond/rpc-electron@npm:1.0.3"
+  peerDependencies:
+    "@wexond/rpc-core": ^1.0.2
+    electron: ^10.1.5
+  checksum: 10c0/52ac18ac3e6101a1a9ca27fdd73b08b80e06264306b9e7623c1b3c4b3485d9175fe4fa9c5519339566bba6f8eddb1e501cce598f26bbd407da1d3e6a380ec9bc
+  languageName: node
+  linkType: hard
+
+"@wexond/rpc-node@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@wexond/rpc-node@npm:1.0.3"
+  peerDependencies:
+    "@wexond/rpc-core": ^1.0.2
+  checksum: 10c0/24b406a9ce77837000e10e8ad0e194f0efe041b8ab3bf737dea03bf9cff6b6a496de349ded31da9568a2117f0f68dc32b4868df3276dd364214486539e4517c4
+  languageName: node
+  linkType: hard
+
 "@xmldom/xmldom@npm:^0.8.8":
   version: 0.8.10
   resolution: "@xmldom/xmldom@npm:0.8.10"
@@ -8126,6 +8152,9 @@ __metadata:
     "@types/styled-components": "npm:^5.1.34"
     "@typescript-eslint/eslint-plugin": "npm:^8.16.0"
     "@typescript-eslint/parser": "npm:^8.16.0"
+    "@wexond/rpc-core": "npm:^1.0.3"
+    "@wexond/rpc-electron": "npm:^1.0.3"
+    "@wexond/rpc-node": "npm:^1.0.3"
     animejs: "npm:^3.2.2"
     awesome-node-loader: "npm:^1.1.1"
     babel-loader: "npm:^9.2.1"

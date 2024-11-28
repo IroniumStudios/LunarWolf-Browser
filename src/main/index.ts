@@ -1,7 +1,7 @@
 /* some elements of this code contains lines from Browser Base and other respective projects, all credit goes to them for there work */
 
 import { ipcMain, app, crashReporter, webContents } from 'electron';
-import { setIpcMain } from '@wexondrpc-electron';
+import { setIpcMain } from '@wexond/rpc-electron';
 setIpcMain(ipcMain);
 
 console.log(app.getPath('crashDumps'))

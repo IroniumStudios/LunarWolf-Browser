@@ -86,7 +86,7 @@ export const DefaultBrowser = observer(() => {
           >
             <div
               style={{
-                background: `url(https://github.com/lunarwolf-project/lunarwolf-browser/blob/main/static/icons/icon.png?raw=true)`,
+                background: `url(https://github.com/LunarWolf-Browser-Projects/LunarWolf-Browser/blob/main/static/icons/icon.png?raw=true)`,
                 width: '21px',
                 height: '21px',
                 backgroundSize: 'cover',
