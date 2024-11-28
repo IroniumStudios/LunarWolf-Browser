@@ -1,8 +1,10 @@
 # Development
 
-## IPC
+# NOTE, to keep licensing concerns less of a problem i am working tword making less and less of this project use there code and use more of my code.
 
-Now, the preferred way to communicate between processes is to use [`@wexond/rpc-electron`](https://github.com/wexond/rpc/tree/master/packages/rpc-electron) package.
+## IPC using RPC
+
+the preferred way to communicate between processes is to use there RPC solution [`@wexond/rpc-electron`](https://github.com/wexond/rpc/tree/master/packages/rpc-electron) package.
 
 Example:
 
