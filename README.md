@@ -38,7 +38,7 @@ If RedBrick or Eryk (the original authors) see this, I want to assure you that m
 - [License](#license)
 
 # my motivation
-If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re create a browser-base project we all know and loved
+If your looking for the perfect Framework for your next web browser build, then look no further because your search is over, i have been in your situation of searching for a electron browser base project that isent old or depricated, so i took the time to re modernize a browser-base project we all know and loved
 
 # Motivation
 Compiling and editing Chromium directly may be challenging and time consuming, so i decided to fork the once active Wexond project and fix it with modern web technologies. Hence, the development effort and time is greatly reduced. Either way Firefox is based on Web Components and Chrome implements new dialogs in WebUI (which essentially is hosted in WebContents).
