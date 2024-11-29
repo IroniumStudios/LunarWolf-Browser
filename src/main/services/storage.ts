@@ -29,9 +29,25 @@ interface Databases {
 [key: string]: Nedb;
 }
 
-// Fix icojs to work properly
+// contenue fixing parse for ico to png.
 const convertIcoToPng = async (icoData: Buffer): Promise<ArrayBuffer> => {
-  return (await icojs.parse(icoData, 'image/png'))[0].buffer;
+  // Convert Buffer to ArrayBuffer as icojs expects an ArrayBuffer
+  const arrayBuffer = icoData.buffer.slice(icoData.byteOffset, icoData.byteOffset + icoData.byteLength);
+
+  // Ensure the input is a valid ICO file
+  if (!icojs.isICO(arrayBuffer)) {
+    throw new Error('Provided data is not a valid ICO file.');
+  }
+
+  // Parse the ICO data and extract the PNG image
+  const images = await icojs.parse(arrayBuffer, { type: 'image/png' });
+
+  // Ensure at least one image was extracted
+  if (images.length === 0) {
+    throw new Error('No PNG images found in the ICO file.');
+  }
+
+  return images[0].buffer; // Return the buffer of the first PNG image
 };
 
 const createDatabase = (name: string) => {
