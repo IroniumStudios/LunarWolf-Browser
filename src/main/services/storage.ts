@@ -3,11 +3,10 @@
 import { ipcMain, dialog } from 'electron';
 import Nedb, * as Datastore from '@seald-io/nedb';
 import { fileTypeFromBuffer } from 'file-type';
-import * as icojs from 'icojs';
-//currently using an alternitive package i sourced from this one -- import { isICO, parseICO } from 'icojs';
+import { parseICO } from 'icojs';
 import fetch from 'node-fetch';
 
-import { getPath } from '~/utils'; // Import getPath function from utils module
+import { getPath } from '~/utils';
 import {
   IFindOperation,
   IInsertOperation,
@@ -29,25 +28,19 @@ interface Databases {
 [key: string]: Nedb;
 }
 
-// contenue fixing parse for ico to png.
 const convertIcoToPng = async (icoData: Buffer): Promise<ArrayBuffer> => {
-  // Convert Buffer to ArrayBuffer as icojs expects an ArrayBuffer
-  const arrayBuffer = icoData.buffer.slice(icoData.byteOffset, icoData.byteOffset + icoData.byteLength);
+  try {
+    const images = await parseICO(icoData, 'image/png');
 
-  // Ensure the input is a valid ICO file
-  if (!icojs.isICO(arrayBuffer)) {
-    throw new Error('Provided data is not a valid ICO file.');
+    if (!images || images.length === 0) {
+      throw new Error('No images found in the ICO file.');
+    }
+
+    return images[0].buffer;
+  } catch (error) {
+    console.error('Failed to convert ICO to PNG:', error);
+    throw error;
   }
-
-  // Parse the ICO data and extract the PNG image
-  const images = await icojs.parse(arrayBuffer, { type: 'image/png' });
-
-  // Ensure at least one image was extracted
-  if (images.length === 0) {
-    throw new Error('No PNG images found in the ICO file.');
-  }
-
-  return images[0].buffer; // Return the buffer of the first PNG image
 };
 
 const createDatabase = (name: string) => {
