@@ -29,6 +29,7 @@ interface Databases {
 [key: string]: Nedb;
 }
 
+// Fix icojs to work properly
 const convertIcoToPng = async (icoData: Buffer): Promise<ArrayBuffer> => {
   return (await icojs.parse(icoData, 'image/png'))[0].buffer;
 };

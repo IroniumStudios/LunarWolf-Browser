@@ -1,7 +1,7 @@
 {
   "name": "lunarwolf",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "sideEffects": false,
   "description": "lunarwolf",
   "keywords": [
@@ -70,8 +70,9 @@
     "copy-webpack-plugin": "^12.0.2",
     "copyright-header": "^0.4.6",
     "cross-env": "^7.0.3",
-    "electron": "^34.0.0-beta.6",
+    "electron": "^34.0.0-beta.7",
     "electron-builder": "^25.1.8",
+    "electron-rebuild": "^3.2.9",
     "electron-updater": "^6.3.9",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
