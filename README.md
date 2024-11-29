@@ -194,3 +194,6 @@ now that i learned more about there name and liceensing as a whole i am taking p
 all i am doing is preserving the project and more, if you want to know more about my intensions read the intensions file for that 
 which can be found here: https://github.com/LunarWolf-Browser-Projects/LunarWolf-Browser/blob/main/intensions.md so for the company reading this
 my intensions where to never claim credit for your work, i just wanted to expand on it because i loved this project
+
+# images
+
