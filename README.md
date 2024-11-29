@@ -5,7 +5,7 @@
 <div align="center">
   <h1>LunarWolf Browser</h1>
 
-> Looking for help, as of now there is only one person {me} doing everything, it would be nice to have some help, if you would like to help, pleasee email me.
+> NOTE: i am looking for contributors to help me work on the projects of the LunarWolf Browser, a google form will be linked soon to apply.
 
 a modern web browser built with react.js, electron, and node.js
 
