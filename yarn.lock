@@ -1383,7 +1383,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.10.0":
+"@types/node@npm:*":
   version: 22.10.0
   resolution: "@types/node@npm:22.10.0"
   dependencies:
@@ -1398,6 +1398,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.19.2"
   checksum: 10c0/d68bbd9f8946a56d3f405e2dbfcc98d1d7a3cdbaa45d0a8fea2865e63ecdf3a2c9a0e992d9ea1658651909273026d341047e593596e133e842374371e04031c3
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.10.1":
+  version: 22.10.1
+  resolution: "@types/node@npm:22.10.1"
+  dependencies:
+    undici-types: "npm:~6.20.0"
+  checksum: 10c0/0fbb6d29fa35d807f0223a4db709c598ac08d66820240a2cd6a8a69b8f0bc921d65b339d850a666b43b4e779f967e6ed6cf6f0fca3575e08241e6b900364c234
   languageName: node
   linkType: hard
 
@@ -8145,7 +8154,7 @@ __metadata:
     "@types/chrome": "npm:^0.0.287"
     "@types/crypto-js": "npm:^4.2.2"
     "@types/jszip": "npm:^3.4.1"
-    "@types/node": "npm:^22.10.0"
+    "@types/node": "npm:^22.10.1"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     "@types/react-helmet": "npm:^6.1.11"
