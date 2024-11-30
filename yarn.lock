@@ -206,16 +206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-content@npm:1.26.5":
-  version: 1.26.5
-  resolution: "@cliqz/adblocker-content@npm:1.26.5"
-  dependencies:
-    "@cliqz/adblocker-extended-selectors": "npm:^1.26.5"
-  checksum: 10c0/a2de39dd991674734b2be467042356e26fffa05edb0f4d51e3c607c38673e7422b9d641f2056beb70a64fd60a44aea3889c30a6abcf3c0b4327b3025d0d364b9
-  languageName: node
-  linkType: hard
-
-"@cliqz/adblocker-content@npm:^1.26.5, @cliqz/adblocker-content@npm:^1.34.0":
+"@cliqz/adblocker-content@npm:1.34.0, @cliqz/adblocker-content@npm:^1.26.5, @cliqz/adblocker-content@npm:^1.34.0":
   version: 1.34.0
   resolution: "@cliqz/adblocker-content@npm:1.34.0"
   dependencies:
@@ -8153,7 +8144,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.26.0"
     "@cliqz/adblocker": "npm:1.26.5"
-    "@cliqz/adblocker-content": "npm:1.26.5"
+    "@cliqz/adblocker-content": "npm:1.34.0"
     "@cliqz/adblocker-electron": "npm:1.26.5"
     "@cliqz/adblocker-electron-preload": "npm:1.26.5"
     "@cliqz/adblocker-extended-selectors": "npm:1.26.5"
