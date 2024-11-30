@@ -8204,7 +8204,7 @@ __metadata:
     html-webpack-plugin: "npm:^5.6.3"
     icojs: "npm:^0.19.4"
     jszip: "npm:^3.10.1"
-    mobx: "npm:6.3.3"
+    mobx: "npm:6.13.5"
     mobx-react-lite: "npm:3.4.0"
     node-fetch: "npm:^3.3.2"
     node-parse-bookmarks: "npm:^1.0.3"
@@ -8803,10 +8803,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx@npm:6.3.3":
-  version: 6.3.3
-  resolution: "mobx@npm:6.3.3"
-  checksum: 10c0/fb0a4868690e65973739d1d55b5b6d1fd8e978f91caa67fe98f168903a53ee5699dadb8ebc498834ed8d0e4149e4c02ea1043dc5384f06514cccd0d996f066a5
+"mobx@npm:6.13.5":
+  version: 6.13.5
+  resolution: "mobx@npm:6.13.5"
+  checksum: 10c0/43691c836363aa1f13c44e43c86ab89fc8f4b83ef408bc6c68d799260e74b4ff08ebba2ef16bda447c6b7bca3558768e15927c0b21ffbb10e99b610783f28859
   languageName: node
   linkType: hard
 
