@@ -224,18 +224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-electron-preload@npm:1.26.5":
-  version: 1.26.5
-  resolution: "@cliqz/adblocker-electron-preload@npm:1.26.5"
-  dependencies:
-    "@cliqz/adblocker-content": "npm:^1.26.5"
-  peerDependencies:
-    electron: ">11"
-  checksum: 10c0/3e62039d90c3e7e2808d16f448c6a1d4f0ca85ed387d4abcd5b076bb6856d577d7150232bb494958621b0bcc1fff3820e10326048d9506873e1f37e8d4e571db
-  languageName: node
-  linkType: hard
-
-"@cliqz/adblocker-electron-preload@npm:^1.26.5":
+"@cliqz/adblocker-electron-preload@npm:1.34.0, @cliqz/adblocker-electron-preload@npm:^1.26.5":
   version: 1.34.0
   resolution: "@cliqz/adblocker-electron-preload@npm:1.34.0"
   dependencies:
@@ -8155,7 +8144,7 @@ __metadata:
     "@cliqz/adblocker": "npm:1.26.5"
     "@cliqz/adblocker-content": "npm:1.26.5"
     "@cliqz/adblocker-electron": "npm:1.26.5"
-    "@cliqz/adblocker-electron-preload": "npm:1.26.5"
+    "@cliqz/adblocker-electron-preload": "npm:1.34.0"
     "@cliqz/adblocker-extended-selectors": "npm:1.26.5"
     "@electron/remote": "npm:^2.1.2"
     "@fortawesome/fontawesome-free": "npm:^6.7.1"
