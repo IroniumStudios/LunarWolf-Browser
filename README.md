@@ -1,3 +1,5 @@
+> NOTE: This projects license was open source when i revamped the code, they made the current repo closed source even tho you can still see and download the ocde.
+
 <p align="center">
   <a href="[https://lunarwolf.net](https://damonicproducts.wixsite.com/smithcloud/support)"><img src="static/icons/icon.png" width="256"></a>
 </p>
