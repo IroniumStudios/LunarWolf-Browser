@@ -1,6 +1,6 @@
 {
   "name": "lunarwolf",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "sideEffects": false,
   "description": "LunarWolf",
   "keywords": [
@@ -13,6 +13,7 @@
   ],
   "homepage": "https://github.com/LunarWolf-Browser-Projects/lunarwolf-browser/blob/main/README.md",
   "main": "build/main.bundle.js",
+  "original-author": "Eryk Rakowski <sentialx@gmail.com>",
   "author": "Damon Smith <cleverdamontoutube@gmail.com>",
   "repository": {
     "type": "git",
