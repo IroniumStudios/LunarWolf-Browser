@@ -12,13 +12,15 @@ a modern web browser built with react.js, electron, and node.js
 This Browser is a fork of the Wexond Browser Basse project, which can be found [`here`](https://github.com/wexond/browser-base)
 
 # Important Notice
-Unfortunately, my old fork of the project (without the updated name) was compromised around 4 months ago and is no longer under my control.  
-I have taken all precautions to secure my account, including changing my password. However, I no longer have access to the old repository.  
+A previous fork of this project, which I maintained for a time, is no longer under my control. That repository was deleted, either by myself or during a brief compromise of my account. After the deletion, another user’s fork of my deleted repository became a standalone fork tied to the original main repository.
 
-My intentions were always to update and preserve the original project in a respectful and transparent way. I planned to rename the old fork once I finalized this new repository, but the compromise prevented me from doing so.  
+Unfortunately, that standalone fork—now maintained by someone else—contains outdated information that did not fully adhere to licensing and open-source rules at the time I created it. Since then, I have taken significant steps to ensure this repository adheres to all licensing and contribution requirements. However, I cannot modify or remove information from the standalone fork as I do not own or control it.
 
-The compromised repository is linked below for reference. Please note that I cannot make changes to it:  
-[Compromised Repository](https://github.com/RubenPlatiado/browser-base-updated)  
+I am committed to transparency and maintaining this current repository in full compliance with open-source standards. If you have questions or concerns, please don't hesitate to contact me.
+
+Thank you for your understanding.
+
+[there Repository with the outdated infeermation](https://github.com/RubenPlatiado/browser-base-updated)  
 
 If RedBrick or Eryk (the original authors) see this, I want to assure you that my intentions were never malicious, and I am open to discussing any concerns.
 
