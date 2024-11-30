@@ -235,7 +235,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-electron-preload@npm:^1.26.5":
+"@cliqz/adblocker-electron-preload@npm:^1.34.0":
   version: 1.34.0
   resolution: "@cliqz/adblocker-electron-preload@npm:1.34.0"
   dependencies:
@@ -246,16 +246,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-electron@npm:1.26.5":
-  version: 1.26.5
-  resolution: "@cliqz/adblocker-electron@npm:1.26.5"
+"@cliqz/adblocker-electron@npm:1.34.0":
+  version: 1.34.0
+  resolution: "@cliqz/adblocker-electron@npm:1.34.0"
   dependencies:
-    "@cliqz/adblocker": "npm:^1.26.5"
-    "@cliqz/adblocker-electron-preload": "npm:^1.26.5"
-    tldts-experimental: "npm:^5.6.21"
+    "@cliqz/adblocker": "npm:^1.34.0"
+    "@cliqz/adblocker-electron-preload": "npm:^1.34.0"
+    tldts-experimental: "npm:^6.0.14"
   peerDependencies:
     electron: ">11"
-  checksum: 10c0/4796044127099b266ba3f2ad0cedd84ac826325a9207955901590c6887d8dbb422a024e92f894447a598e647a75d776dfcc60c33ddf4ccca8b772886476888da
+  checksum: 10c0/8179caa67a41829f55cde11104cf1a2eb8ffe6f943f695fd3da5db2e3aaa52de0fbe53ae3a64e526c4514334ffa96b14ff69d16a22148cbea1a90de4b514bcd2
   languageName: node
   linkType: hard
 
@@ -289,7 +289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker@npm:^1.26.5":
+"@cliqz/adblocker@npm:^1.34.0":
   version: 1.34.0
   resolution: "@cliqz/adblocker@npm:1.34.0"
   dependencies:
@@ -8154,7 +8154,7 @@ __metadata:
     "@babel/core": "npm:^7.26.0"
     "@cliqz/adblocker": "npm:1.26.5"
     "@cliqz/adblocker-content": "npm:1.26.5"
-    "@cliqz/adblocker-electron": "npm:1.26.5"
+    "@cliqz/adblocker-electron": "npm:1.34.0"
     "@cliqz/adblocker-electron-preload": "npm:1.26.5"
     "@cliqz/adblocker-extended-selectors": "npm:1.26.5"
     "@electron/remote": "npm:^2.1.2"
