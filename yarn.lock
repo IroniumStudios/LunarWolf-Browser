@@ -4499,14 +4499,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-chrome-web-store@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "electron-chrome-web-store@npm:0.1.0"
+"electron-chrome-web-store@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "electron-chrome-web-store@npm:0.2.0"
   dependencies:
     adm-zip: "npm:^0.5.16"
     debug: "npm:^4.3.7"
     pbf: "npm:^4.0.1"
-  checksum: 10c0/c8598e3ac0d276a2d7222a15eadb04333cd4d665bc9b3e4fefb7669d7a8162c95df1c917394503920d410eb8932a8cb37ce03294ad8797939bd9fa7ac29bc809
+  checksum: 10c0/84c91c3dc6f7c019c7054acf9bde78c54cd1cbd4aa1220837c1f7e34e268243f8acf2d9fbe9a3f0e0a308459aefd17170e18ef662ce10ea7c81d20151dadeb6f
   languageName: node
   linkType: hard
 
@@ -8190,7 +8190,7 @@ __metadata:
     electron: "npm:^34.0.0-beta.7"
     electron-builder: "npm:^25.1.8"
     electron-chrome-extensions-suit: "npm:^1.0.7"
-    electron-chrome-web-store: "npm:^0.1.0"
+    electron-chrome-web-store: "npm:^0.2.0"
     electron-rebuild: "npm:^3.2.9"
     electron-updater: "npm:^6.3.9"
     eslint: "npm:^9.15.0"

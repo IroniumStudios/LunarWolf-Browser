@@ -126,7 +126,7 @@
     "@wexond/rpc-electron": "^1.0.3",
     "@wexond/rpc-node": "^1.0.3",
     "electron-chrome-extensions-suit": "^1.0.7",
-    "electron-chrome-web-store": "^0.1.0",
+    "electron-chrome-web-store": "^0.2.0",
     "node-polyfill-webpack-plugin": "^4.0.0",
     "react-query": "^3.39.3",
     "react-use": "^17.5.1",
