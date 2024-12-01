@@ -4489,13 +4489,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-chrome-extensions-suit@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "electron-chrome-extensions-suit@npm:1.0.7"
+"electron-chrome-extensions-suit@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "electron-chrome-extensions-suit@npm:1.0.8"
   dependencies:
     "@types/debug": "npm:^4.1.12"
     debug: "npm:^4.3.7"
-  checksum: 10c0/fa9ea2f9552e776e03ef9fb320c7e8c4e5ce63c5aa7ed53714b6365b95b973dc13722c9f17f2616d413f1ceff390fa3424c007321a29e53b1b4d689a353e4a8b
+  checksum: 10c0/5004c993452ca4f87b89c9edb71edbc12f0a4470e6b0863e6a2249789f4153f58c19f02c99abfc524ae49ab5b9817e7c1b68bb3ef8967d6929ce660f422944d3
   languageName: node
   linkType: hard
 
@@ -8189,7 +8189,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     electron: "npm:^34.0.0-beta.7"
     electron-builder: "npm:^25.1.8"
-    electron-chrome-extensions-suit: "npm:^1.0.7"
+    electron-chrome-extensions-suit: "npm:^1.0.8"
     electron-chrome-web-store: "npm:^0.1.0"
     electron-rebuild: "npm:^3.2.9"
     electron-updater: "npm:^6.3.9"
