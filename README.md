@@ -1,4 +1,4 @@
-# This project is no loner active
+# This project is no longer active
 
 I deeply appreciated the BrowserBase project and the work its developers put into it. When I first started working on this project, I didn’t fully understand or look into the licensing terms as thoroughly as I do now. Over time, I’ve come to better understand the importance of these aspects, and this experience has been a significant learning opportunity for me.
 
