@@ -14,4 +14,4 @@ To the developers of the original project, I sincerely apologize for any distres
 i did not get any donations of any kind from the project even tho i gave that as an option from people who wanted to support me working on the project, one again i am deeply sorry.
 
 # Update
-i have a new project in progress but this time its built from the ground up, to see the current project go here: https://github.com/LunarWolf-Browser-Projects/LunarWolf-Base
+I have a new project in progress, but for the time being enjoy the image converter project with the lunarwolf branding, its built from the ground up, heres the link: https://github.com/LunarWolf-Browser-Projects/LunarWolf-image-converter
